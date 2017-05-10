@@ -1,0 +1,24 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@media only screen and (min-width: 768px) {
+	
+	html {
+
+		body {
+
+			div.signup-container{
+				
+				min-height: 300px;
+
+				div.signup-section{
+					text-align: justify;
+				}
+
+			}
+		}
+
+	}
+
+}
