@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootsy
  */
 
 html, body, div, span, ul, li, a, p, h1, h2, h3, h4, h5, h6{

@@ -16,4 +16,5 @@
 //= require jquery.turbolinks
 //= require bootstrap-sprockets
 //= require turbolinks
+//= require bootsy
 //= require_tree .

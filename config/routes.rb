@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  resources :offers
   #devise_for :users
+  mount Bootsy::Engine => '/bootsy', as: 'bootsy'
 
-  devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
+  devise_for :users # :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
   
   root 'pages#home'
 

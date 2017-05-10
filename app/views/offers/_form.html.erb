@@ -1,0 +1,32 @@
+<%= form_for(offer) do |f| %>
+  <% if offer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(offer.errors.count, "error") %> prohibited this offer from being saved:</h2>
+
+      <ul>
+      <% offer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :headline %>
+    <%= f.text_field :headline %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sub_headline %>
+    <%= f.text_field :sub_headline %>
+  </div>
+
+  <div class="field">
+    <%= f.label :content %>
+    <%= f.bootsy_area :content %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
