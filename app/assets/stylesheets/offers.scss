@@ -1,3 +1,31 @@
 // Place all the styles related to the Offers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.offer-main-content{
+	margin: 0 auto;
+	width: 100%;
+	max-width: 600px;
+	padding: 15px;
+	font-family: Cambria, Georgia, serif;
+	font-size: 24px;
+	color: #666;
+	line-height: 1.3;
+
+	h1{
+		color: #111;
+		margin: 20px 0px;
+		font-weight: 800;
+		font-size: 48px;
+	}
+
+	h2{
+		color: #111;
+		margin: 15px 0px;
+		font-size: 36px;
+	}
+
+	p{
+		font-size: 16px;
+	}
+}

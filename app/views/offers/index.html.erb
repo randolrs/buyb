@@ -17,6 +17,7 @@
         <td><%= offer.headline %></td>
         <td><%= offer.sub_headline %></td>
         <td><%= link_to 'Show', offer %></td>
+        <td><%= link_to 'Formatted Page', show_offer_formatted_path(offer.name_url_slug) %></td>
         <td><%= link_to 'Edit', edit_offer_path(offer) %></td>
         <td><%= link_to 'Destroy', offer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

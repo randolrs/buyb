@@ -12,6 +12,28 @@ class OffersController < ApplicationController
   def show
   end
 
+
+  def show_formatted
+
+    if params[:name_url_slug]
+
+      @offer = Offer.where(:name_url_slug => params[:name_url_slug]).last
+
+      unless @offer
+
+        redirect_to root_path
+
+      end
+
+    else
+
+      redirect_to root_path
+
+    end
+
+
+  end
+
   # GET /offers/new
   def new
     @offer = Offer.new
@@ -24,10 +46,42 @@ class OffersController < ApplicationController
   # POST /offers
   # POST /offers.json
   def create
+    
     @offer = Offer.new(offer_params)
 
     respond_to do |format|
+      
       if @offer.save
+
+        if @offer.name
+
+          original_slug = @offer.name.downcase.gsub(' ', '-')
+
+          slug = original_slug
+
+          c=0
+          i=1
+
+          until c==1 do
+
+            unless Offer.where(:name_url_slug => slug).exists?
+
+              @offer.update(:name_url_slug => slug)
+
+              c=1
+
+              else
+
+              i = i + 1
+
+              slug = original_slug + "-" + i.to_s
+
+            end
+
+          end
+
+        end
+
         format.html { redirect_to @offer, notice: 'Offer was successfully created.' }
         format.json { render :show, status: :created, location: @offer }
       else
@@ -69,6 +123,6 @@ class OffersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def offer_params
-      params.require(:offer).permit(:headline, :sub_headline, :content, :bootsy_image_gallery_id)
+      params.require(:offer).permit(:headline, :sub_headline, :content, :bootsy_image_gallery_id, :name, :name_url_slug)
     end
 end

@@ -9,8 +9,9 @@ Rails.application.routes.draw do
 
   get 'pages/home'
 
-  match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
-  
+  match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup 
+
+  get '/:name_url_slug' => 'offers#show_formatted', as: 'show_offer_formatted'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
