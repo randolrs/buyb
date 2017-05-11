@@ -16,9 +16,29 @@
 	background: #000;
 	color: #fff;
 	z-index: 999;	
+
+	a{
+		padding: 10px;
+		line-height: 60px;
+		color: #fff;
+		display: inline-block;
+
+	}
+
+	a:hover{
+		text-decoration: none;
+	}
 }
 
 .header-container.fixed{
 	position: fixed;
 	top: 4px;
+}
+
+.main-nav{
+	opacity: 0;
+}
+
+.main-nav.active{
+	opacity: 1;
 }

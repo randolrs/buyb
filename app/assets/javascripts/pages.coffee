@@ -8,6 +8,7 @@ ready = ->
 
 		$(".signup-cta-down-arrow").click (e) ->
 			$(".signup-container").slideUp(1000)
+			$(".main-nav").addClass("active")
 			$(".header-container").addClass("fixed")
 			$(".header-container-offset").show()
 			window.scrollTo(0, 0)
@@ -17,6 +18,7 @@ ready = ->
 			bottom = $(".signup-container").height()
 			if st > bottom && $(".signup-container").is(":visible")
 				$(".signup-container").hide()
+				$(".main-nav").addClass("active")
 				$(".header-container").addClass("fixed")
 				$(".header-container-offset").show()
 				window.scrollTo(0, 0)
