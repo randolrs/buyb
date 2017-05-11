@@ -1,20 +1,49 @@
 <div class="offer-main-image-container" style="background-image: url(https://s3.amazonaws.com/media.appsumo.com/cache/dc/7a/dc7af207d72d0f636a0b631e553de02f.jpg);">
 
+</div>
+
+<div class="cta-bar">
+
 
 </div>
 
-<article class="offer-main-content">
+<div class="content">
 
-	<h1><%= @offer.headline %></h1>
+	<div class="row">
 
-	<h2><%= @offer.sub_headline %></h2>
+		<!-- <div class="hidden-xs col-sm-2">
+			Col 1
+		</div> -->
 
-	<br>
+		<div class="col-xs-12 col-sm-8">
 
-	<%= @offer.content.html_safe %>
+			<%= render 'offers/headline_and_article_content', offer: @offer %>
 
-</article>
+		</div>
+
+		<div class="hidden-xs col-sm-4 sticky">
+			
+			<div class="offer-ctas stick-in-parent">
+
+				Clicking along
+				<br>
+				Tomorrow 
+				<br>
+				<div class="button">CTA BUY FOR $340</div>
+
+			</div>
+
+			
+		</div>
+
+	</div>
+
+</div>
+
+
 
 
 <p id="notice"><%= notice %></p>
+
+<%= render 'offers/offer_mobile_cta' %>
 
