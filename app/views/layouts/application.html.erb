@@ -20,9 +20,21 @@
 
 	</head>
 
-	<body>
+	<body data-last-scroll="0">
 
-		<%= yield %>
+		<% unless user_signed_in? %>
+
+			<%= render 'pages/email_cta' %>
+
+		<%end%>
+
+		<div class="content-container">
+			
+			<%= render 'layouts/header' %>
+
+			<%= yield %>
+		
+		</div>
 
 	</body>
 

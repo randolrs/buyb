@@ -1,0 +1,22 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.header-container, .header-container-offset{
+	height: 80px;
+}
+
+.header-container-offset{
+	display: none;
+}
+
+.header-container{
+	width:100%;
+	background: red;
+	color: #fff;	
+}
+
+.header-container.fixed{
+	position: fixed;
+}

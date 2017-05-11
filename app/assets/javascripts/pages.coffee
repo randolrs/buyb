@@ -6,6 +6,20 @@ ready = ->
 		
 	jQuery ->
 
+		$(".signup-cta-down-arrow").click (e) ->
+			$(".signup-container").slideUp(1000)
+			$(".header-container").addClass("fixed")
+			$(".header-container-offset").show()
+			window.scrollTo(0, 0)
+
+		$(window).scroll (e) ->
+			st = $(@).scrollTop()
+			bottom = $(".signup-container").height()
+			if st > bottom && $(".signup-container").is(":visible")
+				$(".signup-container").hide()
+				$(".header-container").addClass("fixed")
+				$(".header-container-offset").show()
+				window.scrollTo(0, 0)
 
 
 $(document).on('turbolinks:load', ready)
