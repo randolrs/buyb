@@ -29,3 +29,26 @@
 		font-size: 16px;
 	}
 }
+
+.offer-main-image-container{
+
+    min-height: 180px;
+    height: 200px;
+    position: relative;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+
+    .offer-main-image{
+
+		vertical-align: middle;
+	    height: 100%;
+	    width: 100%;
+	    overflow: hidden;
+	    position: absolute;
+	    right: 0;
+	    top: 0;
+
+    }
+}

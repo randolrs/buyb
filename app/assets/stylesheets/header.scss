@@ -13,10 +13,12 @@
 
 .header-container{
 	width:100%;
-	background: red;
-	color: #fff;	
+	background: #000;
+	color: #fff;
+	z-index: 999;	
 }
 
 .header-container.fixed{
 	position: fixed;
+	top: 4px;
 }
