@@ -2,8 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.offer-content{
+	
+	width: 100%;
+	max-width: 900px;
+	margin: 0 auto;
+}
 .offer-main-content{
 	margin: 0 auto;
+	display: inline-block;
 	width: 100%;
 	max-width: 600px;
 	padding: 15px;
@@ -29,6 +36,10 @@
 	p{
 		font-size: 16px;
 	}
+}
+
+.offer-cta-content{
+	display: inline-block;
 }
 
 .offer-main-image-container{

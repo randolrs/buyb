@@ -6,6 +6,8 @@ ready = ->
 		
 	jQuery ->
 
+		$(".sticky").stick_in_parent()
+		
 		$(".signup-cta-down-arrow").click (e) ->
 			$(".signup-container").slideUp(1000)
 			$(".main-nav").addClass("active")

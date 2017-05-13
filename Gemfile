@@ -57,6 +57,8 @@ gem 'possessive'
 
 gem 'bootsy'
 
+gem 'figaro'
+
 
 
 

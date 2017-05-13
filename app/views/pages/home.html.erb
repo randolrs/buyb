@@ -1,10 +1,7 @@
 
-<div class="content">
+<% Offer.all.each do |offer| %>
+	
+	<%= render 'offers/hero_index', offer: offer %>
 
-	<h1>Pages#home</h1>
 
-	<p>Find me in <%= %></p>
-
-	<%= link_to "Signup", new_user_registration_path %>
-
-</div>
+<%end%>
