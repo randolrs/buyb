@@ -34,7 +34,8 @@ html, body{
 }
 
 body{
-	background: #000;
+	background: #fff;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 html{
@@ -49,8 +50,6 @@ html{
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-    font-family: Cambria, Georgia, serif;
     font-weight: normal;
     color: #000;
     text-rendering: optimizeLegibility;
@@ -69,6 +68,10 @@ h1, h2, h3, h4, h5, h6 {
   
   min-height: 100%;
   
+}
+
+.black-background{
+  background: #000;
 }
 
 .fancy-border{
