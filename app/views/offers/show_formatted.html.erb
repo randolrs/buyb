@@ -18,8 +18,8 @@
 			<p>by Creator</p>
 
 			<br>
-		
-			<a class="offer-cta full-screen-only">Add to Cart</a>
+			
+			<%= link_to "Buy Now", add_offer_to_order_path(@offer.name_url_slug), class:"offer-cta full-screen-only" %>
 
 		</div>
 

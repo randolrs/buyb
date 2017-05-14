@@ -1,0 +1,81 @@
+
+<div class="content">
+
+	<h1>Order Review</h1>
+
+	<br><br>
+
+	<h2><span class="number-badge">1</span>Review Your Order</h2>
+
+	<div class="order-review-section">
+		
+		<table>
+			
+			<tr>
+				<th>Description</th>
+
+				<th>Price</th>
+
+				<th></th>
+
+			</tr>
+
+			<% @order.order_offers.each do |item| %>
+			
+				<tr>
+			
+					<td><%= item.offer.name %></td>
+
+					<td>$89</td>
+
+					<td>Remove</td>
+				
+				</tr>
+
+			<%end%>
+
+			<tr>
+			
+				<td></td>
+
+				<td></td>
+
+				<td><%= "$6779" %></td>
+				
+			</tr>
+
+		</table>
+
+	</div>
+
+	<br><br>
+
+	<h2><span class="number-badge">2</span>Your Details</h2>
+
+	<div class="order-review-section">
+
+		<form>
+
+			<% unless user_signed_in? %>
+
+				<input type="text" name="email" placeholder="Email"></input>
+
+			<%end%>
+
+
+		</form>
+
+		
+		
+
+	</div>
+
+	<br><br>
+
+	<h2><span class="number-badge">3</span>Payment Details</h2>
+
+	<div class="order-review-section">
+
+	</div>
+
+</div>

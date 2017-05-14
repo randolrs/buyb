@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'order/add_offer_to_order'
+
   resources :offers
   #devise_for :users
   mount Bootsy::Engine => '/bootsy', as: 'bootsy'
@@ -9,9 +11,13 @@ Rails.application.routes.draw do
 
   get 'pages/home'
 
-  match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup 
+  #match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup 
 
   get '/:name_url_slug' => 'offers#show_formatted', as: 'show_offer_formatted'
+
+  get '/order/:order_id/review' => 'orders#review', as: 'review_order'
+
+  get '/:offer_url_slug/buy/' => 'orders#add_offer_to_order', as: 'add_offer_to_order'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

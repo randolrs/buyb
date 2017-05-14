@@ -1,6 +1,8 @@
 class Offer < ApplicationRecord
 	include Bootsy::Container
 
+	has_many :order_offers
+
 
 	def set_url_slug
 

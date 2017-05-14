@@ -1,0 +1,2 @@
+class OrderSession < ApplicationRecord
+end
