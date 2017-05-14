@@ -71,9 +71,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .black-background{
-  background: #222;
+  
+  background: #111;
   min-height: 100%;
-  border:3px solid #FF4E50;
+  border: 1px solid #000;
+  box-shadow: inset 0px 0px 5px rgba(0,0,0,0.7);
+  
 }
 
 .fancy-border{

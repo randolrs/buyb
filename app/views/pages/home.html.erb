@@ -1,11 +1,7 @@
 
-<div class="black-background">
 
-	<% Offer.all.each do |offer| %>
-		
-		<%= render 'offers/hero_index', offer: offer %>
+<% Offer.all.each do |offer| %>
+	
+	<%= render 'offers/hero_index', offer: offer %>
 
-
-	<%end%>
-
-</div>
+<%end%>
