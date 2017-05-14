@@ -8,6 +8,18 @@
 
 		body {
 
+			.mobile-only{
+				
+				display: none !important;
+
+			}
+
+			.full-screen-only{
+				
+				display: inherit !important;
+
+			}
+
 			div.signup-container{
 				
 				min-height: 300px;
