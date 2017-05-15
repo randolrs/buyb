@@ -54,7 +54,7 @@
 
 	<br><br>
 
-	<form>
+	<%= form_tag confirm_and_pay_for_order_path(@order.id) do %>
 
 		<div class="order-review-section">
 
@@ -62,14 +62,13 @@
 
 			<div class="order-review-section-content">
 
-				
-
 					<% unless user_signed_in? %>
 						
 						<div class="field">
 
 							<label>Your Email</label>
-							<input type="text" name="email" placeholder="you@example.com"></input>
+
+							<input type="text" name="contact_email" placeholder="you@example.com" required></input>
 						
 						</div>
 
@@ -79,8 +78,9 @@
 						
 						<div class="field">
 
-							<label>Delivery Address</label>
-							<input type="text" name="delivery_address" placeholder="123 Example St., Chicago, IL, 60601" class="geocomplete-input"></input>
+							<label>Mailing Address</label>
+
+							<input type="text" name="mailing_address" placeholder="123 Example St., Chicago, IL, 60601" class="geocomplete-input" required></input>
 
 						</div>
 
@@ -108,8 +108,8 @@
 
 		<br><br>
 
-		<input class="button" type="submit" name="Confirm"></input>
+		<input class="button" type="submit" value="Confirm & Purchase"></input>
 	
-	</form>
+	<%end%>
 
 </div>

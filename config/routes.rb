@@ -19,6 +19,10 @@ Rails.application.routes.draw do
 
   get '/:offer_url_slug/buy/' => 'orders#add_offer_to_order', as: 'add_offer_to_order'
 
+  get '/order/:order_id/confirmation' => 'orders#confirmation', as: 'order_confirmation'
+
+  post '/order/:order_id/confirm' => 'orders#confirm_and_pay_for_order', as: 'confirm_and_pay_for_order'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

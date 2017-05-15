@@ -3,7 +3,7 @@
 	<div class="col-xs-12 col-sm-12 cc-form-row">
 		
 		<%= label_tag 'name-on-card', "Name on Card" %>
-		<%= text_field_tag 'name-on-card' %>
+		<%= text_field_tag :name_on_card, nil, :required => true %>
 
 	</div>
 
@@ -12,7 +12,7 @@
 	<div class="col-xs-12 col-sm-12 cc-form-row">
 
 		<%= label_tag 'credit-card-number', "Credit Card Number" %>
-		<%= text_field_tag 'credit-card-number' %>
+		<%= text_field_tag :credit_card_number, nil, :required => true  %>
 
 	</div>
 
@@ -57,7 +57,7 @@
 	<div class="col-xs-6 cc-form-row">
 
 		<%= label_tag 'cvc', "CVC" %>
-		<%= text_field_tag 'cvc' %>
+		<%= text_field_tag :cvc, nil, required: true  %>
 
 	</div>
 

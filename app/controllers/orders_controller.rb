@@ -96,5 +96,84 @@ class OrdersController < ApplicationController
 
   end
 
+  def confirm_and_pay_for_order
+
+  	if params[:order_id]
+
+  		@order = Order.find(params[:order_id])
+
+  		if @order
+
+  			@order.update(:contact_email => params[:contact_email], :mailing_address => params[:mailing_address])
+
+  			token = Stripe::Token.create(
+
+				:card => {
+					:number => params[:credit_card_number],
+					:exp_month => params[:expMonth],
+					:exp_year => params[:expYear],
+					:cvc => params[:cvc]
+
+				},
+			)
+
+			customer = Stripe::Customer.create(
+				
+				:card  => token.id
+
+			)
+
+			price = 2500 #needs to be changed to @order.total_price * 100
+
+			charge = Stripe::Charge.create(
+
+				:customer    => customer.id,
+				:amount      => price,
+				:description => 'Rails Stripe customer',
+				:currency    => 'usd'
+
+			)
+
+			purchase = Purchase.create(email: params[:stripeEmail], stripe_card_id: params[:stripeToken], 
+			amount: price, description: charge.description, currency: charge.currency,
+			stripe_customer_id: customer.id, order_id: @order.id, ip_address: request.remote_ip)
+
+
+			if user_signed_in?
+				
+				if params[:user_id]
+
+					purchase.update(:user_id => params[:user_id])
+
+				end
+
+			end
+
+  			redirect_to order_confirmation_path(@order.id) and return
+
+  		else
+
+  			redirect_to root_path and return
+
+  		end
+
+  	else
+
+  		redirect_to root_path and return
+
+  	end
+
+	rescue Stripe::CardError => e
+	  flash[:error] = e.message
+	  redirect_to root_path and return
+	end
+
+	def confirmation
+
+
+
+	end
+
+
 
 end
