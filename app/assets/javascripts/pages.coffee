@@ -7,6 +7,8 @@ ready = ->
 	jQuery ->
 
 		$(".sticky").stick_in_parent()
+
+		$(".geocomplete-input").geocomplete()
 		
 		$(".signup-cta-down-arrow").click (e) ->
 			$(".signup-container").slideUp(1000)

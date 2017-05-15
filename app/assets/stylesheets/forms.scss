@@ -24,6 +24,10 @@ form{
 		
 	}
 
+	.field:last-child{
+		margin: 0px;
+	}
+
 	input, textarea {
 		width:100%;
 		display: block;

@@ -5,76 +5,103 @@
 
 	<br><br>
 
-	<h2><span class="number-badge">1</span>Review Your Order</h2>
-
 	<div class="order-review-section">
 		
-		<table>
-			
-			<tr>
-				<th>Description</th>
+		<h2><span class="number-badge">1</span>Review Your Order</h2>
 
-				<th>Price</th>
+		<div class="order-review-section-content">
 
-				<th></th>
-
-			</tr>
-
-			<% @order.order_offers.each do |item| %>
-			
-				<tr>
-			
-					<td><%= item.offer.name %></td>
-
-					<td>$89</td>
-
-					<td>Remove</td>
+			<table>
 				
+				<tr>
+					<th>Description</th>
+
+					<th>Price</th>
+
+					<th></th>
+
 				</tr>
 
-			<%end%>
-
-			<tr>
-			
-				<td></td>
-
-				<td></td>
-
-				<td><%= "$6779" %></td>
+				<% @order.order_offers.each do |item| %>
 				
-			</tr>
+					<tr>
+				
+						<td><%= item.offer.name %></td>
 
-		</table>
+						<td>$89</td>
+
+						<td>Remove</td>
+					
+					</tr>
+
+				<%end%>
+
+				<tr>
+				
+					<td></td>
+
+					<td></td>
+
+					<td><%= "$6779" %></td>
+					
+				</tr>
+
+			</table>
+
+		</div>
 
 	</div>
 
 	<br><br>
 
-	<h2><span class="number-badge">2</span>Your Details</h2>
-
 	<div class="order-review-section">
 
-		<form>
+		<h2><span class="number-badge">2</span>Your Details</h2>
 
-			<% unless user_signed_in? %>
-				<label>Your Email</label>
-				<input type="text" name="email" placeholder="you@example.com"></input>
+		<div class="order-review-section-content">
 
-			<%end%>
+			<form>
+
+				<% unless user_signed_in? %>
+					
+					<div class="field">
+
+						<label>Your Email</label>
+						<input type="text" name="email" placeholder="you@example.com"></input>
+					
+					</div>
+
+				<%end%>
+
+				<% unless @digital_product #will need to change later %> 
+					
+					<div class="field">
+
+						<label>Delivery Address</label>
+						<input type="text" name="delivery_address" placeholder="123 Example St., Chicago, IL, 60601" class="geocomplete-input"></input>
+
+					</div>
+
+				<%end%>
 
 
-		</form>
+			</form>
 
+		</div>		
 		
-		
-
 	</div>
 
 	<br><br>
 
-	<h2><span class="number-badge">3</span>Payment Details</h2>
+	
 
 	<div class="order-review-section">
+
+		<h2><span class="number-badge">3</span>Payment Details</h2>
+
+		<div class="order-review-section-content">
+
+		</div>
 
 	</div>
 

@@ -7,13 +7,13 @@
 			
 			<%= link_to show_offer_formatted_path(offer.name_url_slug) do %>
 				
-				<img src="https://s3.amazonaws.com/media.appsumo.com/cache/dc/7a/dc7af207d72d0f636a0b631e553de02f.jpg">
+				<img class="hero-image" src="https://s3.amazonaws.com/media.appsumo.com/cache/dc/7a/dc7af207d72d0f636a0b631e553de02f.jpg">
 
 			<%end%>
 
 			<br><br>
 
-			<p class="centered">Twitter, Insta, Facebook</p>
+			<p class="centered"><%= image_tag 'twitter_cta.png', class:"social-media-button" %> <%= image_tag 'facebook_cta.png', class:"social-media-button" %> <%= image_tag 'instagram_cta.png', class:"social-media-button" %></p>
 
 		</div>
 

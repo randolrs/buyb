@@ -5,7 +5,18 @@
 
 .order-review-section{
 	border: 2px solid #ccc;
-	padding: 20px;
+	padding: 0px;
+
+	h2{
+		border-bottom: 2px solid #ccc;
+    	padding: 15px;
+    	margin: 0px;
+    	margin-bottom: 10px;
+	}
+
+	.order-review-section-content{
+		padding: 20px;
+	}
 
 	table{
 		
@@ -21,8 +32,9 @@
 		    	width: 100%;
 		    	display: block;
 
-		    	td{
+		    	th, td{
 		    		padding: 10px 20px;
+		    		width: 25%;
 		    	}
 		    }
     	}
