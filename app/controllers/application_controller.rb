@@ -2,16 +2,10 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
-
-  if Rails.env == "production"
   
-    Stripe.api_key = ENV['STRIPE_LIVE_SECRET_KEY']
+  
+  Stripe.api_key = ENV['STRIPE_SECRET_KEY']
 
-  else
-
-    Stripe.api_key = ENV['STRIPE_TEST_SECRET_KEY']
-
-  end
 
 
   # before_filter :ensure_signup_complete, only: [:new, :create, :update, :destroy]
