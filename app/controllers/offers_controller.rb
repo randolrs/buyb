@@ -15,6 +15,8 @@ class OffersController < ApplicationController
 
   def show_formatted
 
+    @email_cta = true
+    
     if params[:name_url_slug]
 
       @offer = Offer.where(:name_url_slug => params[:name_url_slug]).last

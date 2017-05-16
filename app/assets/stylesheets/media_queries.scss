@@ -41,6 +41,7 @@
 			.offer-main-content{
 				
 				font-size: 18px;
+				padding: 0px 15px;
 
 
 				p{
@@ -71,6 +72,23 @@
 			.offer-ctas{
 				padding: 15px;
 				display: block;
+			}
+
+			img.social-media-button{
+				width: 64px;
+				height: 64px;
+			}
+
+			.offer-landing-page{
+	
+			    padding: 50px 20px;
+
+				.offer-header-image{
+
+					margin-bottom: 40px;
+
+				}
+
 			}
 
 		}

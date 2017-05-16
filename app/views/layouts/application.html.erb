@@ -34,9 +34,13 @@
 
 	<body>
 
-		<% unless user_signed_in? %>
+		<% unless user_signed_in?%>
+			
+			<% if @email_cta %>
+				
+				<%= render 'pages/email_cta' %>
 
-			<%= render 'pages/email_cta' %>
+			<%end%>
 
 		<%end%>
 
@@ -51,7 +55,7 @@
 					<p><%= flash[:error] %></p>
 
 				</div>
-				
+
 			<%end%>
 
 			<%= yield %>
