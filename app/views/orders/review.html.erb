@@ -12,13 +12,16 @@
 		<div class="order-review-section-content">
 
 			<table>
-				
-				<tr>
+
+				<tr class="header-row">
+
 					<th>Description</th>
 
 					<th>Price</th>
 
-					<th></th>
+					<th>Quantity</th>
+
+					<th>Subtotal</th>
 
 				</tr>
 
@@ -28,21 +31,35 @@
 				
 						<td><%= item.offer.name %></td>
 
-						<td>$89</td>
+						<td><%= number_to_currency(item.offer.price) %></td>
 
-						<td>Remove</td>
+						<td>
+							<select class="order-offer-update-select" data-order-offer-id="<%= item.id %>">	
+								<% c = 1 %>
+
+								<% until c == 10  do %>
+							    	
+							    	<option value='<%= c %>' <% if item.quantity == c %>selected="selected"<%end%>><%= c %></option>
+
+							    	<% c = c + 1 %>
+
+							    <%end%>
+
+							</select>
+							<%# item.quantity %>
+						</td>
+
+						<td><%= number_to_currency(item.offer.price * item.quantity) %></td>
 					
 					</tr>
 
 				<%end%>
 
-				<tr>
+				<tr class="total-row">
 				
-					<td></td>
+					<td colspan="3">Order Total</td>
 
-					<td></td>
-
-					<td><%= "$6779" %></td>
+					<td style="text-align: right;"><%= number_to_currency(@order.order_total) %></td>
 					
 				</tr>
 
@@ -68,7 +85,7 @@
 
 							<label>Your Email</label>
 
-							<input type="text" name="contact_email" placeholder="you@example.com" required></input>
+							<input type="text" name="contact_email" placeholder="you@example.com" value="<%= @order.contact_email %>" required></input>
 						
 						</div>
 
@@ -80,7 +97,7 @@
 
 							<label>Mailing Address</label>
 
-							<input type="text" name="mailing_address" placeholder="123 Example St., Chicago, IL, 60601" class="geocomplete-input" required></input>
+							<input type="text" name="mailing_address" placeholder="123 Example St., Chicago, IL, 60601" value="<%= @order.mailing_address %>" class="geocomplete-input" required></input>
 
 						</div>
 

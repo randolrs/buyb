@@ -10,7 +10,7 @@ class OrdersController < ApplicationController
 
 	  	if user_signed_in?
 
-	  		if Order.where(:user_id => current_user.id)
+	  		if Order.where(:user_id => current_user.id, :completed => nil)
 
 	  			#user has order
 
@@ -27,13 +27,13 @@ class OrdersController < ApplicationController
 
 	  			#session has id
 
-	  			@order = Order.where(:session_id => session[:id]).last
+	  			@order = Order.where(:session_id => session[:id], :completed => nil).last
 
 	  			if @order
 
 	  				#session has existing order
 
-	  				OrderOffer.create(:offer_id => @offer.id, :order_id => @order.id)
+	  				OrderOffer.create(:offer_id => @offer.id, :order_id => @order.id, :quantity => 1)
 
 	  				redirect_to review_order_path(@order.id) and return
 
@@ -43,7 +43,7 @@ class OrdersController < ApplicationController
 
 	  				@order = Order.create(:session_id => session[:id])
 
-		  			OrderOffer.create(:offer_id => @offer.id, :order_id => @order.id)
+		  			OrderOffer.create(:offer_id => @offer.id, :order_id => @order.id, :quantity => 1)
 
 		  			redirect_to review_order_path(@order.id) and return
 
@@ -62,7 +62,7 @@ class OrdersController < ApplicationController
 
 	  			@order = Order.create(:session_id => session[:id])
 
-  				OrderOffer.create(:offer_id => @offer.id, :order_id => @order.id)
+  				OrderOffer.create(:offer_id => @offer.id, :order_id => @order.id, :quantity => 1)
 
   				redirect_to review_order_path(@order.id) and return
 
@@ -139,6 +139,7 @@ class OrdersController < ApplicationController
 			amount: price, description: charge.description, currency: charge.currency,
 			stripe_customer_id: customer.id, order_id: @order.id, ip_address: request.remote_ip)
 
+			@order.update(:completed => true)
 
 			if user_signed_in?
 				
@@ -169,8 +170,24 @@ class OrdersController < ApplicationController
 	  redirect_to review_order_path(@order.id) and return
 	end
 
+
+
 	def confirmation
 
+
+
+	end
+
+	def update_order_offer_quantity
+
+		@order_offer = OrderOffer.find(params[:order_offer_id])
+		new_quantity = params[:new_quantity]
+		
+		if @order_offer
+
+			@order_offer.update(:quantity => new_quantity)
+
+		end
 
 
 	end

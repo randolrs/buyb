@@ -17,6 +17,16 @@ ready = ->
 			$(".header-container-offset").show()
 			window.scrollTo(0, 0)
 
+		$('.order-offer-update-select').change (e) ->
+			order_offer_id = $(@).data("order-offer-id")
+			alert(order_offer_id)
+			new_quantity = $(@).val()
+			$.ajax
+				url: "/order/order_offer/update_quantity/#{order_offer_id}/#{new_quantity}", format: 'js'
+				type: "GET"
+				success: (data) ->
+		  			console.log("succus")
+
 		$(window).scroll (e) ->
 			if $(".signup-container").is(":visible")
 				st = $(@).scrollTop()
