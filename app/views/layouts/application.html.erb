@@ -44,6 +44,16 @@
 			
 			<%= render 'layouts/header' %>
 
+			<% if flash[:error] %>
+				
+				<div class="flash-prompt">
+
+					<p><%= flash[:error] %></p>
+
+				</div>
+				
+			<%end%>
+
 			<%= yield %>
 		
 		</div>

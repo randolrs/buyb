@@ -71,11 +71,12 @@ class OrdersController < ApplicationController
 	  	end
 
 
-	  else
+	else
 
-	  	redirect_to root_path and return
+		flash[:error] = "Sorry, we cannot find your order"
+		redirect_to :back and return
 
-	  end
+	end
 
 
   end
@@ -165,7 +166,7 @@ class OrdersController < ApplicationController
 
 	rescue Stripe::CardError => e
 	  flash[:error] = e.message
-	  redirect_to root_path and return
+	  redirect_to review_order_path(@order.id) and return
 	end
 
 	def confirmation
