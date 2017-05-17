@@ -19,7 +19,6 @@ ready = ->
 
 		$('.order-offer-update-select').change (e) ->
 			order_offer_id = $(@).data("order-offer-id")
-			alert(order_offer_id)
 			new_quantity = $(@).val()
 			$me = $(@)
 			$subtotal_text = $(@).parent().parent().find('.order-offer-subtotal')
