@@ -180,23 +180,32 @@ class OrdersController < ApplicationController
 
 		if @order
 
-			if user_signed_in?
+			if @order.completed
 
-				unless @order.user_id == current_user.id
+				if user_signed_in?
 
-					redirect_to root_path
+					unless @order.user_id == current_user.id
+
+						redirect_to root_path
+
+					end
+
+				else
+
+					unless session[:id] == @order.session_id
+
+						redirect_to root_path
+
+					end
+
 
 				end
 
 			else
 
-				unless session[:id] == @order.session_id
-
-					redirect_to root_path
-
-				end
-
-
+				flash[:error] = "Please complete your order."
+	  			redirect_to review_order_path(@order.id) and return
+	  			
 			end
 
 		else

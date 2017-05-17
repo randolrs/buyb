@@ -1,6 +1,10 @@
 
-<% Offer.all.each do |offer| %>
-	
-	<%= render 'offers/hero_index', offer: offer %>
+<div class="content">
 
-<%end%>
+	<% Offer.all.each do |offer| %>
+		
+		<%= render 'offers/hero_index', offer: offer %>
+
+	<%end%>
+
+</div>
