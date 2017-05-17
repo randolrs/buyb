@@ -50,3 +50,45 @@
 .main-nav.active{
 	opacity: 1;
 }
+
+.header-option{
+	position: absolute;
+}
+
+.header-option.left{
+	left: 0px;
+}
+
+.header-option.right{
+	right: 0px;
+}
+
+
+a.cheeseburger-container{
+	cursor: pointer;
+}
+
+
+.cheeseburger {
+	font-weight: 800;
+   	font-size: 20px;
+   	margin-left: 10px;
+    position: relative;
+    display: inline-block;
+    width: 1em;
+    height: 15px;
+    margin-right: 0.3em;
+    border-top: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+    cursor: pointer;
+}
+
+.cheeseburger:before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 0px;
+    width: 100%;
+    border-top: 3px solid #fff;
+}
+
