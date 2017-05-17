@@ -1,5 +1,7 @@
 class OrdersController < ApplicationController
   
+  include ActionView::Helpers::NumberHelper
+
   def add_offer_to_order
 
   	
@@ -124,12 +126,12 @@ class OrdersController < ApplicationController
 
 			)
 
-			price = 2500 #needs to be changed to @order.total_price * 100
+			price = @order.order_total * 100 #needs to be changed to @order.total_price * 100
 
 			charge = Stripe::Charge.create(
 
 				:customer    => customer.id,
-				:amount      => price,
+				:amount      => price.to_i,
 				:description => 'Rails Stripe customer',
 				:currency    => 'usd'
 
@@ -174,7 +176,34 @@ class OrdersController < ApplicationController
 
 	def confirmation
 
+		@order = Order.find(params[:order_id])
 
+		if @order
+
+			if user_signed_in?
+
+				unless @order.user_id == current_user.id
+
+					redirect_to root_path
+
+				end
+
+			else
+
+				unless session[:id] == @order.session_id
+
+					redirect_to root_path
+
+				end
+
+
+			end
+
+		else
+
+			redirect_to root_path
+
+		end
 
 	end
 
@@ -187,9 +216,9 @@ class OrdersController < ApplicationController
 
 			@order_offer.update(:quantity => new_quantity)
 
-			new_subtotal = "$" + @order_offer.subtotal.to_i.to_s + ".00"
+			new_subtotal = number_to_currency(@order_offer.subtotal.to_i).to_s
 			
-			new_order_total = "$" + @order_offer.order.order_total.to_i.to_s + ".00"
+			new_order_total = number_to_currency(@order_offer.order.order_total.to_i).to_s
 
 			render json: { :new_subtotal => new_subtotal, :new_order_total => new_order_total, content_type: 'text/json' }
       

@@ -1,6 +1,46 @@
 
-<div class="content">
+<div class="content medium">
 
-	Confirmation
+	<div class="card">
+		
+		<div class="card-content">
+			
+			<div class="centered">
+				
+				<span class="glyphicon glyphicon-ok big-check-mark" aria-hidden=true></span>
+
+				<h2>Your Order is Complete!</h2>
+
+				<br>
+
+				<h3>Thank you for supporting black-owned businesses.</h3>
+
+				<br>
+
+				<p>An email confirming your order confirmation has been sent to <b><%= @order.contact_email %></b>.</p>
+
+				<br>
+
+				<% if user_signed_in? %>
+
+					<p>You can review your order, order status, and ..</p>
+
+					<br>
+
+					<%= link_to "My Orders", root_path %>
+
+				<%else%>
+
+					<p>If you want to ... next time, Create an account</p>
+
+				<%end%>
+
+				<%= link_to "Return to our homepage", root_path %>
+
+			</div>
+
+		</div>
+
+	</div>
 
 </div>

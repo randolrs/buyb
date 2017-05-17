@@ -2,6 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.form-content{
+	padding: 10px;
+	margin: 0 auto;
+	max-width: 600px;
+	position: relative;
+	width: 100%;
+	padding: 50px 0px;
+}
+
 form{
 
 	max-width: 800px;
@@ -79,4 +88,24 @@ form{
 
 .button.rounded{
 	border-radius: 30px;
+}
+
+.cc-form-row{
+	margin-bottom: 20px;
+}
+
+.cc-form-row:last-child{
+	margin-bottom: 0px;
+}
+
+.big-check-mark{
+	
+	background: #3d3;
+    color: #fff;
+    width: 120px;
+    height: 120px;
+    line-height: 120px;
+    border-radius: 50%;
+    margin: 0 auto;
+    font-size: 80px;
 }
