@@ -21,11 +21,16 @@ ready = ->
 			order_offer_id = $(@).data("order-offer-id")
 			alert(order_offer_id)
 			new_quantity = $(@).val()
+			$me = $(@)
+			$subtotal_text = $(@).parent().parent().find('.order-offer-subtotal')
+			$order_total_text = $(@).parent().parent().parent().find('.order-total')
 			$.ajax
 				url: "/order/order_offer/update_quantity/#{order_offer_id}/#{new_quantity}", format: 'js'
 				type: "GET"
 				success: (data) ->
-		  			console.log("succus")
+					if $subtotal_text
+						$subtotal_text.text(data.new_subtotal)
+						$order_total_text.text(data.new_order_total)
 
 		$(window).scroll (e) ->
 			if $(".signup-container").is(":visible")

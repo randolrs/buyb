@@ -187,6 +187,13 @@ class OrdersController < ApplicationController
 
 			@order_offer.update(:quantity => new_quantity)
 
+			new_subtotal = "$" + @order_offer.subtotal.to_i.to_s + ".00"
+			
+			new_order_total = "$" + @order_offer.order.order_total.to_i.to_s + ".00"
+
+			render json: { :new_subtotal => new_subtotal, :new_order_total => new_order_total, content_type: 'text/json' }
+      
+
 		end
 
 
