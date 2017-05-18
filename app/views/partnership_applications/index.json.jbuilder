@@ -1,0 +1,1 @@
+json.array! @partnership_applications, partial: 'partnership_applications/partnership_application', as: :partnership_application

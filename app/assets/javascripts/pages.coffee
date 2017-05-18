@@ -25,11 +25,14 @@ ready = ->
 			targetId = "#" + $(@).data("modal-id")
 			$('body').find(targetId).fadeIn()
 
-		$(".modal-cta").click (e) ->
+		$(".modal-content").click (e) ->
 			e.stopPropagation()
 
 		$(".modal-container").click (e) ->
 			$(@).hide()
+
+		$(".dismiss-modal").click (e) ->
+			$('.modal-container').hide()
 			
 		$(".signup-cta-down-arrow").click (e) ->
 			$(".signup-container").slideUp(1000)

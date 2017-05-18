@@ -1,0 +1,71 @@
+<div class="form-content">
+
+  <%= form_for(partnership_application) do |f| %>
+    <% if partnership_application.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(partnership_application.errors.count, "error") %> prohibited this partnership_application from being saved:</h2>
+
+        <ul>
+        <% partnership_application.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :company_name %>
+      <%= f.text_field :company_name %>
+    </div>
+
+    <div class="field">
+      <%= f.label :company_description %>
+      <%= f.text_area :company_description %>
+    </div>
+
+    <div class="field">
+      <%= f.label :contact_email %>
+      <%= f.text_field :contact_email %>
+    </div>
+
+    <div class="field">
+      <%= f.label :contact_name %>
+      <%= f.text_field :contact_name %>
+    </div>
+
+    <div class="field">
+      <%= f.label :company_url %>
+      <%= f.text_field :company_url %>
+    </div>
+
+    <div class="field">
+      <%= f.label :product_name %>
+      <%= f.text_field :product_name %>
+    </div>
+
+    <div class="field">
+      <%= f.label :product_description %>
+      <%= f.text_field :product_description %>
+    </div>
+
+    <div class="field">
+      <%= f.label :product_why_is_great %>
+      <%= f.text_field :product_why_is_great %>
+    </div>
+
+    <div class="field">
+      <%= f.label :customer_service_staff %>
+      <%= f.check_box :customer_service_staff %>
+    </div>
+
+    <div class="field">
+      <%= f.label :contact_title %>
+      <%= f.text_field :contact_title %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+
+</div>

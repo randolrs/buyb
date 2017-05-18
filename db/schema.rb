@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170518104104) do
+ActiveRecord::Schema.define(version: 20170518160703) do
 
   create_table "bootsy_image_galleries", force: :cascade do |t|
     t.string   "bootsy_resource_type"
@@ -74,6 +74,22 @@ ActiveRecord::Schema.define(version: 20170518104104) do
     t.string   "contact_email"
     t.string   "mailing_address"
     t.boolean  "completed"
+  end
+
+  create_table "partnership_applications", force: :cascade do |t|
+    t.string   "company_name"
+    t.text     "company_description"
+    t.string   "contact_email"
+    t.string   "contact_name"
+    t.string   "company_url"
+    t.string   "product_name"
+    t.string   "product_description"
+    t.decimal  "product_retail_value"
+    t.text     "product_why_is_great"
+    t.boolean  "customer_service_staff"
+    t.string   "contact_title"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "purchases", force: :cascade do |t|

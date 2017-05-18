@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  
+  resources :partnership_applications
+  
   get 'order/add_offer_to_order'
 
   resources :offers
@@ -10,6 +13,13 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   get 'pages/home'
+
+
+  get '/signup/' => 'pages#signup', as: 'signup'
+
+
+  get '/partneships/' => 'partnership_applications#new', as: 'partnership_application_page'
+
 
   #match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup 
 

@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Partnership Applications</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Company name</th>
+      <th>Company description</th>
+      <th>Contact email</th>
+      <th>Contact name</th>
+      <th>Company url</th>
+      <th>Product name</th>
+      <th>Product description</th>
+      <th>Product why is great</th>
+      <th>Customer service staff</th>
+      <th>Contact title</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @partnership_applications.each do |partnership_application| %>
+      <tr>
+        <td><%= partnership_application.company_name %></td>
+        <td><%= partnership_application.company_description %></td>
+        <td><%= partnership_application.contact_email %></td>
+        <td><%= partnership_application.contact_name %></td>
+        <td><%= partnership_application.company_url %></td>
+        <td><%= partnership_application.product_name %></td>
+        <td><%= partnership_application.product_description %></td>
+        <td><%= partnership_application.product_why_is_great %></td>
+        <td><%= partnership_application.customer_service_staff %></td>
+        <td><%= partnership_application.contact_title %></td>
+        <td><%= link_to 'Show', partnership_application %></td>
+        <td><%= link_to 'Edit', edit_partnership_application_path(partnership_application) %></td>
+        <td><%= link_to 'Destroy', partnership_application, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Partnership Application', new_partnership_application_path %>

@@ -1,0 +1,1 @@
+json.partial! "partnership_applications/partnership_application", partnership_application: @partnership_application
