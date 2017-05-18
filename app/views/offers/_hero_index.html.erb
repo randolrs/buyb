@@ -6,8 +6,8 @@
 		<div class="hero-index-content">
 			
 			<%= link_to show_offer_formatted_path(offer.name_url_slug) do %>
-				
-				<img class="hero-image" src="https://s3.amazonaws.com/media.appsumo.com/cache/dc/7a/dc7af207d72d0f636a0b631e553de02f.jpg">
+
+				<%= image_tag offer.image(:medium), class:"hero-image" %>
 
 			<%end%>
 
