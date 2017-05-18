@@ -33,9 +33,32 @@ ready = ->
 
 		$(".dismiss-modal").click (e) ->
 			$('.modal-container').hide()
+
+		$("#newsletter-signup").submit (e) ->
+			e.preventDefault()
+			form = $(@)
+			formData = {email: $('.signup-email-input').val()}
+			formUrl = form.attr('action')
+			formMethod = form.attr('method') 
+			responseMsg = $('#signup-response')
+			alert(formData)
+			alert("submit")
+			$.ajax
+				url: formUrl
+				type: formMethod
+				data: formData
+				dataType: 'json'
+				success: (data) ->
+					console.log(data)
+					$(".signup-container").fadeOut(500)
+					$(".main-nav").addClass("active")
+					$(".header-container").addClass("fixed")
+					$(".header-container-offset").show()
+					window.scrollTo(0, 0)
+
 			
 		$(".signup-cta-down-arrow").click (e) ->
-			$(".signup-container").slideUp(1000)
+			$(".signup-container").fadeOut(500)
 			$(".main-nav").addClass("active")
 			$(".header-container").addClass("fixed")
 			$(".header-container-offset").show()

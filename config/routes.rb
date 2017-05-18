@@ -25,6 +25,8 @@ Rails.application.routes.draw do
 
   get '/:name_url_slug' => 'offers#show_formatted', as: 'show_offer_formatted'
 
+  post '/newsletter_signup/create/' => 'pages#create_newsletter_subscriber', as: 'create_newsletter_subscriber'
+  
   get '/order/:order_id/review' => 'orders#review', as: 'review_order'
 
   get '/:offer_url_slug/buy/' => 'orders#add_offer_to_order', as: 'add_offer_to_order'
