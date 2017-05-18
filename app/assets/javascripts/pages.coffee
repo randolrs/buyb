@@ -41,8 +41,6 @@ ready = ->
 			formUrl = form.attr('action')
 			formMethod = form.attr('method') 
 			responseMsg = $('#signup-response')
-			alert(formData)
-			alert("submit")
 			$.ajax
 				url: formUrl
 				type: formMethod
