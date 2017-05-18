@@ -28,17 +28,13 @@
 	}
 
 	.order-review-section-content{
-		padding: 30px;
+		padding: 30px 10px;
 	}
 
 	table{
 		
-		width: 100%;
-    	display: block;
+		margin: 0 auto;
     	font-size: 16px;
-    	border: 1px solid #ccc;
-    	box-shadow: 0px 1px 1px rgba(0,0,0,0.2);
-
 
     	tbody{
     		
@@ -50,8 +46,13 @@
 		    	display: block;
 
 		    	th, td{
-		    		padding: 10px 20px;
-		    		width: 25%;
+		    		padding: 20px 10px;
+		    		width: 110px;
+		    		text-align: center;
+		    	}
+
+		    	th.left, td.left{
+		    		text-align: left;
 		    	}
 		    }
 
