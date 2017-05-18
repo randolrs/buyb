@@ -9,7 +9,28 @@ ready = ->
 		$(".sticky").stick_in_parent()
 
 		$(".geocomplete-input").geocomplete()
-		
+
+		$(".click-to-reveal").click (e) ->
+			$('.click-to-reveal').removeClass('active')
+			$('div.reveal-panel').hide()
+			$(@).addClass('active')
+			targetId = "#" + $(@).data("reveal-panel-id")
+			$('body').find(targetId).fadeIn()
+			$('.click-to-reveal').each (index, element) =>
+				if $(element).data("reveal-panel-id") == $(@).data("reveal-panel-id")
+					$(element).addClass('active')
+
+		$(".modal-cta").click (e) ->
+			$(@).addClass('active')
+			targetId = "#" + $(@).data("modal-id")
+			$('body').find(targetId).fadeIn()
+
+		$(".modal-cta").click (e) ->
+			e.stopPropagation()
+
+		$(".modal-container").click (e) ->
+			$(@).hide()
+			
 		$(".signup-cta-down-arrow").click (e) ->
 			$(".signup-container").slideUp(1000)
 			$(".main-nav").addClass("active")

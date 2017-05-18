@@ -1,0 +1,33 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.modal-container{
+	background: rgba(0,0,0,0.4);
+	padding: 10px;
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	z-index: 9799999;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+
+	display: none;
+}
+
+.modal-container.floating{
+	padding: 25px;
+}
+
+
+.modal-content{
+	margin: 0 auto;
+    max-width: 600px;
+    height: 100%;
+}
+
+.reveal-panel{
+	display: none;
+}
