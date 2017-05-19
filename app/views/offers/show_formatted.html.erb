@@ -9,7 +9,12 @@
 			
 			<br><br>
 
-			<p class="centered"><%= image_tag 'twitter_icon.png', class:"social-media-button" %> <%= image_tag 'facebook_icon.png', class:"social-media-button" %> <%= image_tag 'instagram_icon.png', class:"social-media-button" %></p>
+			<p class="centered">
+				
+				<a class="twitter popup" href="http://twitter.com/share?text=This%20is%20so%20easy&url=<%= add_offer_to_order_path(@offer.name_url_slug) %>" target="blank"><%= image_tag 'twitter_icon.png', class:"social-media-button" %></a>
+				<%# image_tag 'facebook_icon.png', class:"social-media-button" %> 
+				<%# image_tag 'instagram_icon.png', class:"social-media-button" %>
+			</p>
 
 			<br>
 
