@@ -2,8 +2,10 @@ class PagesController < ApplicationController
   
   def home
   	
-  	@email_cta = true
-
+  	unless session[:email]
+  		@email_cta = true
+  	end
+  	
   end
 
   def create_newsletter_subscriber

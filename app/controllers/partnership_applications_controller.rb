@@ -28,7 +28,7 @@ class PartnershipApplicationsController < ApplicationController
 
     respond_to do |format|
       if @partnership_application.save
-        format.html { redirect_to @partnership_application, notice: 'Partnership application was successfully created.' }
+        format.html { redirect_to root_path }
         format.json { render :show, status: :created, location: @partnership_application }
       else
         format.html { render :new }

@@ -18,8 +18,16 @@
 			<p>by Creator</p>
 
 			<br>
-			
-			<%= link_to "Buy Now", add_offer_to_order_path(@offer.name_url_slug), class:"offer-hero-cta full-screen-only" %>
+
+			<% unless @offer.affiliate %>
+				
+				<%= link_to "Buy Now", add_offer_to_order_path(@offer.name_url_slug), class:"offer-hero-cta full-screen-only" %>
+
+			<%else%>
+
+				<%= link_to "Buy Now", @offer.affiliate_link, class:"offer-hero-cta full-screen-only", target: :_blank %>
+
+			<%end%>
 
 		</div>
 

@@ -1,4 +1,8 @@
-<div class="form-content">
+<div class="form-card card">
+  
+  <h2 class="centered">Partnership Application</h2>
+
+  <br>
 
   <%= form_for(partnership_application) do |f| %>
     <% if partnership_application.errors.any? %>
@@ -14,58 +18,59 @@
     <% end %>
 
     <div class="field">
-      <%= f.label :company_name %>
+      <label>Company Name</label>
       <%= f.text_field :company_name %>
     </div>
 
     <div class="field">
-      <%= f.label :company_description %>
-      <%= f.text_area :company_description %>
-    </div>
-
-    <div class="field">
-      <%= f.label :contact_email %>
-      <%= f.text_field :contact_email %>
-    </div>
-
-    <div class="field">
-      <%= f.label :contact_name %>
-      <%= f.text_field :contact_name %>
-    </div>
-
-    <div class="field">
-      <%= f.label :company_url %>
+      <label>Company URL/website:</label>
       <%= f.text_field :company_url %>
     </div>
 
     <div class="field">
-      <%= f.label :product_name %>
+      <label>What does your company sell?</label>
+      <%= f.text_area :company_description %>
+    </div>
+
+    <div class="field">
+      <label>Your name</label>
+      <%= f.text_field :contact_name %>
+    </div>
+
+    <div class="field">
+      <label>Your title</label>
+      <%= f.text_field :contact_title %>
+    </div>
+
+    <div class="field">
+      <label>Your email</label>
+      <%= f.text_field :contact_email %>
+    </div>
+
+    <div class="field">
+      <label>Name of the product you want to create</label>
       <%= f.text_field :product_name %>
     </div>
 
     <div class="field">
-      <%= f.label :product_description %>
+      <label>Describe your product:</label>
       <%= f.text_field :product_description %>
     </div>
 
     <div class="field">
-      <%= f.label :product_why_is_great %>
+      <label>What makes your product great?</label>
       <%= f.text_field :product_why_is_great %>
     </div>
 
-    <div class="field">
-      <%= f.label :customer_service_staff %>
-      <%= f.check_box :customer_service_staff %>
-    </div>
-
-    <div class="field">
-      <%= f.label :contact_title %>
-      <%= f.text_field :contact_title %>
-    </div>
+<!--     <div class="field">
+      <%# f.label :customer_service_staff %>
+      <%# f.check_box :customer_service_staff %>
+    </div> -->
 
     <div class="actions">
-      <%= f.submit %>
+      <%= f.submit "Submit Application", class:"button" %>
     </div>
+
   <% end %>
 
 </div>

@@ -33,7 +33,15 @@
 
 			<br>
 
-			<%= link_to "Add to Cart", add_offer_to_order_path(offer.name_url_slug), class:"offer-hero-cta" %>
+			<% unless offer.affiliate %>
+				
+				<%= link_to "Add to Cart", add_offer_to_order_path(offer.name_url_slug), class:"offer-hero-cta" %>
+
+			<%else%>
+
+				<%= link_to "I Want This", offer.affiliate_link, class:"offer-hero-cta", target: :_blank %>
+
+			<%end%>
 
 			<br><br>
 
