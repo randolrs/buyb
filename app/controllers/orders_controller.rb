@@ -3,10 +3,8 @@ class OrdersController < ApplicationController
   include ActionView::Helpers::NumberHelper
 
   def add_offer_to_order
-
   	
   	@offer = Offer.where(:name_url_slug => params[:offer_url_slug]).last
-
   	
   	if @offer
 
@@ -35,7 +33,17 @@ class OrdersController < ApplicationController
 
 	  				#session has existing order
 
-	  				OrderOffer.create(:offer_id => @offer.id, :order_id => @order.id, :quantity => 1)
+	  				@existing_order_offer = OrderOffer.where(:offer_id => @offer.id, :order_id => @order.id).last
+
+	  				unless @existing_order_offer
+	  					
+	  					OrderOffer.create(:offer_id => @offer.id, :order_id => @order.id, :quantity => 1)
+	  				
+	  				else
+
+	  					@existing_order_offer.update(:quantity => @existing_order_offer.quantity + 1)
+
+	  				end
 
 	  				redirect_to review_order_path(@order.id) and return
 
