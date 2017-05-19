@@ -3,7 +3,7 @@
 
 	<div class="col-xs-12 col-sm-6">
 
-		<div class="hero-index-content">
+		<div class="hero-index-content centered">
 			
 			<%= link_to show_offer_formatted_path(offer.name_url_slug) do %>
 
@@ -13,13 +13,23 @@
 
 			<br><br>
 
-			<p class="centered">
+			<p><%= offer.name %></p>
+
+			<p>by Creator</p>
+			
+			<br>
+
+			<p>
 				
 				<a class="twitter popup" href="http://twitter.com/share?text=Check%20out%20<%= offer.name %>%20on%20thatHQ%20&hashtags=buyblack&url=<%= request.base_url %><%= add_offer_to_order_path(offer.name_url_slug) %>" target="blank"><%= image_tag 'twitter_icon.png', class:"social-media-button" %></a>
+
+
 
 				<!-- <a href="http://www.facebook.com/share.php?u=<%= show_offer_formatted_path(offer.name_url_slug) %>&title="tital" target="blank""><%# image_tag 'facebook_icon.png', class:"social-media-button" %></a>
 
 				<%# image_tag 'instagram_icon.png', class:"social-media-button" %></p> -->
+
+			</p>
 
 			<span class="mobile-only"><br></span>
 
@@ -31,9 +41,7 @@
 
 		<div class="hero-index-content">
 
-			<header><%= offer.name %></header>
-
-			<p>by The Creator</p>
+			<header><%= offer.preview_headline %></header>
 
 			<br>
 

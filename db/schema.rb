@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170519142159) do
+ActiveRecord::Schema.define(version: 20170519200657) do
 
   create_table "bootsy_image_galleries", force: :cascade do |t|
     t.string   "bootsy_resource_type"
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 20170519142159) do
     t.boolean  "affiliate"
     t.string   "affiliate_link"
     t.text     "sales_preview_text"
+    t.string   "preview_headline"
   end
 
   create_table "order_offers", force: :cascade do |t|
