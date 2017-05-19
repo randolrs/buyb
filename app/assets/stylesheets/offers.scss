@@ -175,17 +175,12 @@
 
 .offer-landing-page{
 	
-	max-width: 1200px;
+	max-width: 900px;
     margin: 0 auto;
     padding: 30px 10px;
     padding-bottom: 40px;
 
     font-size: 18px;
-
-    background: #fff;
-    border: 1px solid #ddd;
-    box-shadow: 0px 1px 3px rgba(0,0,0,0.3);
-
 
 	.offer-header-image{
 
@@ -194,6 +189,9 @@
 
 		img.main-image{
 			width: 100%;
+			max-width: 500px;
+		    margin: 0 auto;
+		    display: inherit;
 			box-shadow: 0px 3px 5px rgba(0,0,0,0.3);
 			border: 1px solid #ddd;
 		}
