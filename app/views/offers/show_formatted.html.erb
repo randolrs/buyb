@@ -3,11 +3,17 @@
 
 	<section class="row">
 
-		<div class="col-xs-12 col-sm-6 offer-header-image">
+		<div class="col-xs-12 col-sm-6 offer-header-image centered">
 
 			<%= image_tag @offer.image(:medium), class:"main-image" %>
+
+			<br>
+
+			<p><%= @offer.name %></p>
+
+			<p>by Creator</p>
 			
-			<br><br>
+			<br>
 
 			<p class="centered">
 				
@@ -16,11 +22,15 @@
 				<%# image_tag 'instagram_icon.png', class:"social-media-button" %>
 			</p>
 
-			<br>
+			
 
-			<p><%= @offer.name %></p>
+			
 
-			<p>by Creator</p>
+		</div>
+
+		<div class="col-xs-12 col-sm-6">
+
+			<%= render 'offers/headline_and_article_content', offer: @offer %>
 
 			<br>
 
@@ -33,12 +43,6 @@
 				<%= link_to "Buy Now", @offer.affiliate_link, class:"offer-hero-cta full-screen-only", target: :_blank %>
 
 			<%end%>
-
-		</div>
-
-		<div class="col-xs-12 col-sm-6">
-
-			<%= render 'offers/headline_and_article_content', offer: @offer %>
 
 		</div>
 
