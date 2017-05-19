@@ -1,11 +1,11 @@
 
 <div class="content medium">
 
-	<h1 class="underlined-header">Signup</h1>
+	<h1 class="underlined-header">Login</h1>
 
 	<div class="form-content">
 
-		<%= form_for(:user, :url => registration_path(:user)) do |f| %>
+		<%= form_for(:user, :url => session_path(:user)) do |f| %>
 
 			<div class="field">
 			  <label>Email</label>
@@ -20,7 +20,7 @@
 			</div>
 
 			<div class="actions">
-			  <%= f.submit "Signup", class: "button medium brand-blue-background" %>
+			  <%= f.submit "Login", class: "button medium brand-blue-background" %>
 			</div>
 
 		<% end %>

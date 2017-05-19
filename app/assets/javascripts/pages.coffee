@@ -54,6 +54,22 @@ ready = ->
 					$(".header-container-offset").show()
 					window.scrollTo(0, 0)
 
+		$("#in-content-newsletter-signup").submit (e) ->
+			e.preventDefault()
+			form = $(@)
+			formData = {email: $('.signup-email-input').val()}
+			formUrl = form.attr('action')
+			formMethod = form.attr('method') 
+			responseMsg = $('#signup-response')
+			$.ajax
+				url: formUrl
+				type: formMethod
+				data: formData
+				dataType: 'json'
+				success: (data) ->
+					console.log(data)
+					$('.email-cta-content').slideUp()
+					$('.email-cta-success').fadeIn()
 			
 		$(".signup-cta-down-arrow").click (e) ->
 			$(".signup-container").fadeOut(500)

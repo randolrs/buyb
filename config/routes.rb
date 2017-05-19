@@ -16,6 +16,8 @@ Rails.application.routes.draw do
 
   get '/signup/' => 'pages#signup', as: 'signup'
 
+  get '/login/' => 'pages#login', as: 'login'
+
   get '/partneships/' => 'partnership_applications#new', as: 'partnership_application_page'
 
   get '/newsletter_signups/' => 'pages#newsletter_signups', as: 'newsletter_signups'
