@@ -12,11 +12,9 @@ Rails.application.routes.draw do
   
   root 'pages#home'
 
-  get 'pages/home'
-
+  get '/about_us' => 'pages#about_us', as: 'about_us'
 
   get '/signup/' => 'pages#signup', as: 'signup'
-
 
   get '/partneships/' => 'partnership_applications#new', as: 'partnership_application_page'
 
