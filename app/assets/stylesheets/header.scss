@@ -38,7 +38,8 @@
 	}
 
 	a.logo{
-		letter-spacing: 4px;
+		letter-spacing: 2px;
+    	font-size: 24px;
 	}
 }
 
@@ -79,21 +80,22 @@ a.cheeseburger-container{
    	margin-left: 10px;
     position: relative;
     display: inline-block;
-    width: 1em;
-    height: 15px;
+    width: 28px;
+    height: 22px;
     margin-right: 0.3em;
-    border-top: 3px solid #fff;
-    border-bottom: 3px solid #fff;
+    border-top: 4px solid #fff;
+    border-bottom: 4px solid #fff;
     cursor: pointer;
+    top: 6px;
 }
 
 .cheeseburger:before {
     content: "";
     position: absolute;
-    top: 3px;
+    top: 5px;
     left: 0px;
     width: 100%;
-    border-top: 3px solid #fff;
+    border-top: 4px solid #fff;
 }
 
 .header-login-option{
