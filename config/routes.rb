@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   get '/partneships/' => 'partnership_applications#new', as: 'partnership_application_page'
 
+  get '/newsletter_signups/' => 'pages#newsletter_signups', as: 'newsletter_signups'
+
 
   #match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup 
 

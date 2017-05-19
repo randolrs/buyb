@@ -1,0 +1,22 @@
+
+<div class="content">
+
+
+	<table>
+		<tr>
+			<th>Email</th>
+			<th>IP</th>
+		</tr>
+
+		<% @signups.all.each do |signup| %>
+			
+			<tr>
+				<td><%= signup.email %></td>
+				<td><%= signup.signup_ip %></td>
+			</tr>
+
+		<%end%>
+
+	</table>
+
+</div>

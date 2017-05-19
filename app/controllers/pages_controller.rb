@@ -8,6 +8,29 @@ class PagesController < ApplicationController
   	
   end
 
+  def newsletter_signups
+
+    if user_signed_in?
+
+      if current_user.is_admin
+
+        @signups = NewsletterSignup.all
+
+      else
+
+
+        redirect_to root_path
+
+      end
+
+    else
+
+      redirect_to root_path
+
+    end
+
+  end
+
   def create_newsletter_subscriber
   	
   	@email = params[:email]

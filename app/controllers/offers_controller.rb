@@ -4,7 +4,25 @@ class OffersController < ApplicationController
   # GET /offers
   # GET /offers.json
   def index
-    @offers = Offer.all
+    
+    if user_signed_in?
+      
+      if current_user.is_admin
+      
+        @offers = Offer.all
+
+      else
+
+        redirect_to root_path
+
+      end
+
+    else
+
+      redirect_to root_path
+
+    end
+
   end
 
   # GET /offers/1
@@ -40,83 +58,172 @@ class OffersController < ApplicationController
 
   # GET /offers/new
   def new
-    @offer = Offer.new
+
+    if user_signed_in?
+      
+      if current_user.is_admin
+        
+        @offer = Offer.new
+
+      else
+
+        redirect_to root_path
+
+      end
+
+    else
+
+      redirect_to root_path
+
+    end
+
+
   end
 
   # GET /offers/1/edit
   def edit
+    
+    if user_signed_in?
+      
+      if current_user.is_admin
+
+      else
+
+        redirect_to root_path
+
+      end
+
+    else
+
+       redirect_to root_path
+    
+    end
+
   end
 
   # POST /offers
   # POST /offers.json
   def create
     
-    @offer = Offer.new(offer_params)
+    if user_signed_in?
 
-    respond_to do |format|
-      
-      if @offer.save
+      if current_user.is_admin
 
-        if @offer.name
+        @offer = Offer.new(offer_params)
 
-          original_slug = @offer.name.downcase.gsub(' ', '-')
+        respond_to do |format|
+          
+          if @offer.save
 
-          slug = original_slug
+            if @offer.name
 
-          c=0
-          i=1
+              original_slug = @offer.name.downcase.gsub(' ', '-')
 
-          until c==1 do
+              slug = original_slug
 
-            unless Offer.where(:name_url_slug => slug).exists?
+              c=0
+              i=1
 
-              @offer.update(:name_url_slug => slug)
+              until c==1 do
 
-              c=1
+                unless Offer.where(:name_url_slug => slug).exists?
 
-              else
+                  @offer.update(:name_url_slug => slug)
 
-              i = i + 1
+                  c=1
 
-              slug = original_slug + "-" + i.to_s
+                  else
+
+                  i = i + 1
+
+                  slug = original_slug + "-" + i.to_s
+
+                end
+
+              end
 
             end
 
+            format.html { redirect_to @offer, notice: 'Offer was successfully created.' }
+            format.json { render :show, status: :created, location: @offer }
+          else
+            format.html { render :new }
+            format.json { render json: @offer.errors, status: :unprocessable_entity }
           end
-
         end
 
-        format.html { redirect_to @offer, notice: 'Offer was successfully created.' }
-        format.json { render :show, status: :created, location: @offer }
       else
-        format.html { render :new }
-        format.json { render json: @offer.errors, status: :unprocessable_entity }
+
+        redirect_to root_path
+
       end
+
+    else
+
+      redirect_to root_path
+
     end
+
   end
 
   # PATCH/PUT /offers/1
   # PATCH/PUT /offers/1.json
   def update
-    respond_to do |format|
-      if @offer.update(offer_params)
-        format.html { redirect_to @offer, notice: 'Offer was successfully updated.' }
-        format.json { render :show, status: :ok, location: @offer }
+
+    if user_signed_in?
+
+      if current_user.is_admin
+
+        respond_to do |format|
+          if @offer.update(offer_params)
+            format.html { redirect_to @offer, notice: 'Offer was successfully updated.' }
+            format.json { render :show, status: :ok, location: @offer }
+          else
+            format.html { render :edit }
+            format.json { render json: @offer.errors, status: :unprocessable_entity }
+          end
+        end
+
       else
-        format.html { render :edit }
-        format.json { render json: @offer.errors, status: :unprocessable_entity }
+
+        redirect_to root_path
+
       end
+
+    else
+
+      redirect_to root_path
+
     end
+
   end
 
   # DELETE /offers/1
   # DELETE /offers/1.json
   def destroy
-    @offer.destroy
-    respond_to do |format|
-      format.html { redirect_to offers_url, notice: 'Offer was successfully destroyed.' }
-      format.json { head :no_content }
+
+    if user_signed_in?
+
+      if current_user.is_admin
+
+        @offer.destroy
+        respond_to do |format|
+          format.html { redirect_to offers_url, notice: 'Offer was successfully destroyed.' }
+          format.json { head :no_content }
+        end
+
+      else
+
+        redirect_to root_path
+        
+      end
+
+    else
+
+      redirect_to root_path
     end
+
+
   end
 
   private
