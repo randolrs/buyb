@@ -23,15 +23,20 @@
 	    margin: 1em auto;
 	}
 
-	p{
-		margin: 20px 0px;
-	}
 
 }
 
 .content.medium{
 	
 	max-width: 700px;
+}
+
+.content.written{
+
+	p{
+		margin: 20px 0px;
+	}
+
 }
 
 .card{
