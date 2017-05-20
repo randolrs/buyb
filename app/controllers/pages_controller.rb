@@ -8,6 +8,16 @@ class PagesController < ApplicationController
   	
   end
 
+
+
+  def category_index
+
+    @offers = Offer.all
+
+  end
+
+
+
   def newsletter_signups
 
     if user_signed_in?

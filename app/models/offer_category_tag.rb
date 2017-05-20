@@ -1,0 +1,2 @@
+class OfferCategoryTag < ApplicationRecord
+end

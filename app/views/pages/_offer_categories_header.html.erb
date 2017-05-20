@@ -1,0 +1,17 @@
+<div class="sub-header">
+
+	<h1>Great Products from Black-Owned Businesses</h1>
+
+	<div class="category-content">
+
+		<%= link_to "Latest", root_path, class: cp(root_path)%>
+		
+		<% OfferCategory.all.each do |offer_category| %>
+
+			<%= link_to offer_category.name, offer_category_path(offer_category.url_slug), class: cp(offer_category_path(offer_category.url_slug)) %>
+
+		<%end%>
+
+	</div>
+
+</div>

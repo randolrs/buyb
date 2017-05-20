@@ -27,6 +27,8 @@ Rails.application.routes.draw do
 
   get '/:name_url_slug' => 'offers#show_formatted', as: 'show_offer_formatted'
 
+  get '/category/:category_url_slug' => 'pages#offer_category', as: 'offer_category'
+
   post '/newsletter_signup/create/' => 'pages#create_newsletter_subscriber', as: 'create_newsletter_subscriber'
   
   get '/order/:order_id/review' => 'orders#review', as: 'review_order'

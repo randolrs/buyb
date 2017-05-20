@@ -102,3 +102,42 @@ a.cheeseburger-container{
 	display: none;
 }
 
+.sub-header{
+	
+	text-align: center;
+    background: #FF4E50;
+    background: -webkit-linear-gradient(to right, #F9D423, #FF4E50);
+    background: linear-gradient(to right, #F9D423, #FF4E50);
+
+    box-shadow: 0px 1px 1px rgba(0,0,0,0.4);
+
+
+    h1{
+    	margin: 0 auto;
+    	padding: 20px;
+    	color: #fff;
+    	text-shadow: 0px 1px 1px rgba(0,0,0,0.4);
+    	font-size: 40px;
+
+    }
+
+    .category-content{
+
+
+    	a{
+    		padding: 10px;
+    		display: inline-block;
+    		color: #fff;
+    		background: rgba(255,255,255,0.1);
+
+    		cursor: pointer;
+            text-decoration: none;
+    	}
+
+    	a.active{
+    		background: #fff;
+    		color: #111;
+    	}
+    }
+}
+
