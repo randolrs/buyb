@@ -1,67 +1,69 @@
 
-<section class="row offer-hero-index">
+<section class="offer-hero-index">
 
-	<div class="col-xs-12 col-sm-6">
+	<div class="row">
+		
+		<div class="col-xs-12 col-sm-6 no-padding">
 
-		<div class="hero-index-content centered">
-			
-			<%= link_to show_offer_formatted_path(offer.name_url_slug) do %>
-
-				<%= image_tag offer.image(:medium), class:"hero-image" %>
-
-			<%end%>
-
-			<br><br>
-
-			<p><%= offer.name %></p>
-
-			<p>by Creator</p>
-			
-			<br>
-
-			<p>
+			<div class="hero-index-content centered">
 				
-				<a class="twitter popup" href="http://twitter.com/share?text=Check%20out%20<%= offer.name %>%20on%20thatHQ%20&hashtags=buyblack&url=<%= request.base_url %><%= add_offer_to_order_path(offer.name_url_slug) %>" target="blank"><%= image_tag 'twitter_icon.png', class:"social-media-button" %></a>
+				<%= link_to show_offer_formatted_path(offer.name_url_slug) do %>
 
+					<%= image_tag offer.image(:medium), class:"hero-image" %>
 
+				<%end%>
 
-				<!-- <a href="http://www.facebook.com/share.php?u=<%= show_offer_formatted_path(offer.name_url_slug) %>&title="tital" target="blank""><%# image_tag 'facebook_icon.png', class:"social-media-button" %></a>
+				<br><br>
 
-				<%# image_tag 'instagram_icon.png', class:"social-media-button" %></p> -->
+				<p><%= offer.name %></p>
 
-			</p>
+				<p>by Creator</p>
+				
+				<br>
 
-			<span class="mobile-only"><br></span>
+				<p>
+					
+					<a class="twitter popup" href="http://twitter.com/share?text=Check%20out%20<%= offer.name %>%20on%20thatHQ%20&hashtags=buyblack&url=<%= request.base_url %><%= add_offer_to_order_path(offer.name_url_slug) %>" target="blank"><%= image_tag 'twitter_icon.png', class:"social-media-button" %></a>
+
+					<a href="http://www.facebook.com/sharer.php?s=100&p[title]=<%= offer.name %>&amp;p[url]=<%= request.base_url %><%= add_offer_to_order_path(offer.name_url_slug) %>&p[summary]=&p[images][0]=<%= offer.image.url %>" title="Share to Facebook!"><%= image_tag 'facebook_icon.png', class:"social-media-button" %></a>
+
+					<!-- <a href="http://www.facebook.com/share.php?u=<%= show_offer_formatted_path(offer.name_url_slug) %>&title="tital" target="blank""><%# image_tag 'facebook_icon.png', class:"social-media-button" %></a>
+
+					<%# image_tag 'instagram_icon.png', class:"social-media-button" %></p> -->
+
+				</p>
+
+				<span class="mobile-only"><br></span>
+
+			</div>
 
 		</div>
 
-	</div>
+		<div class="col-xs-12 col-sm-6">
 
-	<div class="col-xs-12 col-sm-6">
+			<div class="hero-index-content">
 
-		<div class="hero-index-content">
+				<header><%= offer.preview_headline %></header>
 
-			<header><%= offer.preview_headline %></header>
+				<p><%= offer.sales_preview_text %></p>
 
-			<br>
+				<br>
 
-			<p><%= offer.sales_preview_text %></p>
+				<% unless offer.affiliate %>
+					
+					<%= link_to "Add to Cart", add_offer_to_order_path(offer.name_url_slug), class:"offer-hero-cta" %>
 
-			<br>
+				<%else%>
 
-			<% unless offer.affiliate %>
-				
-				<%= link_to "Add to Cart", add_offer_to_order_path(offer.name_url_slug), class:"offer-hero-cta" %>
+					<%= link_to "I Want This", offer.affiliate_link, class:"offer-hero-cta", target: :_blank %>
 
-			<%else%>
+				<%end%>
 
-				<%= link_to "I Want This", offer.affiliate_link, class:"offer-hero-cta", target: :_blank %>
+				<br><br>
 
-			<%end%>
+				<%= link_to "Learn More", show_offer_formatted_path(offer.name_url_slug), class:"learn-more-cta" %>
 
-			<br><br>
-
-			<%= link_to "Learn More", show_offer_formatted_path(offer.name_url_slug), class:"learn-more-cta" %>
+			</div>
 
 		</div>
 
