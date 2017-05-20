@@ -20,6 +20,19 @@ ready = ->
 				if $(element).data("reveal-panel-id") == $(@).data("reveal-panel-id")
 					$(element).addClass('active')
 
+		$(".toggle-active").click (e) ->
+			if $(@).hasClass("active")
+				$(@).removeClass("active")
+			else
+				$(@).addClass("active")
+
+		$(".toggle-to-activate").click (e) ->
+			target_id = "#" + $(@).data("activate-input")
+			if $(target_id).val() == "false"
+				$(target_id).val(true)
+			else
+				$(target_id).val(false)
+
 		$(".modal-cta").click (e) ->
 			$(@).addClass('active')
 			targetId = "#" + $(@).data("modal-id")

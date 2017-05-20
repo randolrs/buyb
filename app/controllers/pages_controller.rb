@@ -10,9 +10,23 @@ class PagesController < ApplicationController
 
 
 
-  def category_index
+  def offer_category_index
 
-    @offers = Offer.all
+    
+
+    @offer_category = OfferCategory.where(:url_slug => params[:category_url_slug]).last
+
+    @offers = @offer_category.offers
+
+    unless @offer_category
+
+      redirect_to root_path
+
+    else
+
+      
+
+    end
 
   end
 

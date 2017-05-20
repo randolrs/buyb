@@ -144,6 +144,55 @@ class OffersController < ApplicationController
 
             end
 
+
+
+            ##BEGIN CATEGORY TAGS
+
+            params[:category_tags].each do |id, checked| 
+
+
+              offer_category = OfferCategory.find(id) #ERRRORORORO
+            
+
+              if offer_category
+
+                #check for existing offer category tag entry
+
+                offer_category_tag_entry = OfferCategoryTag.where(:offer_id => @offer.id, :offer_category_id => offer_category.id).last
+
+
+                if checked == "true"  #if selected
+
+                  unless offer_category_tag_entry
+
+                    OfferCategoryTag.create(:offer_category_id => offer_category.id, :offer_id => @offer.id, :is_active => true)
+
+                  else
+
+                    offer_category_tag_entry.update(:is_active => true)
+
+                  end
+
+
+
+                else #if not selected
+
+                  if offer_category_tag_entry
+
+                    offer_category_tag_entry.update(:is_active => false)
+
+                  end
+
+                end
+
+              end
+
+            end
+
+            ##END CATEGORY TAGS
+
+            
+
             format.html { redirect_to @offer, notice: 'Offer was successfully created.' }
             format.json { render :show, status: :created, location: @offer }
           else
@@ -175,7 +224,54 @@ class OffersController < ApplicationController
       if current_user.is_admin
 
         respond_to do |format|
+          
           if @offer.update(offer_params)
+
+            ##BEGIN CATEGORY TAGS
+
+            params[:category_tags].each do |id, checked| 
+
+
+              offer_category = OfferCategory.find(id) #ERRRORORORO
+            
+
+              if offer_category
+
+                #check for existing offer category tag entry
+
+                offer_category_tag_entry = OfferCategoryTag.where(:offer_id => @offer.id, :offer_category_id => offer_category.id).last
+
+
+                if checked == "true"  #if selected
+
+                  unless offer_category_tag_entry
+
+                    OfferCategoryTag.create(:offer_category_id => offer_category.id, :offer_id => @offer.id, :is_active => true)
+
+                  else
+
+                    offer_category_tag_entry.update(:is_active => true)
+
+                  end
+
+
+
+                else #if not selected
+
+                  if offer_category_tag_entry
+
+                    offer_category_tag_entry.update(:is_active => false)
+
+                  end
+
+                end
+
+              end
+
+            end
+
+            ##END CATEGORY TAGS
+
             format.html { redirect_to @offer, notice: 'Offer was successfully updated.' }
             format.json { render :show, status: :ok, location: @offer }
           else

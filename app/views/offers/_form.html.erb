@@ -47,6 +47,26 @@
   </div>
 
   <div class="field">
+
+    <% OfferCategory.all.each do |category| %>
+        
+        <% if offer.has_category_tag(category.id) %>
+
+          <a class="add-tag-option toggle-active toggle-to-activate active" data-activate-input="<%= category.url_slug %>"><%=category.name%></a>
+
+        <%else%>
+
+          <a class="add-tag-option toggle-active toggle-to-activate" data-activate-input="<%= category.url_slug %>"><%=category.name%></a>
+
+        <%end%>
+
+          <input type="hidden" value="<%= offer.has_category_tag(category.id) %>" name="category_tags[<%= category.id %>]" id="<%= category.url_slug %>"></input>
+
+    <% end %>
+
+  </div>
+
+  <div class="field">
     <%= f.label :preview_headline %>
     <%= f.text_field :preview_headline%>
   </div>

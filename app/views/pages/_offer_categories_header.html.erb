@@ -8,7 +8,7 @@
 		
 		<% OfferCategory.all.each do |offer_category| %>
 
-			<%= link_to offer_category.name, offer_category_path(offer_category.url_slug), class: cp(offer_category_path(offer_category.url_slug)) %>
+			<%= link_to offer_category.name, offer_category_index_path(offer_category.url_slug), class: cp(offer_category_index_path(offer_category.url_slug)) %>
 
 		<%end%>
 

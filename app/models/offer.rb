@@ -3,12 +3,29 @@ class Offer < ApplicationRecord
 
 	has_many :order_offers
 
+	has_many :offer_category_tags
+
+
 	has_attached_file :image, 
 		:styles => { :medium => "800x", :small => "70x70#"},
 		:default_url => 'missing_item_photo.png',
 		:s3_protocol => :https
 
 	validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+
+	def has_category_tag(category_id)
+
+		count = OfferCategoryTag.where(:offer_id => self.id, :offer_category_id => category_id, :is_active => true).count
+
+		if count > 0
+
+			return true
+		else
+
+			return false
+		end
+
+	end
 
 
 	def set_url_slug
