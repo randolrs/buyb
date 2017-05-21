@@ -3,15 +3,52 @@
 
   <div class="row">
     
-    <% offers.all.each do |offer| %>
-      
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        
-        <%= render 'offers/hero_index', offer: offer %>
+    <% x = offers.count / 3 %>
 
-      </div>
+    <% per_col = x.to_i %>
 
-    <%end%>
+    <% i = 0 %>
+
+    <div class="col-xs-12 col-sm-4 col-md-4">
+
+	    <% offers[i,per_col].each do |offer| %>
+	        
+	        <%= render 'offers/hero_index', offer: offer %>
+
+	        <% i = i + 1 %>
+
+	    <%end%>
+
+    </div>
+
+
+    <div class="col-xs-12 col-sm-4 col-md-4">
+
+	    <% offers[i, per_col].each do |offer| %>
+	        
+	        <%= render 'offers/hero_index', offer: offer %>
+
+	        <% i = i + 1 %>
+
+	    <%end%>
+
+    </div>
+
+
+    <div class="col-xs-12 col-sm-4 col-md-4">
+
+	    <% offers[i, i + per_col].each do |offer| %>
+	        
+	        <%= render 'offers/hero_index', offer: offer %>
+
+	        <% i = i + 1 %>
+
+	    <%end%>
+
+    </div>
+
+
+
 
   </div>
 
