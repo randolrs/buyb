@@ -150,7 +150,8 @@
     cursor: pointer;
 }
 
-.offer-hero-cta:hover{
+.offer-hero-cta:hover, .offer-hero-cta:focus{
+	
 	color: #fff;
 	text-decoration: none;
 }
@@ -182,7 +183,7 @@
     cursor: pointer;
 }
 
-.learn-more-cta:hover{
+.learn-more-cta:hover, .learn-more-cta:focus{
 	text-decoration: none;
 	color: #fff;
 }
