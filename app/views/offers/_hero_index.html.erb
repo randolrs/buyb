@@ -63,15 +63,16 @@
 			
 			<%= link_to "Add to Cart", add_offer_to_order_path(offer.name_url_slug), class:"offer-hero-cta" %>
 
+			<br><br>
+
+			<%= link_to "Learn More", show_offer_formatted_path(offer.name_url_slug), class:"learn-more-cta" %>
+
 		<%else%>
 
-			<%= link_to "I Want This", offer.affiliate_link, class:"offer-hero-cta", target: :_blank %>
+			<%= link_to "Learn More", offer.affiliate_link, class:"learn-more-cta", target: :_blank %>
 
 		<%end%>
 
-		<br><br>
-
-		<%= link_to "Learn More", show_offer_formatted_path(offer.name_url_slug), class:"learn-more-cta" %>
 	</div>
 
 </section>
