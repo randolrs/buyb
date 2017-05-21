@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require geocomplete
 //= require sticky
+//= require masonry/jquery.masonry
+//= require masonry/jquery.imagesloaded.min
 //= require jquery.turbolinks
 //= require bootstrap-sprockets
 //= require turbolinks
