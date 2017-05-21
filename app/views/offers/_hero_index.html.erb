@@ -6,12 +6,27 @@
 	</span>
 
 	<div class="centered">
-		
-		<%= link_to show_offer_formatted_path(offer.name_url_slug) do %>
 
-			<%= image_tag offer.image(:medium), class:"hero-image" %>
+		<% unless offer.affiliate %>
+			
+			<%= link_to show_offer_formatted_path(offer.name_url_slug) do %>
+
+				<%= image_tag offer.image(:medium), class:"hero-image" %>
+
+			<%end%>
+
+		<%else%>
+
+			<%= link_to offer.affiliate_link do %>
+
+				<%= image_tag offer.image(:medium), class:"hero-image" %>
+
+			<%end%>
 
 		<%end%>
+
+
+			
 
 		<br><br>
 
