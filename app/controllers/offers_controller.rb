@@ -147,39 +147,42 @@ class OffersController < ApplicationController
 
 
             ##BEGIN CATEGORY TAGS
+            if params[:category_tags]
 
-            params[:category_tags].each do |id, checked| 
-
-
-              offer_category = OfferCategory.find(id) #ERRRORORORO
-            
-
-              if offer_category
-
-                #check for existing offer category tag entry
-
-                offer_category_tag_entry = OfferCategoryTag.where(:offer_id => @offer.id, :offer_category_id => offer_category.id).last
+              params[:category_tags].each do |id, checked| 
 
 
-                if checked == "true"  #if selected
+                offer_category = OfferCategory.find(id) #ERRRORORORO
+              
 
-                  unless offer_category_tag_entry
+                if offer_category
 
-                    OfferCategoryTag.create(:offer_category_id => offer_category.id, :offer_id => @offer.id, :is_active => true)
+                  #check for existing offer category tag entry
 
-                  else
-
-                    offer_category_tag_entry.update(:is_active => true)
-
-                  end
+                  offer_category_tag_entry = OfferCategoryTag.where(:offer_id => @offer.id, :offer_category_id => offer_category.id).last
 
 
+                  if checked == "true"  #if selected
 
-                else #if not selected
+                    unless offer_category_tag_entry
 
-                  if offer_category_tag_entry
+                      OfferCategoryTag.create(:offer_category_id => offer_category.id, :offer_id => @offer.id, :is_active => true)
 
-                    offer_category_tag_entry.update(:is_active => false)
+                    else
+
+                      offer_category_tag_entry.update(:is_active => true)
+
+                    end
+
+
+
+                  else #if not selected
+
+                    if offer_category_tag_entry
+
+                      offer_category_tag_entry.update(:is_active => false)
+
+                    end
 
                   end
 
@@ -228,39 +231,43 @@ class OffersController < ApplicationController
           if @offer.update(offer_params)
 
             ##BEGIN CATEGORY TAGS
-
-            params[:category_tags].each do |id, checked| 
-
-
-              offer_category = OfferCategory.find(id) #ERRRORORORO
             
+            if params[:category_tags]
 
-              if offer_category
-
-                #check for existing offer category tag entry
-
-                offer_category_tag_entry = OfferCategoryTag.where(:offer_id => @offer.id, :offer_category_id => offer_category.id).last
+              params[:category_tags].each do |id, checked| 
 
 
-                if checked == "true"  #if selected
+                offer_category = OfferCategory.find(id) #ERRRORORORO
+              
 
-                  unless offer_category_tag_entry
+                if offer_category
 
-                    OfferCategoryTag.create(:offer_category_id => offer_category.id, :offer_id => @offer.id, :is_active => true)
+                  #check for existing offer category tag entry
 
-                  else
-
-                    offer_category_tag_entry.update(:is_active => true)
-
-                  end
+                  offer_category_tag_entry = OfferCategoryTag.where(:offer_id => @offer.id, :offer_category_id => offer_category.id).last
 
 
+                  if checked == "true"  #if selected
 
-                else #if not selected
+                    unless offer_category_tag_entry
 
-                  if offer_category_tag_entry
+                      OfferCategoryTag.create(:offer_category_id => offer_category.id, :offer_id => @offer.id, :is_active => true)
 
-                    offer_category_tag_entry.update(:is_active => false)
+                    else
+
+                      offer_category_tag_entry.update(:is_active => true)
+
+                    end
+
+
+
+                  else #if not selected
+
+                    if offer_category_tag_entry
+
+                      offer_category_tag_entry.update(:is_active => false)
+
+                    end
 
                   end
 
