@@ -2,8 +2,10 @@
 
 	<h1 class="underlined-header"><%= @post.title %></h1>
 
-	<%= image_tag @post.image(:medium), class:"main-image" %>
-
+	<div class="centered">
+		<%= image_tag @post.image(:medium), class:"main-image" %>
+	</div>
+	
 	<br><br>
 
 	<%= @post.content.html_safe %>
