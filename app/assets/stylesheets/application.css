@@ -99,7 +99,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 2px;
   position: fixed;
   width: 100%;
-  z-index: 999;
+  z-index: 99991;
   background: #FF4E50;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #F9D423, #FF4E50);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #F9D423, #FF4E50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
