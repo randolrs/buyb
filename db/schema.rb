@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170521150850) do
+ActiveRecord::Schema.define(version: 20170522161533) do
 
   create_table "bootsy_image_galleries", force: :cascade do |t|
     t.string   "bootsy_resource_type"
@@ -117,6 +117,19 @@ ActiveRecord::Schema.define(version: 20170521150850) do
     t.string   "contact_title"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.text     "title"
+    t.text     "sub_title"
+    t.text     "content"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "url_slug"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "purchases", force: :cascade do |t|

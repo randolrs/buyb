@@ -1,0 +1,13 @@
+<div class="content">
+
+	<h1 class="underlined-header">The Blog</h1>
+
+	<%# @post.content %>
+
+	<% Post.all.each do |post| %>
+
+		<%= link_to post.title, show_formatted_post_path(post.url_slug) %>
+	<%end%>
+
+
+</div>

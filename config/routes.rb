@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :posts
   resources :partnership_applications
   
   get 'order/add_offer_to_order'
@@ -18,6 +19,8 @@ Rails.application.routes.draw do
 
   get '/login/' => 'pages#login', as: 'login'
 
+  get '/blog/' => 'posts#blog_home', as: 'blog_home'
+
   get '/partneships/' => 'partnership_applications#new', as: 'partnership_application_page'
 
   get '/newsletter_signups/' => 'pages#newsletter_signups', as: 'newsletter_signups'
@@ -26,6 +29,11 @@ Rails.application.routes.draw do
   #match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup 
 
   get '/:name_url_slug' => 'offers#show_formatted', as: 'show_offer_formatted'
+
+  
+
+  get '/blog/:post_url_slug' => 'posts#show_formatted', as: 'show_formatted_post'
+
 
   get '/category/:category_url_slug' => 'pages#offer_category_index', as: 'offer_category_index'
 

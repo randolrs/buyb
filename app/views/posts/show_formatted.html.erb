@@ -1,0 +1,12 @@
+<div class="content medium written">
+
+	<h1 class="underlined-header"><%= @post.title %></h1>
+
+	<%= image_tag @post.image(:medium), class:"main-image" %>
+
+	<br><br>
+
+	<%= @post.content.html_safe %>
+
+
+</div>

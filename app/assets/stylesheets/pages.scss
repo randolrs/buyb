@@ -30,8 +30,12 @@
 	max-width: 700px;
 }
 
-.content.written{
 
+
+.content.written{
+	
+	text-align: justify;
+	
 	p{
 		margin: 20px 0px;
 	}
@@ -98,4 +102,8 @@ img.social-media-button{
 		margin: 0 auto;
 		font-size: 18px;
 	}
+}
+
+.bootsy_text_area, .wysihtml5-sandbox{
+	height: 900px !important;
 }
