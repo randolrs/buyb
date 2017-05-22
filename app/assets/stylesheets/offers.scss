@@ -81,7 +81,7 @@
 
 	border: 1px solid #ddd;
 
-	margin-bottom: 20px;
+	position: relative;
     
     background: #fff;
     margin-bottom: 25px;
@@ -104,6 +104,11 @@
 		padding:20px;
 	}
 
+	.hero-image-container{
+		position: relative;
+		text-align: center;
+	}
+
 	p.preview-text{
 		color: #555;
 	}
@@ -120,6 +125,18 @@
 	color: #fff;
 	padding: 3px;
 	background: rgba(35, 205, 212, 0.8);
+
+}
+
+.social-media-ctas{
+	position: absolute;
+    display: inline-block;
+	bottom: 0px;
+	left: 0px;
+    right: 0px;
+	color: #fff;
+	padding: 3px;
+	background: rgba(255, 255, 255, 0.9);
 
 }
 
