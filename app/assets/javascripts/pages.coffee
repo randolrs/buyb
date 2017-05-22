@@ -41,6 +41,9 @@ ready = ->
 		$(".modal-content").click (e) ->
 			e.stopPropagation()
 
+		$(".menu-content").click (e) ->
+			e.stopPropagation()
+
 		$(".modal-container").click (e) ->
 			$(@).hide()
 
