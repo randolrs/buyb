@@ -7,7 +7,7 @@ class Offer < ApplicationRecord
 
 
 	has_attached_file :image, 
-		:styles => { :medium => "800x", :small => "70x70#"},
+		:styles => { :medium => "600x600", :small => "70x70#"},
 		:default_url => 'missing_item_photo.png',
 		:s3_protocol => :https
 
