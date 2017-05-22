@@ -108,15 +108,4 @@ ready = ->
 						$subtotal_text.text(data.new_subtotal)
 						$order_total_text.text(data.new_order_total)
 
-		$(window).scroll (e) ->
-			if $(".signup-container").is(":visible")
-				st = $(@).scrollTop()
-				bottom = $(".signup-container").height()
-				if st > bottom
-					$(".signup-container").hide()
-					$(".main-nav").addClass("active")
-					$(".header-container").addClass("fixed")
-					$(".header-container-offset").show()
-					window.scrollTo(0, 0)
-
 $(document).on('turbolinks:load', ready)
