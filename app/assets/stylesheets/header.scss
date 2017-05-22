@@ -140,8 +140,9 @@ a.cheeseburger-container{
     	}
 
     	a.active{
-    		background: #fff;
-    		color: #111;
+    		background: #111;
+            border: 1px solid rgba(0,0,0,0.2);
+    		color: #fff;
             text-shadow: none;
             box-shadow: 0px 1px 1px rgba(0,0,0,0.3);
     	}
