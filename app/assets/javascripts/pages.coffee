@@ -64,7 +64,7 @@ ready = ->
 				dataType: 'json'
 				success: (data) ->
 					console.log(data)
-					if data.redirect_url
+					if data.redirect_to_url
 						window.location.href = data.redirect_to_url
 					else
 						$(".signup-container").fadeOut(500)

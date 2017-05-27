@@ -74,12 +74,12 @@ class PagesController < ApplicationController
       if params[:redirect_url]
 
         redirect_url = request.domain + params[:redirect_url]
-  		  
-        render json: { :status => "success", :report => @email, :redirect_url => redirect_url, content_type: 'text/json' }
+
+        render json: { :status => "success", :report => @email, :redirect_to_url => redirect_url, content_type: 'text/json' }
 
       else
 
-        render json: { :status => "success", :report => @email, :redirect_url => nil, content_type: 'text/json' }
+        render json: { :status => "success", :report => @email, :redirect_to_url => nil, content_type: 'text/json' }
 
       end
 

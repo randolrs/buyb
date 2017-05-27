@@ -36,7 +36,7 @@
 							        
 							        <input type="text" name="signup-email" class="signup-email-input" id="signup-email" placeholder="Enter Your Email"/>
 
-							        <input type="hidden" name="redirect-url" class="redirect-url-input" value="<%= root_path %>"/>
+							        <input type="hidden" name="redirect-url" class="redirect-url-input" value="<%= request.protocol + request.host %>"/>
 							        <br>
 
 							        <input class="button rounded email-signup-cta" type="submit" id="signup-button" value="Sign Me Up!" />
