@@ -55,6 +55,12 @@ class PagesController < ApplicationController
 
   end
 
+  def email_signup
+
+    @hide_header = true
+
+  end
+
   def create_newsletter_subscriber
   	
   	@email = params[:email]
@@ -65,7 +71,18 @@ class PagesController < ApplicationController
 
   		session[:email] = @email
 
-  		render json: { :status => "success", :report => @email, content_type: 'text/json' }
+      if params[:redirect_url]
+
+        redirect_url = request.domain + params[:redirect_url]
+  		  
+        render json: { :status => "success", :report => @email, :redirect_url => redirect_url, content_type: 'text/json' }
+
+      else
+
+        render json: { :status => "success", :report => @email, :redirect_url => nil, content_type: 'text/json' }
+
+      end
+
 
   	else
 

@@ -61,7 +61,11 @@
 
 		<div class="content-container">
 			
-			<%= render 'layouts/header' %>
+			<% unless @hide_header %>
+			
+				<%= render 'layouts/header' %>
+			
+			<%end%>
 
 			<% if flash[:error] %>
 				

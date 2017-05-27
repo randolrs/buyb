@@ -53,7 +53,7 @@ ready = ->
 		$("#newsletter-signup").submit (e) ->
 			e.preventDefault()
 			form = $(@)
-			formData = {email: $('.signup-email-input').val()}
+			formData = {email: $('.signup-email-input').val(), redirect_url: $('.redirect-url-input').val()}
 			formUrl = form.attr('action')
 			formMethod = form.attr('method') 
 			responseMsg = $('#signup-response')
@@ -64,11 +64,14 @@ ready = ->
 				dataType: 'json'
 				success: (data) ->
 					console.log(data)
-					$(".signup-container").fadeOut(500)
-					$(".main-nav").addClass("active")
-					$(".header-container").addClass("fixed")
-					$(".header-container-offset").show()
-					window.scrollTo(0, 0)
+					if data.redirect_url
+						window.location.href = data.redirect_to_url
+					else
+						$(".signup-container").fadeOut(500)
+						$(".main-nav").addClass("active")
+						$(".header-container").addClass("fixed")
+						$(".header-container-offset").show()
+						window.scrollTo(0, 0)
 
 		$("#in-content-newsletter-signup").submit (e) ->
 			e.preventDefault()

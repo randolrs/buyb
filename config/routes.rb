@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 
   get '/signup/' => 'pages#signup', as: 'signup'
 
+  get '/signup/newsletter' => 'pages#email_signup', as: 'email_signup'
+
   get '/login/' => 'pages#login', as: 'login'
 
   get '/blog/' => 'posts#blog_home', as: 'blog_home'
