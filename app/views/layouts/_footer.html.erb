@@ -3,31 +3,8 @@
 
 	<div class="footer-content">
 
-		<a>thatHQ</a>
-
-		<br>
-		
-		<a>Curated in Montreal, Quebec</a>
-
-		<br><br>
-
-		<ul class="horizontal">
-
-			<li><%= link_to "Home", root_path %></li>
-
-			<li><%= link_to "About", about_us_path %></li>
-			
-			<li><%= link_to "Partnership Application", partnership_application_page_path %>
-			</li>
-
-			<li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-
-		</ul>
+		<a>Copyright <%= Time.now.strftime("%Y") %> thatHQ, LLC. All Right Reserved.</a>
 
 	</div>
-
-	<br><br><br>
-	
-	<div class="centered">Copyright <%= Time.now.strftime("%Y") %> thatHQ, LLC. All Right Reserved.</div>
 
 </footer>

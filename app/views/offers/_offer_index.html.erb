@@ -9,7 +9,19 @@
 
     <% i = 0 %>
 
-    <div class="col-xs-12 col-sm-4 col-md-4 no-padding">
+    <div class="col-xs-12 col-sm-4 col-md-2 no-padding">
+
+	    <% offers[i,per_col + 1].each do |offer| %>
+	        
+	        <%= render 'offers/hero_index', offer: offer %>
+
+	        <% i = i + 1 %>
+
+	    <%end%>
+
+    </div>
+    
+    <div class="col-xs-12 col-sm-4 col-md-2 no-padding">
 
 	    <% offers[i,per_col + 1].each do |offer| %>
 	        
@@ -22,7 +34,7 @@
     </div>
 
 
-    <div class="col-xs-12 col-sm-4 col-md-4 no-padding">
+    <div class="col-xs-12 col-sm-4 col-md-2 no-padding">
 
 	    <% offers[i, per_col].each do |offer| %>
 	        
@@ -35,7 +47,7 @@
     </div>
 
 
-    <div class="col-xs-12 col-sm-4 col-md-4 no-padding">
+    <div class="col-xs-12 col-sm-4 col-md-2 no-padding">
 
 	    <% offers[i, i + per_col].each do |offer| %>
 	        

@@ -122,3 +122,18 @@ img.social-media-button{
 .bootsy_text_area, .wysihtml5-sandbox{
 	height: 900px !important;
 }
+
+.main-content{
+	
+	section{
+		
+		padding: 50px;
+		max-width: 1200px;
+
+		header{
+			margin-bottom: 15px;
+			font-size: 30px;
+			display: inline-block;
+		}
+	}
+}

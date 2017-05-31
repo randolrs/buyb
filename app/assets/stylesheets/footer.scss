@@ -3,24 +3,22 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .footer-container{
-	padding: 50px;
-	padding-bottom: 80px;
-	background: #111;
-	color: #fff;
 
 	.footer-content{
 		max-width: 1200px;
 		margin: 0 auto;
-		text-align: center;
+		padding: 25px 50px;
 
 		a{
-			color: #fff;
+			color: #666;
+			text-decoration: none;
 
 		}
 		
 		a:hover{
-			color: #fff;
-			text-decoration: none;
+			
+			color: #333;
+			
 		}
 	}
 
