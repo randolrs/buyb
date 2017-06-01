@@ -26,6 +26,12 @@
 
 				<%= link_to "Blog", blog_home_path %>
 
+				<% if user_signed_in? %>
+
+					<%= link_to "Logout", destroy_user_session_path, method: :delete %>
+
+				<%end%>
+
 			</span>
 			<!-- <%# link_to "Signup", signup_path %><span class="header-login-option">/<%# link_to "Login", root_path %></span> -->
 

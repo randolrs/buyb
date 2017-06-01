@@ -60,7 +60,11 @@
 
 		<%else%>
 
-			<%= link_to "Learn More", offer.affiliate_link, class:"learn-more-cta", target: :_blank %>
+			<%= link_to "Get This", offer.affiliate_link, class:"offer-hero-cta" %>
+
+			<br><br>
+			
+			<%= link_to "Learn More", show_offer_formatted_path(offer.name_url_slug), class:"learn-more-cta", target: :_blank %>
 
 		<%end%>
 
