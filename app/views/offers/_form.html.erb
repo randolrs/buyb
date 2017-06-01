@@ -11,14 +11,13 @@
     </div>
   <% end %>
 
+  <br>
+
+  <h2 style="border-bottom: 2px solid #111;">Records</h2>
+
   <div class="field">
     <%= f.label :name %>
     <%= f.text_field :name %>
-  </div>
-
-  <div class="field">
-    <label>Main Image</label>
-    <%= f.file_field :image %>
   </div>
 
   <div class="field">
@@ -26,27 +25,38 @@
     <%= f.text_field :name_url_slug %>
   </div>
 
+  <br>
+  <h2 style="border-bottom: 2px solid #111;">Preview Image and Headlines</h2>
+
+  <div class="field">
+    <%= f.label :preview_headline %>
+    <%= f.text_field :preview_headline%>
+  </div>
+
+  <div class="field">
+    <%= f.label :sales_preview_text %>
+    <%= f.text_field :sales_preview_text %>
+  </div>
+
+  <div class="field">
+    <label>Main Image</label>
+    <%= f.file_field :image %>
+  </div>
+
+  <br>
+
+  <h2 style="border-bottom: 2px solid #111;">Sales Settings</h2>
+
   <div class="field">
     <%= f.label :price %>
     <%= f.number_field :price %>
   </div>
 
   <div class="field">
-    <%= f.label :headline %>
-    <%= f.text_field :headline %>
-  </div>
 
-  <div class="field">
-    <%= f.label :sub_headline %>
-    <%= f.text_field :sub_headline %>
-  </div>
+    <label>Category(s)</label>
 
-  <div class="field">
-    <%= f.label :content %>
-    <%= f.bootsy_area :content %>
-  </div>
-
-  <div class="field">
+    <br>
 
     <% OfferCategory.all.each do |category| %>
         
@@ -67,16 +77,6 @@
   </div>
 
   <div class="field">
-    <%= f.label :preview_headline %>
-    <%= f.text_field :preview_headline%>
-  </div>
-
-  <div class="field">
-    <%= f.label :sales_preview_text %>
-    <%= f.text_field :sales_preview_text %>
-  </div>
-
-  <div class="field">
     <%= f.label :affiliate %>
     <%= f.check_box :affiliate %>
   </div>
@@ -91,7 +91,27 @@
     <%= f.check_box :active %>
   </div>
 
+  <br>
+  <h2 style="border-bottom: 2px solid #111;">Learn More Page</h2>
+
+  <div class="field">
+    <%= f.label :headline %>
+    <%= f.text_field :headline %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sub_headline %>
+    <%= f.text_field :sub_headline %>
+  </div>
+
+  <div class="field">
+    <%= f.label :content %>
+    <%= f.bootsy_area :content %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
+
+
 <% end %>

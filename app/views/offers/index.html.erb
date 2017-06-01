@@ -5,8 +5,8 @@
 <table>
   <thead>
     <tr>
-      <th>Headline</th>
-      <th>Sub headline</th>
+      <th>Name</th>
+      <th>Preview Headline</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,8 +14,8 @@
   <tbody>
     <% @offers.each do |offer| %>
       <tr>
-        <td><%= offer.headline %></td>
-        <td><%= offer.sub_headline %></td>
+        <td><%= offer.name %></td>
+        <td><%= offer.preview_headline %></td>
         <td><%= link_to 'Show', offer %></td>
         <td><%= link_to 'Formatted Page', show_offer_formatted_path(offer.name_url_slug) %></td>
         <td><%= link_to 'Edit', edit_offer_path(offer) %></td>
