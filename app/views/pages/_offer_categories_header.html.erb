@@ -2,9 +2,24 @@
 
 	<div class="category-content">
 		
-		<% OfferCategory.where(:front_page => true).take(4).each do |offer_category| %>
+		<% if @offer_category %>
 
-			<%= link_to offer_category.name, offer_category_index_path(offer_category.url_slug), class: cp(offer_category_index_path(offer_category.url_slug)) %>
+			<a class="active"><%= @offer_category.name %></a>
+
+			<% OfferCategory.sidebar_categories(@offer_category).each do |offer_category| %>
+
+				<%= link_to offer_category.name, offer_category_index_path(offer_category.url_slug), class: cp(offer_category_index_path(offer_category.url_slug)) %>
+
+			<%end%>
+
+		<%else%>
+
+			<% OfferCategory.sidebar_categories(@offer_category).each do |offer_category| %>
+
+				<%= link_to offer_category.name, offer_category_index_path(offer_category.url_slug), class: cp(offer_category_index_path(offer_category.url_slug)) %>
+
+			<%end%>
+
 
 		<%end%>
 
