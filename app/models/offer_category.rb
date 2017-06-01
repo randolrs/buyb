@@ -24,5 +24,18 @@ class OfferCategory < ApplicationRecord
 
 	end
 
+	def top_offers
+
+		return self.offers.where(:active => true)
+
+	end
+
+
+	def new_offers
+
+		return self.offers.where(:active => true)
+
+	end
+
 
 end

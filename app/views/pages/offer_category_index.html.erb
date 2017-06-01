@@ -15,7 +15,7 @@
 		
 		<div class="row">
 
-			<% Offer.all.take(4).each do |offer| %>
+			<% @offer_category.top_offers.take(4).each do |offer| %>
 		        
 		        <div class="col-xs-12 col-sm-6 col-md-3">
 					<%= render 'offers/hero_index', offer: offer %>
@@ -31,15 +31,13 @@
 
 	<section>
 
-		<section>
-
-		<header>Section 1</header>
+		<header>Section 2</header>
 
 		<br>
-		
+
 		<div class="row">
 
-			<% Offer.all.take(4).each do |offer| %>
+			<% @offer_category.new_offers.take(4).each do |offer| %>
 		        
 		        <div class="col-xs-12 col-sm-6 col-md-3">
 					<%= render 'offers/hero_index', offer: offer %>
@@ -50,10 +48,6 @@
 		</div>
 
 	</section>
-	
-	<br>
-
-	<section>
 
 </div>
 
