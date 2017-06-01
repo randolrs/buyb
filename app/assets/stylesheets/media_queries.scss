@@ -159,3 +159,26 @@
 	}
 
 }
+
+
+@media only screen and (min-device-width: 768px) {
+	@media only screen and (max-width: 768px) {
+		
+		html {
+
+			body {
+
+				nav.content-header-container{
+					
+					top: 140px;
+
+				}
+
+			}
+
+		}
+
+	}
+
+}
+    
