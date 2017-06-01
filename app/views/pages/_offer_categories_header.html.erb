@@ -4,11 +4,11 @@
 		
 		<% if @offer_category %>
 
-			<a class="active"><%= @offer_category.name %></a>
+			<a class="active <%= @offer_category.url_slug %>"><%= @offer_category.name %></a>
 
 			<% OfferCategory.sidebar_categories(@offer_category).each do |offer_category| %>
 
-				<%= link_to offer_category.name, offer_category_index_path(offer_category.url_slug), class: cp(offer_category_index_path(offer_category.url_slug)) %>
+				<a href="<%= offer_category_index_path(offer_category.url_slug) %>" class="<%= cp(offer_category_index_path(offer_category.url_slug)) %> <%= offer_category.url_slug %>"><%= offer_category.name %></a>
 
 			<%end%>
 

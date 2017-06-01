@@ -3,8 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+@import 'colors';
+
 .header-container, .header-container-offset{
-	height: 80px;
+	height: 60px;
 }
 
 .header-container{
@@ -22,7 +24,7 @@
 
 	a{
 		padding: 10px;
-		line-height: 60px;
+		line-height: 40px;
 		color: #fff;
 		display: inline-block;
 
@@ -103,7 +105,7 @@ a.cheeseburger-container{
 
     position: fixed;
 
-    top: 84px;
+    top: 64px;
 
     z-index: 9999;
 
@@ -149,6 +151,36 @@ a.cheeseburger-container{
             box-shadow: 0px 1px 1px rgba(0,0,0,0.3);
             font-weight: 500;
     	}
+
+        a.active.books{
+            background: $books-theme-color;
+            color: #fff;
+        }
+
+        a.active.courses{
+            background: $courses-theme-color;
+            color: #fff;
+        }
+
+        a.active.interviews{
+            background: $interviews-theme-color;
+            color: #fff;
+        }
+
+        a.active.free{
+            background: $free-theme-color;
+            color: #fff;
+        }
+
+        a.active.tools{
+            background: $tools-theme-color;
+            color: #fff;
+        }
+
+        a.active.coaching{
+            background: $coaching-theme-color;
+            color: #fff;
+        }
     }
 }
 
