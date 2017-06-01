@@ -12,48 +12,48 @@
 		<header>Section 1</header>
 
 		<br>
-
-		<% Offer.all.take(6).each do |offer| %>
-	        
-	        <%= render 'offers/hero_index', offer: offer %>
-
-		<%end%>
-
-	</section>
-
-	<section>
-
-		<header>Section 2</header>
-
+		
 		<div class="row">
-			
-			<div class="col-xs-4 col-sm-3 col-md-2">
-				XXYYZZ
-			</div>
 
-			<div class="col-xs-4 col-sm-3 col-md-2">
-				XXYYZZ
-			</div>
+			<% Offer.all.take(4).each do |offer| %>
+		        
+		        <div class="col-xs-6 col-sm-6 col-md-3">
+					<%= render 'offers/hero_index', offer: offer %>
+				</div>
 
-			<div class="col-xs-4 col-sm-3 col-md-2">
-				XXYYZZ
-			</div>
-
-			<div class="col-xs-4 col-sm-3 col-md-2">
-				XXYYZZ
-			</div>
-
-			<div class="col-xs-4 col-sm-3 col-md-2">
-				XXYYZZ
-			</div>
-
-			<div class="col-xs-4 col-sm-3 col-md-2">
-				XXYYZZ
-			</div>
+			<%end%>
 
 		</div>
 
 	</section>
+	
+	<br>
+
+	<section>
+
+		<section>
+
+		<header>Section 1</header>
+
+		<br>
+		
+		<div class="row">
+
+			<% Offer.all.take(4).each do |offer| %>
+		        
+		        <div class="col-xs-6 col-sm-6 col-md-3">
+					<%= render 'offers/hero_index', offer: offer %>
+				</div>
+
+			<%end%>
+
+		</div>
+
+	</section>
+	
+	<br>
+
+	<section>
 
 </div>
 

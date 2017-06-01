@@ -1,8 +1,6 @@
 <div class="sub-header">
 
 	<div class="category-content">
-
-		<%= link_to "Latest", root_path, class: cp(root_path)%>
 		
 		<% OfferCategory.where(:front_page => true).take(4).each do |offer_category| %>
 
