@@ -5,6 +5,10 @@ class PagesController < ApplicationController
   	unless session[:email]
   		@email_cta = true
   	end
+
+    @offer_category = OfferCategory.where(:home_page => true).last
+
+
   	
   end
 

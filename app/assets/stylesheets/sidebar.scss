@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import 'colors';
 
 .sidebar-container{
     height: 100%;
@@ -33,14 +34,21 @@
         .glyph{
             
             line-height: 50px;
+            width: 50px;
+            text-align: center;
             padding: 0px 10px;
             top: 0px;
+            color: #fff;
+            display: inline-block;
+            vertical-align: top;
         }
 
         .sidebar-category-text{
             padding: 0px 10px;
             line-height: 50px;
             height: 50px;
+            display: inline-block;
+            vertical-align: top;
         }
 
     }
@@ -49,6 +57,86 @@
         background: #f4e;
         color: #fff;
     }
+
+    .sidebar-category.active.books{
+        background: $books-theme-color;
+        color: #fff;
+    }
+
+    .sidebar-category.active.courses{
+        background: $courses-theme-color;
+        color: #fff;
+    }
+
+    .sidebar-category.active.interviews{
+        background: $interviews-theme-color;
+        color: #fff;
+    }
+
+    .sidebar-category.active.tools{
+        background: $tools-theme-color;
+        color: #fff;
+    }
+
+    .sidebar-category.active.coaching{
+        background: $coaching-theme-color;
+        color: #fff;
+    }
+
+    .sidebar-category.active.free{
+        background: $free-theme-color;
+        color: #fff;
+    }
+
+
+    .sidebar-category.books{
+        
+        .glyph{
+            background: $books-theme-color;
+        }
+
+    }
+
+    .sidebar-category.courses{
+        
+        .glyph{
+            background: $courses-theme-color;
+        }
+
+    }
+
+    .sidebar-category.interviews{
+        
+        .glyph{
+            background: $interviews-theme-color;
+        }
+
+    }
+
+    .sidebar-category.tools{
+        
+        .glyph{
+            background: $tools-theme-color;
+        }
+
+    }
+
+    .sidebar-category.coaching{
+        
+        .glyph{
+            background: $coaching-theme-color;
+        }
+
+    }
+
+    .sidebar-category.free{
+        
+        .glyph{
+            background: $free-theme-color;
+        }
+
+    }
+
 }
 
 .content-header-container{
@@ -63,7 +151,9 @@
 
     z-index: 9999;
                 
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #ddd;
+
+    font-size: 18px;
 
     top: 144px;
 
@@ -73,5 +163,41 @@
         display: inline-block;
         line-height: 30px;
         padding: 10px;
+        color: #666;
+        font-weight: 300;
+        text-decoration: none;
+        cursor: pointer;
+
+    }
+
+    a.content-header-action.active{
+        padding-bottom: 7px;
+        color: #333;
+        font-weight: 500;
+        border-bottom: 3px solid #e4f;
+    }
+
+    a.content-header-action.active.books{
+        border-bottom: 3px solid $books-theme-color;
+    }
+
+    a.content-header-action.active.courses{
+        border-bottom: 3px solid $courses-theme-color;
+    }
+
+    a.content-header-action.active.interviews{
+        border-bottom: 3px solid $interviews-theme-color;
+    }
+
+    a.content-header-action.active.free{
+        border-bottom: 3px solid $free-theme-color;
+    }
+
+    a.content-header-action.active.tools{
+        border-bottom: 3px solid $tools-theme-color;
+    }
+
+    a.content-header-action.active.coaching{
+        border-bottom: 3px solid $books-theme-color;
     }
 }

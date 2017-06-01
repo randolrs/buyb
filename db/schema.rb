@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170522161533) do
+ActiveRecord::Schema.define(version: 20170601130906) do
 
   create_table "bootsy_image_galleries", force: :cascade do |t|
     t.string   "bootsy_resource_type"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20170522161533) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean  "front_page"
+    t.boolean  "home_page"
   end
 
   create_table "offer_category_tags", force: :cascade do |t|

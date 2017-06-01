@@ -60,10 +60,6 @@
 		<%end%>
 
 		<div class="content-container">
-			
-			<%= render 'layouts/sidebar' %>
-
-			<%= render 'layouts/subheader' %>
 
 			<% unless @hide_header %>
 			
@@ -80,12 +76,10 @@
 				</div>
 
 			<%end%>
-
-			<div class="main-content">
 			
-				<%= yield %>
 			
-			</div>
+			<%= yield %>
+		
 		
 		</div>
 

@@ -1,4 +1,60 @@
+<%= render 'layouts/sidebar' %>
+
+<%= render 'layouts/content_header', offer_category: @offer_category  %>
+
 <%= render 'pages/offer_categories_header' %>
 
-<%= render 'offers/offer_index', offers: @offers %>
+
+<div class="main-content">
+
+	<section>
+
+		<header>Section 1</header>
+
+		<br>
+
+		<% Offer.all.take(6).each do |offer| %>
+	        
+	        <%= render 'offers/hero_index', offer: offer %>
+
+		<%end%>
+
+	</section>
+
+	<section>
+
+		<header>Section 2</header>
+
+		<div class="row">
+			
+			<div class="col-xs-4 col-sm-3 col-md-2">
+				XXYYZZ
+			</div>
+
+			<div class="col-xs-4 col-sm-3 col-md-2">
+				XXYYZZ
+			</div>
+
+			<div class="col-xs-4 col-sm-3 col-md-2">
+				XXYYZZ
+			</div>
+
+			<div class="col-xs-4 col-sm-3 col-md-2">
+				XXYYZZ
+			</div>
+
+			<div class="col-xs-4 col-sm-3 col-md-2">
+				XXYYZZ
+			</div>
+
+			<div class="col-xs-4 col-sm-3 col-md-2">
+				XXYYZZ
+			</div>
+
+		</div>
+
+	</section>
+
+</div>
+
 
