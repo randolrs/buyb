@@ -5,6 +5,8 @@
 
 .sidebar-container{
     height: 100%;
+
+    display: none;
     width: 200px;
     position: fixed;
     background: #fff;
@@ -22,6 +24,7 @@
         line-height: 50px;
         height: 50px;
         cursor: pointer;
+        font-weight: 300;
 
         text-decoration: none;
         font-size: 24px;
@@ -41,13 +44,32 @@
         }
 
     }
+
+    .sidebar-category.active{
+        background: #f4e;
+        color: #fff;
+    }
 }
 
-.subheader-container{
+.content-header-container{
     
-    padding-left: 30px;
+    font-size: 20px;
 
-    a.subheader-action{
+    position: fixed;
+
+    width: 100%;
+
+    background: #fff;
+
+    z-index: 9999;
+                
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+
+    top: 144px;
+
+    padding-left: 0px;
+
+    a.content-header-action{
         display: inline-block;
         line-height: 30px;
         padding: 10px;

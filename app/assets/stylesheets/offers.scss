@@ -69,13 +69,17 @@
 	display: none;
 }
 
-.offer-hero-index{
+article.offer-hero-index{
 	
 	margin: 0 auto;
 
 	width: 100%;
 
 	max-width: 1200px;
+
+	width: 250px;
+	display: inline-block;
+	vertical-align: top;
 
 	color: #111;
 
@@ -93,8 +97,8 @@
 		
 	}
 
-	header{
-		font-size: 28px;
+	h3{
+		font-size: 20px;
 		font-weight: 600;
 		margin-bottom: 10px;
 	}

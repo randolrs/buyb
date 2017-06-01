@@ -1,10 +1,24 @@
-<%# render 'pages/offer_categories_header' %>
+<%= render 'pages/offer_categories_header' %>
 
 <%# render 'offers/offer_index', offers: Offer.all %>
 
 <section>
 
 	<header>Section 1</header>
+
+	<br>
+
+	<% Offer.all.take(6).each do |offer| %>
+        
+        <%= render 'offers/hero_index', offer: offer %>
+
+	<%end%>
+
+</section>
+
+<section>
+
+	<header>Section 2</header>
 
 	<div class="row">
 		
