@@ -91,6 +91,12 @@
         color: #fff;
     }
 
+    .sidebar-category.active.blogs{
+        background: $blogs-theme-color;
+        color: #fff;
+    }
+
+
 
     .sidebar-category.books{
         
@@ -136,6 +142,14 @@
         
         .glyph{
             background: $free-theme-color;
+        }
+
+    }
+
+    .sidebar-category.blogs{
+        
+        .glyph{
+            background: $blogs-theme-color;
         }
 
     }
@@ -197,6 +211,11 @@
     a.content-header-action.active.free{
         border-bottom: 3px solid $free-theme-color;
     }
+
+    a.content-header-action.active.blogs{
+        border-bottom: 3px solid $blogs-theme-color;
+    }
+
 
     a.content-header-action.active.tools{
         border-bottom: 3px solid $tools-theme-color;

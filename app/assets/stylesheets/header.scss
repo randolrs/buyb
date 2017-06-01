@@ -180,6 +180,11 @@ a.cheeseburger-container{
             background: $coaching-theme-color;
             color: #fff;
         }
+
+        a.active.blogs{
+            background: $blogs-theme-color;
+            color: #fff;
+        }
     }
 }
 
