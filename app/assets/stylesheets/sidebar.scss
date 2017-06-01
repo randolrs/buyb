@@ -30,6 +30,8 @@
         text-decoration: none;
         font-size: 24px;
         color: #666;
+        border-bottom: 1px solid #ddd;
+
 
         .glyph{
             
@@ -198,6 +200,6 @@
     }
 
     a.content-header-action.active.coaching{
-        border-bottom: 3px solid $books-theme-color;
+        border-bottom: 3px solid $coaching-theme-color;
     }
 }
