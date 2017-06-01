@@ -10,13 +10,13 @@ class OfferCategory < ApplicationRecord
 
 			categories = OfferCategory.where(:front_page => true).where.not(:id => current_category.id)
 
-			return categories.take(4)
+			return categories
 
 		else
 
 			categories = OfferCategory.where(:front_page => true)
 
-			return categories.take(4)
+			return categories
 
 
 		end
