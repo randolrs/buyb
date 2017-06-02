@@ -25,6 +25,11 @@
     <%= f.text_field :name_url_slug %>
   </div>
 
+  <div class="field">
+    <label>Creator</label><br>
+    <%= collection_select(:offer, :creator_id, Creator.all, :id, :display_name, :include_blank => "Select Creator")%>
+  </div>
+
   <br>
   <h2 style="border-bottom: 2px solid #111;">Preview Image and Headlines</h2>
 

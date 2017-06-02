@@ -3,6 +3,8 @@ class Offer < ApplicationRecord
 
 	has_many :order_offers
 
+	belongs_to :creator
+
 	has_many :offer_category_tags
 
 
@@ -60,4 +62,7 @@ class Offer < ApplicationRecord
 
 
 	end
+
+
+
 end

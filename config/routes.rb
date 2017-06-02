@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :creators
   resources :posts
   resources :partnership_applications
   
