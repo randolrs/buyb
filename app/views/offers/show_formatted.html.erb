@@ -11,7 +11,10 @@
 			<p>by <%= @offer.creator.display_name %></p>
 		
 		<%end%>
-		
+
+		<% if @offer.price %>
+			<p><%= number_to_currency(@offer.price) %></p>
+		<%end%>
 		
 
 		<% unless @offer.affiliate %>
