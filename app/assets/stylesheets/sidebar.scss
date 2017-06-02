@@ -186,6 +186,37 @@
 
     padding-left: 0px;
 
+    div.child-category-dropdown{
+        
+        position: absolute;
+        top: 48px;
+        left: 10px;
+        border-radius: 2px;
+        box-shadow: 0 2px 40px rgba(0,0,0,0.4);
+        background: #fff;
+        border: 1px solid #d6d6d6;
+
+        ul{
+            list-style-type: none;
+
+            li{
+                a{
+                    color: #444;
+                    padding: 10px;
+                    text-decoration: none;
+                    display: inline-block;
+                    cursor: pointer;
+                    font-weight: 300;
+                    font-size: 16px;
+                }
+
+                a:hover{
+                    background: #eee;
+                }
+            }
+        }
+    }
+
     a.content-header-action{
         display: inline-block;
         line-height: 30px;

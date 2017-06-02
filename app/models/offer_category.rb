@@ -37,5 +37,16 @@ class OfferCategory < ApplicationRecord
 
 	end
 
+	def child_categories
+
+		return OfferCategory.where(:parent_category_id => self.id)
+	end
+
+
+	def parent_category
+
+		return OfferCategory.where(:id => self.parent_category_id).last
+	end
+
 
 end

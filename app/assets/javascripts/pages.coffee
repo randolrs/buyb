@@ -20,6 +20,17 @@ ready = ->
 				if $(element).data("reveal-panel-id") == $(@).data("reveal-panel-id")
 					$(element).addClass('active')
 
+		$(".dropdown-trigger").click (e) ->
+			e.stopPropagation()
+			targetID = "#" + $(@).data("dropdown-id")
+			$('body').find(targetID).show()
+
+		$(".dropdown-container").click (e) ->
+			e.stopPropagation()
+
+		$(document).click (e) ->
+			$(".dropdown-container").hide()
+
 		$(".toggle-active").click (e) ->
 			if $(@).hasClass("active")
 				$(@).removeClass("active")

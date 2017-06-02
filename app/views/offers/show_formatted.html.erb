@@ -12,9 +12,7 @@
 		
 		<%end%>
 
-		<% if @offer.price %>
-			<p><%= number_to_currency(@offer.price) %></p>
-		<%end%>
+		<% if @offer.price %><%= number_to_currency(@offer.price) %><%end%>
 		
 
 		<% unless @offer.affiliate %>

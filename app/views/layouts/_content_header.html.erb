@@ -1,11 +1,38 @@
 
 <nav class="content-header-container">
 	
-	<a class="content-header-action">Categories <span class="glyphicon glyphicon-chevron-down"></span></a>
+	<% if @offer_category.front_page %>
+	
+		<% if @offer_category.child_categories.count > 0 %>
+			
+			<a class="content-header-action dropdown-trigger" data-dropdown-id="child-categories">Categories <span class="glyphicon glyphicon-chevron-down"></span></a>
 
-	<a class="content-header-action <%= @offer_category.url_slug %> <%= cp(offer_category_index_path(@offer_category.url_slug)) %> <%= cp(root_path) %>">Home</a>
+			<div class="child-category-dropdown dropdown-container default-off" id="child-categories">
+				
+				<ul>
+					<% @offer_category.child_categories.each do |child_category| %>
+						<li><%= link_to child_category.name, offer_sub_category_index_path(@offer_category.url_slug, child_category.url_slug) %></li>
+					<%end%>
 
-	<a class="content-header-action <%= @offer_category.url_slug %> <%=  %>">Latest</a>
+				</ul>
+
+			</div>
+
+		<%end%>
+
+		<a class="content-header-action <%= @offer_category.url_slug %> <%= cp(offer_category_index_path(@offer_category.url_slug)) %> <%= cp(root_path) %>">Home</a>
+
+		<a class="content-header-action <%= @offer_category.url_slug %> <%=  %>">Latest</a>
+
+	<%else%>
+
+		<% if @offer_category.parent_category %>
+
+			<a class="content-header-action" href="<%= offer_category_index_path(@offer_category.parent_category.url_slug) %>"><span class="glyphicon glyphicon-chevron-left" aria-hidden=true></span> Return to <%= @offer_category.parent_category.name %> Home</a>
+
+		<%end%>
+
+	<%end%>
 
 </nav>
 

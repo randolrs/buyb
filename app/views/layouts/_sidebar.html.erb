@@ -2,20 +2,47 @@
 <nav class="sidebar-container">
 	
 	<% if @offer_category %>
-	
-		<a class="sidebar-category active <%= @offer_category.url_slug %>"><span class="glyph glyphicon glyphicon-star"></span><span class="sidebar-category-text"><%= @offer_category.name %></span></a>
+		
+		<% if @offer_category.front_page %>
+			
+			<a class="sidebar-category active <%= @offer_category.url_slug %>"><span class="glyph glyphicon glyphicon-star"></span><span class="sidebar-category-text"><%= @offer_category.name %></span></a>
+
+			<% OfferCategory.sidebar_categories(@offer_category).each do |offer_category| %>
+
+				<a class="sidebar-category <%= offer_category.url_slug %>" href="<%= offer_category_index_path(offer_category.url_slug) %>"><span class="glyph glyphicon glyphicon-plus"></span><span class="sidebar-category-text"><%= offer_category.name %></span></a>
+
+			<%end%>
+		
+		<%else%>
+
+			<% if @offer_category.parent_category %>
+
+				<a class="sidebar-category active <%= @offer_category.parent_category.url_slug %>"><span class="glyph glyphicon glyphicon-star"></span><span class="sidebar-category-text"><%= @offer_category.parent_category.name %></span></a>
+
+				<% OfferCategory.sidebar_categories(@offer_category.parent_category).each do |offer_category| %>
+
+					<a class="sidebar-category <%= offer_category.url_slug %>" href="<%= offer_category_index_path(offer_category.url_slug) %>"><span class="glyph glyphicon glyphicon-plus"></span><span class="sidebar-category-text"><%= offer_category.name %></span></a>
+
+				<%end%>
+
+			<%end%>
+
+		<%end%>
 	
 	<%else%>
 
 		<a class="sidebar-category active <%= @offer_category.url_slug %>"><span class="glyph glyphicon glyphicon-star"></span><span class="sidebar-category-text">Latest</span></a>
 
+		<% OfferCategory.sidebar_categories(@offer_category).each do |offer_category| %>
+
+			<a class="sidebar-category <%= offer_category.url_slug %>" href="<%= offer_category_index_path(offer_category.url_slug) %>"><span class="glyph glyphicon glyphicon-plus"></span><span class="sidebar-category-text"><%= offer_category.name %></span></a>
+
+		<%end%>
+
 	<%end%>
 
-	<% OfferCategory.sidebar_categories(@offer_category).each do |offer_category| %>
 
-		<a class="sidebar-category <%= offer_category.url_slug %>" href="<%= offer_category_index_path(offer_category.url_slug) %>"><span class="glyph glyphicon glyphicon-plus"></span><span class="sidebar-category-text"><%= offer_category.name %></span></a>
-
-	<%end%>
+	
 
 	<a class="sidebar-action">Option 1</a>
 	<a class="sidebar-action">Option 2</a>
