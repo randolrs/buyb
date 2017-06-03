@@ -12,16 +12,29 @@
 		
 		<%end%>
 
-		<% if @offer.price %><%= number_to_currency(@offer.price) %><%end%>
-		
-
 		<% unless @offer.affiliate %>
-		
-			<%= link_to "Buy Now", add_offer_to_order_path(@offer.name_url_slug), class:"offer-hero-cta full-screen-only" %>
+			
+			<% if @offer.price %>
+			
+				<%= link_to "Buy Now for " + number_to_currency(@offer.price).to_s, add_offer_to_order_path(@offer.name_url_slug), class:"offer-hero-cta full-screen-only" %>
+
+			<%else%>
+
+				<%= link_to "Buy Now", add_offer_to_order_path(@offer.name_url_slug), class:"offer-hero-cta full-screen-only" %>
+
+			<%end%>
 
 		<%else%>
 
-			<%= link_to "Buy Now", @offer.affiliate_link, class:"offer-hero-cta full-screen-only", target: :_blank %>
+			<% if @offer.price %>
+
+				<%= link_to "Buy Now for " + number_to_currency(@offer.price).to_s, @offer.affiliate_link, class:"offer-hero-cta full-screen-only", target: :_blank %>
+
+			<%else%>
+
+				<%= link_to "Buy Now", @offer.affiliate_link, class:"offer-hero-cta full-screen-only", target: :_blank %>
+
+			<%end%>
 
 		<%end%>
 
@@ -48,11 +61,28 @@
 
 	<% unless @offer.affiliate %>
 		
-		<%= link_to "Buy Now", add_offer_to_order_path(@offer.name_url_slug), class:"offer-hero-cta full-screen-only" %>
+		<% if @offer.price %>
+
+			<%= link_to "Buy Now for " + number_to_currency(@offer.price).to_s, add_offer_to_order_path(@offer.name_url_slug), class:"offer-hero-cta full-screen-only" %>
+
+		<%else%>
+
+			<%= link_to "Buy Now", add_offer_to_order_path(@offer.name_url_slug), class:"offer-hero-cta full-screen-only" %>
+
+		<%end%>
 
 	<%else%>
 
-		<%= link_to "Buy Now", @offer.affiliate_link, class:"offer-hero-cta full-screen-only", target: :_blank %>
+		<% if @offer.price %>
+
+			<%= link_to "Buy Now for " + number_to_currency(@offer.price).to_s, @offer.affiliate_link, class:"offer-hero-cta full-screen-only", target: :_blank %>
+
+		<%else%>
+
+			<%= link_to "Buy Now", @offer.affiliate_link, class:"offer-hero-cta full-screen-only", target: :_blank %>
+
+
+		<%end%>
 
 	<%end%>
 
