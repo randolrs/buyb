@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import 'colors';
+
+
 .content{
 	padding: 30px 15px;
 	margin: 0 auto;
@@ -137,12 +140,48 @@ img.social-media-button{
 		
 		padding: 0px;
 		max-width: 1200px;
+		position: relative;
 
 		header{
 			margin-bottom: 15px;
 			font-size: 30px;
 			display: inline-block;
 			font-weight: 200;
+			line-height: 40px;
 		}
+
+		.see-all-cta{
+			position: absolute;
+			right: 0px;
+			line-height: 20px;
+			padding: 10px;
+			background: #3fe;
+			color: #fff;
+
+		}
+
+		.see-all-cta.blogs{
+       		background: $blogs-theme-color;
+    	}
+
+    	.see-all-cta.books{
+       		background: $books-theme-color;
+    	}
+
+    	.see-all-cta.coaching{
+       		background: $coaching-theme-color;
+    	}
+
+    	.see-all-cta.courses{
+       		background: $courses-theme-color;
+    	}
+
+    	.see-all-cta.tools{
+       		background: $tools-theme-color;
+    	}
+
+    	.see-all-cta.interviews{
+       		background: $interviews-theme-color;
+    	}
 	}
 }
