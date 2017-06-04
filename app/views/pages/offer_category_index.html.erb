@@ -11,7 +11,7 @@
 
 		<header>Top Recommendations</header>
 
-		<a class="see-all-cta <%= @offer_category.url_slug %>">See All</a>
+		<a href="<%= offer_category_featured_index_path(@offer_category.url_slug) %>" class="see-all-cta <%= @offer_category.url_slug %>">See All</a>
 
 		<br>
 		
@@ -35,7 +35,7 @@
 
 		<header>Latest Recommendations</header>
 
-		<a class="see-all-cta <%= @offer_category.url_slug %>">See All</a>
+		<a href="<%= offer_category_latest_index_path(@offer_category.url_slug) %>" class="see-all-cta <%= @offer_category.url_slug %>">See All</a>
 
 		<br>
 

@@ -1,0 +1,32 @@
+<%= render 'layouts/sidebar' %>
+
+<%= render 'layouts/content_header', offer_category: @offer_category  %>
+
+<%= render 'pages/offer_categories_header' %>
+
+
+<div class="main-content">
+
+	<section>
+
+		<header><%= %></header>
+
+		<br>
+		
+		<div class="row">
+
+			<% @offers.each do |offer| %>
+		        
+		        <div class="col-xs-12 col-sm-6 col-md-3">
+					<%= render 'offers/hero_index', offer: offer %>
+				</div>
+
+			<%end%>
+
+		</div>
+
+	</section>
+
+</div>
+
+

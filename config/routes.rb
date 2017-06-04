@@ -40,6 +40,12 @@ Rails.application.routes.draw do
 
   get '/category/:category_url_slug' => 'pages#offer_category_index', as: 'offer_category_index'
 
+  get '/category/:category_url_slug/featured/all' => 'pages#offer_category_type_index', as: 'offer_category_featured_index'
+
+  get '/category/:category_url_slug/latest/all' => 'pages#offer_category_type_index', as: 'offer_category_latest_index'
+
+
+
   get '/category/:parent_category/:category_url_slug' => 'pages#offer_category_index', as: 'offer_sub_category_index'
 
   post '/newsletter_signup/create/' => 'pages#create_newsletter_subscriber', as: 'create_newsletter_subscriber'
