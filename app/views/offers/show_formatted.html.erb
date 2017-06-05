@@ -38,7 +38,7 @@
 
 		<%end%>
 
-		<span class="full-screen-only"><br></span>
+		<br>
 
 <!-- 		<p class="centered">
 			
@@ -47,17 +47,35 @@
 			<%# image_tag 'instagram_icon.png', class:"social-media-button" %>
 		</p> -->
 
-		<h1><%= @offer.headline %></h1>
 
-		<h2><%= @offer.sub_headline %></h2>
+<!-- 		<h1><%# @offer.headline %></h1>
+
+		<h2><%# @offer.sub_headline %></h2> -->
 
 		<br>
 
 	</div>
 
-	<%= @offer.content.html_safe %>
+	<section>
+		
+		<header>Reason We Recommend</header>
 
-	<br><br>
+		<p><%= @offer.reason_we_recommend %></p>
+
+	</section>
+
+	<section>
+
+		<header>Who Should Buy This</header>
+
+		<p><%= @offer.who_this_is_good_for %></p>
+
+	</section>
+
+
+	<%# @offer.content.html_safe %>
+
+	<br>
 
 	<% unless @offer.affiliate %>
 		
