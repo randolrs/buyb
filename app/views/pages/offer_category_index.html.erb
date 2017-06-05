@@ -11,7 +11,7 @@
 
 		<header>Top Recommendations</header>
 
-		<a href="<%= offer_category_featured_index_path(@offer_category.url_slug) %>" class="see-all-cta <%= @offer_category.url_slug %>">See All</a>
+		<a href="<%= offer_category_type_index_path(@offer_category.url_slug, "top") %>" class="see-all-cta <%= @offer_category.url_slug %>">See All</a>
 
 		<br>
 		
@@ -19,7 +19,7 @@
 
 			<% @offer_category.top_offers.take(4).each do |offer| %>
 		        
-		        <div class="col-xs-12 col-sm-6 col-md-3">
+		        <div class="col-xs-6 col-sm-6 col-md-3">
 					<%= render 'offers/hero_index', offer: offer %>
 				</div>
 
@@ -35,7 +35,7 @@
 
 		<header>Latest Recommendations</header>
 
-		<a href="<%= offer_category_latest_index_path(@offer_category.url_slug) %>" class="see-all-cta <%= @offer_category.url_slug %>">See All</a>
+		<a href="<%= offer_category_type_index_path(@offer_category.url_slug, "newest") %>" class="see-all-cta <%= @offer_category.url_slug %>">See All</a>
 
 		<br>
 
@@ -43,7 +43,7 @@
 
 			<% @offer_category.new_offers.take(4).each do |offer| %>
 		        
-		        <div class="col-xs-12 col-sm-6 col-md-3">
+		        <div class="col-xs-6 col-sm-6 col-md-3">
 					<%= render 'offers/hero_index', offer: offer %>
 				</div>
 

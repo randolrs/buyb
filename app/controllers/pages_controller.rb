@@ -33,6 +33,10 @@ class PagesController < ApplicationController
 
     @offer_category = OfferCategory.where(:url_slug => params[:category_url_slug]).last
 
+    @type = params[:type]
+
+    @type = @type.capitalize
+
     unless @offer_category
 
       redirect_to root_path

@@ -9,21 +9,35 @@
 
 	<section>
 
-		<header><%= %></header>
+		<header>All <%= @type %> Recommendations</header>
 
 		<br>
-		
-		<div class="row">
 
-			<% @offers.each do |offer| %>
-		        
-		        <div class="col-xs-12 col-sm-6 col-md-3">
-					<%= render 'offers/hero_index', offer: offer %>
-				</div>
+		<% c = 0 %>
 
-			<%end%>
+		<% until c > @offers.count do %>
 
-		</div>
+			<div class="row">
+
+				<% row_offers = @offers[c..c+3] %>
+
+				<% row_offers.each do |offer| %>
+
+			        <div class="col-xs-12 col-sm-6 col-md-3">
+
+						<%= render 'offers/hero_index', offer: offer %>
+
+					</div>
+
+					<% c = c + 1 %>
+
+				<%end%>
+
+			</div>
+
+			<% c = c + 1 %>
+
+		<% end %>
 
 	</section>
 
