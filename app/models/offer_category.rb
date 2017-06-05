@@ -33,7 +33,7 @@ class OfferCategory < ApplicationRecord
 
 	def new_offers
 
-		return self.offers.where(:active => true)
+		return self.offers.where(:active => true).order(created_at: :desc)
 
 	end
 
