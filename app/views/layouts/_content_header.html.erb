@@ -12,8 +12,11 @@
 				<div class="child-category-dropdown dropdown-container default-off" id="child-categories">
 					
 					<ul>
+						
 						<% @offer_category.child_categories.each do |child_category| %>
+							
 							<li><%= link_to child_category.name, offer_sub_category_index_path(@offer_category.url_slug, child_category.url_slug) %></li>
+
 						<%end%>
 
 					</ul>
@@ -22,9 +25,11 @@
 
 			<%end%>
 
-			<a class="content-header-action <%= @offer_category.url_slug %> <%= cp(offer_category_index_path(@offer_category.url_slug)) %> <%= cp(root_path) %>">Home</a>
+			<a href="<%= offer_category_index_path(@offer_category.url_slug) %>" class="content-header-action <%= @offer_category.url_slug %> <%= cp(offer_category_index_path(@offer_category.url_slug)) %> <%= cp(root_path) %>">Home</a>
 
-			<a class="content-header-action <%= @offer_category.url_slug %> <%=  %>">Latest</a>
+			<a class="content-header-action <%= @offer_category.url_slug %> <%= cp(offer_category_type_index_path(@offer_category.url_slug, "top")) %>" href="<%= offer_category_type_index_path(@offer_category.url_slug, "top") %>">Top</a>
+
+			<a class="content-header-action <%= @offer_category.url_slug %> <%= cp(offer_category_type_index_path(@offer_category.url_slug, "latest")) %>" href="<%= offer_category_type_index_path(@offer_category.url_slug, "latest") %>">Latest</a>
 
 		<%else%>
 
