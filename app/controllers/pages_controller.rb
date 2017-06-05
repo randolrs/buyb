@@ -33,6 +33,8 @@ class PagesController < ApplicationController
 
     @offer_category = OfferCategory.where(:url_slug => params[:category_url_slug]).last
 
+    @return_to_category_home_only = true
+
     @type = params[:type]
 
     @type = @type.capitalize
