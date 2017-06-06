@@ -103,7 +103,13 @@ ready = ->
 
 		$(".update-preferred-category").click (e) ->
 			e.preventDefault()
-			
+			category_id = $(@).data("category-id")
+			$.ajax
+				url: "/personal_settings/preferred_category/update/#{category_id}", format: 'js'
+				success: (data) ->
+					console.log(data)
+					if data.redirect_to_url
+						window.location.href = data.redirect_to_url
 			
 		$(".signup-cta-down-arrow").click (e) ->
 			$(".full-screen-popover").fadeOut(500)

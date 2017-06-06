@@ -42,11 +42,12 @@ Rails.application.routes.draw do
 
   get '/category/:category_url_slug/:type/all' => 'pages#offer_category_type_index', as: 'offer_category_type_index'
 
-
   get '/category/:parent_category/:category_url_slug' => 'pages#offer_category_index', as: 'offer_sub_category_index'
 
   post '/newsletter_signup/create/' => 'pages#create_newsletter_subscriber', as: 'create_newsletter_subscriber'
   
+  get '/personal_settings/preferred_category/update/:category_id' => 'personal_settings#update_preferred_category', as: 'update_preferred_category' 
+
   get '/order/:order_id/review' => 'orders#review', as: 'review_order'
 
   get '/:offer_url_slug/buy/' => 'orders#add_offer_to_order', as: 'add_offer_to_order'

@@ -31,6 +31,47 @@ class ApplicationController < ActionController::Base
   end
 
   
+  def personal_settings_object
+
+    if user_signed_in?
+      
+      if current_user.personal_settings
+
+        return current_user.personal_settings
+
+      else
+
+        session_settings = PersonalSetting.where(:session_id => session.id).last
+
+        if session_settings
+
+          return session_settings
+
+        else
+
+          return nil
+
+        end
+
+      end
+
+    else
+
+      session_settings = PersonalSetting.where(:session_id => session.id).last
+
+      if session_settings
+
+        return session_settings
+
+      else
+
+        return nil
+
+      end
+
+    end
+
+  end
 
   # before_filter :ensure_signup_complete, only: [:new, :create, :update, :destroy]
 

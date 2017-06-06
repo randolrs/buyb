@@ -6,8 +6,21 @@ class PagesController < ApplicationController
   		@email_cta = true
   	end
 
-    @offer_category = OfferCategory.where(:home_page => true).last
+    
 
+    if personal_settings_object
+      
+      @personal_settings_cta = false
+      @offer_category = personal_settings_object.preferred_category_object
+
+    else
+
+      @personal_settings_cta = true
+      @offer_category = OfferCategory.where(:home_page => true).last
+
+    end
+
+    
 
   	
   end

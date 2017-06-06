@@ -53,11 +53,17 @@
 			
 			<% if @email_cta %>
 				
-				<%= render 'pages/email_cta' %>
+				<%# render 'pages/email_cta' %>
 
-				<%= render 'personal_settings/preferred_category' %>
+				<%# render 'personal_settings/preferred_category' %>
 
 			<%end%>
+
+		<%end%>
+
+		<% if @personal_settings_cta %>
+
+			<%= render 'personal_settings/update_settings' %>
 
 		<%end%>
 

@@ -15,6 +15,21 @@ class User < ActiveRecord::Base
   
   end
 
+  def personal_settings
+
+  	settings = PersonalSetting.where(:user_id => self.id).last
+
+  	if settings
+
+  		return settings
+  	else
+
+  		return nil
+
+  	end
+
+  end
+
 
 
 
