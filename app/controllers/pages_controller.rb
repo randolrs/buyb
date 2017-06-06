@@ -31,13 +31,23 @@ class PagesController < ApplicationController
 
     @offer_category = OfferCategory.where(:url_slug => params[:category_url_slug]).last
 
+
+    if personal_settings_object
+
+      
+    else
+
+
+    end
+
+
     unless @offer_category
 
       redirect_to root_path
 
     end
 
-    @offers = @offer_category.offers
+    @offers = @offer_category.offers.where(:active => true)
 
 
   end
@@ -56,7 +66,7 @@ class PagesController < ApplicationController
 
     end
 
-    @offers = @offer_category.offers
+    @offers = @offer_category.offers.where(:active => true)
 
   end
 

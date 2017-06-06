@@ -17,7 +17,7 @@
 		
 		<div class="row">
 
-			<% @offer_category.top_offers.take(4).each do |offer| %>
+			<% @offer_category.top_offers.where(:active => true).take(4).each do |offer| %>
 		        
 		        <div class="col-xs-6 col-sm-6 col-md-3">
 					<%= render 'offers/hero_index', offer: offer %>
@@ -41,7 +41,7 @@
 
 		<div class="row">
 
-			<% @offer_category.new_offers.take(4).each do |offer| %>
+			<% @offer_category.new_offers.where(:active => true).take(4).each do |offer| %>
 		        
 		        <div class="col-xs-6 col-sm-6 col-md-3">
 					<%= render 'offers/hero_index', offer: offer %>
