@@ -100,9 +100,13 @@ ready = ->
 					console.log(data)
 					$('.email-cta-content').slideUp()
 					$('.email-cta-success').fadeIn()
+
+		$(".update-preferred-category").click (e) ->
+			e.preventDefault()
+			
 			
 		$(".signup-cta-down-arrow").click (e) ->
-			$(".signup-container").fadeOut(500)
+			$(".full-screen-popover").fadeOut(500)
 			$(".main-nav").addClass("active")
 			$(".header-container").addClass("fixed")
 			$(".header-container-offset").show()
