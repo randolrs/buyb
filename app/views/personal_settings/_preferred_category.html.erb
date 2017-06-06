@@ -1,0 +1,44 @@
+<div class="full-screen-popover personal-settings-container">
+	
+	<div class="fancy-border fixed"></div>
+
+	<!-- <div class="overlay"> -->
+
+		<table>
+
+			<tr>
+
+				<td class="centered">
+
+					<div class="overlay-content-container">
+
+						<h2>What Category Interests You Most?</h2>
+
+						<% OfferCategory.all.each do |category| %>
+
+							<a class="update-preferred-category category-background popover-options <%= category.url_slug %>" data-category-id="<%= category.id %>"><%= category.name  %></a>
+
+						<%end%>
+
+					</div>
+
+					<br><br>
+					<br><br>
+					<br><br>
+
+				</td>
+
+			</tr>
+
+			<tr class="bottom-continue centered">
+
+				<td><span class="glyphicon glyphicon-circle-arrow-down signup-cta-down-arrow" aria-hidden="true"></span></td>
+
+			</tr>
+
+
+		</table>
+
+	<!-- </div> -->
+
+</div>

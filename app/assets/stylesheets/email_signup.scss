@@ -4,6 +4,24 @@
 
 .signup-container{
     
+    background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/ep_naturalblack.png);
+    color: #fff;
+    text-shadow: 0px 1px 1px #000;
+
+}
+
+.personal-settings-container{
+    background: #112;
+    color: #fff;
+    text-shadow: 0px 1px 1px #000;
+
+    h2{
+        color: #fff;
+    }
+}
+
+.full-screen-popover{
+    
     height: 100%;
     width: 100%;
     position: fixed;
@@ -15,9 +33,7 @@
     border-bottom: 3px solid #fff;
     margin: 0;
     padding: 0 0 0 0;
-    background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/ep_naturalblack.png);
-    color: #fff;
-    text-shadow: 0px 1px 1px #000;
+    
 
     font-family: 'Eczar', serif;
 
@@ -27,70 +43,96 @@
         position: relative;
     }
 
+    .overlay-content-container{
+        display: inline-block;
+        margin: 0 auto;
+        max-width: 600px;
+        padding: 10px;
+
+    }
+
+    .popover-options{
+
+        display: inline-block;
+        padding: 10px 15px;
+        text-decoration: none;
+        cursor: pointer;
+        border: 1px solid rgba(0,0,0,0.8);
+        margin: 10px;
+        font-size: 20px;
+
+        border-radius: 3px;
+        text-shadow: none;
+        font-weight: 200;
+    }
+
+
+
+
     header.site-name{
-    	font-size: 40px;
-    	font-weight: 600;
-    	line-height: 60px;
+        font-size: 40px;
+        font-weight: 600;
+        line-height: 60px;
     }
 
     header.signup-header{
-    	font-size: 30px;
-    	line-height:60px;
+        font-size: 30px;
+        line-height:60px;
     }
 
     p{
-    	font-size: 20px;
+        font-size: 20px;
     }
 
     table{
-    	position: absolute;
-	    width: 100%;
-	    height: 100%;
-	    background: transparent;
-	    /* vertical-align: middle; */
-	    border: 0;
-	    padding: 0;
-	    margin: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        /* vertical-align: middle; */
+        border: 0;
+        padding: 0;
+        margin: 0;
 
-	    tr{
+        tr{
 
-	    	td{
-	    		vertical-align: middle;
+            td{
+                vertical-align: middle;
 
-	    		.row{
-	    			max-width: 960px;
-	    			margin: 0 auto;
-	    		}
-	    	}
-	    }
+                .row{
+                    max-width: 960px;
+                    margin: 0 auto;
+                }
+            }
+        }
 
-	    tr.bottom-continue{
-	    	height: 60px;
-	    }
+        tr.bottom-continue{
+            height: 60px;
+        }
 
-	    .signup-email-input{
-	    	color: #000;
-	    	font-size: 18px;
-	    	
-	    }
+        .signup-email-input{
+            color: #000;
+            font-size: 18px;
+            
+        }
 
-	    .signup-submit{
-	    	
-	    }
+        .signup-submit{
+            
+        }
 
-	    .glyphicon{
+        .glyphicon{
 
-	    	font-size: 30px;
-    		color: rgba(255,255,255,0.8);
-    		cursor: pointer;
-	    }
+            font-size: 30px;
+            color: rgba(255,255,255,0.8);
+            cursor: pointer;
+        }
     }
 
     .signup-section{
-    	padding: 20px;
-    	text-align: center;
-    	margin: 0 auto;
-    	max-width: 500px;
+        padding: 20px;
+        text-align: center;
+        margin: 0 auto;
+        max-width: 500px;
     }
 
 }

@@ -1,0 +1,2 @@
+class PersonalSetting < ApplicationRecord
+end
