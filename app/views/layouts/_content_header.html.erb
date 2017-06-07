@@ -25,13 +25,30 @@
 
 			<%end%>
 
-			<% if @offer_category.home_page %>
-				
-				<a href="<%= root_path %>" class="content-header-action <%= @offer_category.url_slug %> <%= cp(offer_category_index_path(@offer_category.url_slug)) %> <%= cp(root_path) %>">Home</a>
+
+			<% if @personal_settings_object %>
+			
+				<% if @offer_category.id == @personal_settings_object.preferred_category_id %>
+					
+					<a href="<%= root_path %>" class="content-header-action <%= @offer_category.url_slug %> <%= cp(offer_category_index_path(@offer_category.url_slug)) %> <%= cp(root_path) %>">Home</a>
+
+				<%else%>
+					
+					<a href="<%= offer_category_index_path(@offer_category.url_slug) %>" class="content-header-action <%= @offer_category.url_slug %> <%= cp(offer_category_index_path(@offer_category.url_slug)) %> <%= cp(root_path) %>">Home</a>
+
+				<%end%>
 
 			<%else%>
-				
-				<a href="<%= offer_category_index_path(@offer_category.url_slug) %>" class="content-header-action <%= @offer_category.url_slug %> <%= cp(offer_category_index_path(@offer_category.url_slug)) %> <%= cp(root_path) %>">Home</a>
+
+				<% if @offer_category.home_page %>
+					
+					<a href="<%= root_path %>" class="content-header-action <%= @offer_category.url_slug %> <%= cp(offer_category_index_path(@offer_category.url_slug)) %> <%= cp(root_path) %>">Home</a>
+
+				<%else%>
+					
+					<a href="<%= offer_category_index_path(@offer_category.url_slug) %>" class="content-header-action <%= @offer_category.url_slug %> <%= cp(offer_category_index_path(@offer_category.url_slug)) %> <%= cp(root_path) %>">Home</a>
+
+				<%end%>
 
 			<%end%>
 

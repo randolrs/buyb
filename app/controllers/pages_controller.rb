@@ -11,6 +11,7 @@ class PagesController < ApplicationController
     if personal_settings_object
       
       @personal_settings_cta = false
+      @personal_settings_object = personal_settings_object
       @offer_category = personal_settings_object.preferred_category_object
 
     else
@@ -34,6 +35,7 @@ class PagesController < ApplicationController
 
     if personal_settings_object
 
+      @personal_settings_object = personal_settings_object
       
     else
 
@@ -60,6 +62,15 @@ class PagesController < ApplicationController
 
     @type = @type.capitalize
 
+    if personal_settings_object
+
+      @personal_settings_object = personal_settings_object
+      
+    else
+
+
+    end
+    
     unless @offer_category
 
       redirect_to root_path
