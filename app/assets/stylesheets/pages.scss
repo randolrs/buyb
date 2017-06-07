@@ -82,6 +82,35 @@
 
 }
 
+.content.written.has_header{
+	margin-top: -50px;
+}
+
+.written-content-header{
+	
+	background: url(https://www.toptal.com/designers/subtlepatterns/patterns/topography.png);
+	
+	background: url(https://www.toptal.com/designers/subtlepatterns/patterns/pw_maze_black.png);
+
+	text-align: center;
+
+
+
+	.written-content-header-overlay{
+		
+		background: rgba(26,49,224,0.8);
+		padding: 50px;
+		padding-bottom: 60px;
+		
+	}
+
+	h1{
+		display: inline-block;
+		color: #fff;
+		text-shadow: 0px 2px 1px rgba(0,0,0,0.3);
+	}
+}
+
 .card{
 	border: 1px solid #ccc;
 	box-shadow: 0px 1px 5px rgba(0,0,0,0.2);
