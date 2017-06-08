@@ -53,6 +53,8 @@ Rails.application.routes.draw do
 
   get '/personal_settings/biggest_problem/update/:biggest_problem_id' => 'personal_settings#update_biggest_problem', as: 'update_biggest_problem' 
 
+  get '/personal_settings/update/skip' => 'personal_settings#skip_personal_settings', as: 'skip_personal_settings' 
+
 
   get '/order/:order_id/review' => 'orders#review', as: 'review_order'
 

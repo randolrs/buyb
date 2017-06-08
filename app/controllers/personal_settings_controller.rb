@@ -133,4 +133,14 @@ class PersonalSettingsController < ApplicationController
 
   end
 
+  def skip_personal_settings
+
+    session[:skip_personal_settings] = true
+
+
+    render json: {:result => "success", :redirect_to_url => nil, content_type: 'text/json' }
+
+
+  end
+
 end

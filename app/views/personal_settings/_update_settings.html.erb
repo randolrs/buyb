@@ -1,4 +1,4 @@
-<div class="full-screen-popover personal-settings-container">
+<div class="full-screen-popover personal-settings-container" id="personal-settings-container">
 	
 	<div class="fancy-border fixed"></div>
 
@@ -20,7 +20,7 @@
 
 						<a class="button stretch green-background click-to-reveal" data-reveal-panel-id="category">Continue</a><br>
 						
-						<a class="button stretch red-background click-to-reveal" data-reveal-panel-id="category">Skip Customization</a>
+						<a class="button stretch red-background click-to-hide skip-personal-settings" data-hide-panel-id="personal-settings-container">Skip Customization</a>
 
 
 					</div>
@@ -56,12 +56,11 @@
 
 						<% BiggestProblem.all.each do |problem| %>
 
-							<a class="button stretch green-background update-biggest-problem" data-biggest-problem-id="<%= problem.id %>"><%= problem.name %></a><br>
+							<a class="button stretch green-background update-biggest-problem" data-biggest-problem-id="<%= problem.id %>"><%= problem.description %></a><br>
 
 						<%end%>
 
 					</div>
-
 
 					<br><br>
 					<br><br>

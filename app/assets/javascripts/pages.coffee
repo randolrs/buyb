@@ -20,6 +20,11 @@ ready = ->
 				if $(element).data("reveal-panel-id") == $(@).data("reveal-panel-id")
 					$(element).addClass('active')
 
+		$(".click-to-hide").click (e) ->
+			targetId = "#" + $(@).data("hide-panel-id")
+			alert(targetId)
+			$('body').find(targetId).fadeOut()
+
 		$(".dropdown-trigger").click (e) ->
 			e.stopPropagation()
 			targetID = "#" + $(@).data("dropdown-id")
@@ -108,6 +113,8 @@ ready = ->
 				url: "/personal_settings/preferred_category/update/#{category_id}", format: 'js'
 				success: (data) ->
 					console.log(data)
+					if data.redirect_to_url
+		  				window.location.href = data.redirect_to_url
 
 		$(".update-biggest-problem").click (e) ->
 			e.preventDefault()
@@ -116,12 +123,23 @@ ready = ->
 				url: "/personal_settings/biggest_problem/update/#{biggest_problem_id}", format: 'js'
 				success: (data) ->
 					console.log(data)
+					if data.redirect_to_url
+		  				window.location.href = data.redirect_to_url
 
 		$(".update-how-much").click (e) ->
 			e.preventDefault()
 			how_much = $(@).data("how-much")
 			$.ajax
 				url: "/personal_settings/how_much/update/#{how_much}", format: 'js'
+				success: (data) ->
+					console.log(data)
+					if data.redirect_to_url
+		  				window.location.href = data.redirect_to_url
+
+		$(".skip-personal-settings").click (e) ->
+			e.preventDefault()
+			$.ajax
+				url: "/personal_settings/update/skip", format: 'js'
 				success: (data) ->
 					console.log(data)
 			
