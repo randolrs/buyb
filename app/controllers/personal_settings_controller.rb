@@ -8,59 +8,32 @@ class PersonalSettingsController < ApplicationController
 
       if @category
 
-        if user_signed_in?
+        if personal_settings_object
 
-          personal_setting = PersonalSetting.where(:user_id => current_user.id).last
-
-          unless personal_setting
-
-            if session[:personal_setting_id]
-
-              personal_setting = PersonalSetting.where(:session_id => session[:personal_setting_id]).last
-
-              unless personal_setting
-
-                personal_setting = PersonalSetting.create(:user_id => current_user.id)
-
-              end
-
-            else
-
-              personal_setting = PersonalSetting.create(:user_id => current_user.id)
-
-            end
-
-          end
+          personal_setting = personal_settings_object
 
         else
 
-          if session[:personal_setting_id]
-
-            personal_setting = PersonalSetting.where(:id => session[:personal_setting_id]).last
-
-            unless personal_setting
-
-              personal_setting = PersonalSetting.create()
-
-              session[:personal_setting_id] = personal_setting.id
-
-            end
-
+          if user_signed_in?
+          
+            personal_setting = PersonalSetting.create(:user_id => current_user.id)
+          
           else
 
             personal_setting = PersonalSetting.create()
 
             session[:personal_setting_id] = personal_setting.id
 
-          end
 
+          end
 
         end
 
         personal_setting.update(:preferred_category_id => @category.id, :session_id => session.id)
 
 
-        render json: { :result => "success", :personal_setting => personal_setting, :redirect_to_url => root_path, content_type: 'text/json' }
+        render json: { :result => "success", :personal_setting => personal_setting, :redirect_to_url => nil, content_type: 'text/json' }
+
 
       else
 
@@ -72,6 +45,90 @@ class PersonalSettingsController < ApplicationController
 
       render json: { :result => "failure", content_type: 'text/json' }
       
+    end
+
+  end
+
+  def update_biggest_problem
+
+    if params[:biggest_problem_id]
+
+      if personal_settings_object
+
+        personal_setting = personal_settings_object
+
+      else
+
+        if user_signed_in?
+        
+          personal_setting = PersonalSetting.create(:user_id => current_user.id)
+        
+        else
+
+          personal_setting = PersonalSetting.create()
+
+          session[:personal_setting_id] = personal_setting.id
+
+
+        end
+
+      end
+
+      personal_setting.update(:biggest_problem_id => params[:biggest_problem_id], :session_id => session.id)
+
+
+      render json: { :result => "success", :personal_setting => personal_setting, :redirect_to_url => nil, content_type: 'text/json' }
+
+    else
+
+      render json: { :result => "failure", :personal_setting => nil, :redirect_to_url => nil, content_type: 'text/json' }
+
+    end
+
+  end
+
+  def update_how_much
+
+    if params[:how_much]
+
+      if personal_settings_object
+
+        personal_setting = personal_settings_object
+
+      else
+
+        if user_signed_in?
+        
+          personal_setting = PersonalSetting.create(:user_id => current_user.id)
+        
+        else
+
+          personal_setting = PersonalSetting.create()
+
+          session[:personal_setting_id] = personal_setting.id
+
+
+        end
+
+      end
+
+      if params[:how_much] == "true"
+        
+        personal_setting.update(:made_money => true, :session_id => session.id)
+
+      else
+
+        personal_setting.update(:made_money => false, :session_id => session.id)
+
+
+      end
+
+      render json: { :result => "success", :personal_setting => personal_setting, :redirect_to_url => nil, content_type: 'text/json' }
+
+    else
+
+      render json: { :result => "failure", :personal_setting => nil, :redirect_to_url => nil, content_type: 'text/json' }
+
     end
 
   end

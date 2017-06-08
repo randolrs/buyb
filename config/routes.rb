@@ -45,8 +45,14 @@ Rails.application.routes.draw do
   get '/category/:parent_category/:category_url_slug' => 'pages#offer_category_index', as: 'offer_sub_category_index'
 
   post '/newsletter_signup/create/' => 'pages#create_newsletter_subscriber', as: 'create_newsletter_subscriber'
+
   
   get '/personal_settings/preferred_category/update/:category_id' => 'personal_settings#update_preferred_category', as: 'update_preferred_category' 
+
+  get '/personal_settings/how_much/update/:how_much' => 'personal_settings#update_how_much', as: 'update_how_much' 
+
+  get '/personal_settings/biggest_problem/update/:biggest_problem_id' => 'personal_settings#update_biggest_problem', as: 'update_biggest_problem' 
+
 
   get '/order/:order_id/review' => 'orders#review', as: 'review_order'
 

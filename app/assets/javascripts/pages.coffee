@@ -108,6 +108,22 @@ ready = ->
 				url: "/personal_settings/preferred_category/update/#{category_id}", format: 'js'
 				success: (data) ->
 					console.log(data)
+
+		$(".update-biggest-problem").click (e) ->
+			e.preventDefault()
+			biggest_problem_id = $(@).data("biggest-problem-id")
+			$.ajax
+				url: "/personal_settings/biggest_problem/update/#{biggest_problem_id}", format: 'js'
+				success: (data) ->
+					console.log(data)
+
+		$(".update-how-much").click (e) ->
+			e.preventDefault()
+			how_much = $(@).data("how-much")
+			$.ajax
+				url: "/personal_settings/how_much/update/#{how_much}", format: 'js'
+				success: (data) ->
+					console.log(data)
 			
 		$(".signup-cta-down-arrow").click (e) ->
 			$(".full-screen-popover").fadeOut(500)

@@ -12,11 +12,15 @@
 
 					<div class="overlay-content-container preferred-category-container reveal-panel">
 
-						<h2>Welcome to thatHQ! We provide ... </h2>
+						<h2>Welcome to thatHQ!</h2>
 
-						<a class="button stretch red-background click-to-reveal" data-reveal-panel-id="category">Get Personal Recommendations</a><br>
+						<br>
+
+						<h3>We provide personalized recommendations ... ... making money online. </h3>
+
+						<a class="button stretch green-background click-to-reveal" data-reveal-panel-id="category">Continue</a><br>
 						
-						<a class="button stretch green-background click-to-reveal" data-reveal-panel-id="category">Continue without Customzizing</a>
+						<a class="button stretch red-background click-to-reveal" data-reveal-panel-id="category">Skip Customization</a>
 
 
 					</div>
@@ -50,12 +54,11 @@
 
 						<h2>What is Your Biggest Problem Making More Money Online?</h2>
 
-						<a class="button stretch red-background update-biggest-problem" data-biggest-problem-id="false">I don't know how to start.</a><br>
-						<a class="button stretch green-background update-biggest-problem" data-biggest-problem-id="true">I need to reach more potential customers</a>
-						<br>
-						<a class="button stretch green-background update-biggest-problem" data-biggest-problem-id="true">Nobody is buying my product</a>
-						<br>
-						<a class="button stretch green-background update-biggest-problem" data-biggest-problem-id="true">Other</a>
+						<% BiggestProblem.all.each do |problem| %>
+
+							<a class="button stretch green-background update-biggest-problem" data-biggest-problem-id="<%= problem.id %>"><%= problem.name %></a><br>
+
+						<%end%>
 
 					</div>
 
