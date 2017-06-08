@@ -56,7 +56,7 @@
 
 						<% BiggestProblem.all.each do |problem| %>
 
-							<a class="button stretch green-background update-biggest-problem click-to-hide" data-biggest-problem-id="<%= problem.id %>" data-hide-panel-id="personal-settings-container"><%= problem.description %></a><br>
+							<a class="button stretch green-background update-biggest-problem" data-biggest-problem-id="<%= problem.id %>"><%= problem.description %></a><br>
 
 						<%end%>
 

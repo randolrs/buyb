@@ -22,7 +22,6 @@ ready = ->
 
 		$(".click-to-hide").click (e) ->
 			targetId = "#" + $(@).data("hide-panel-id")
-			alert(targetId)
 			$('body').find(targetId).fadeOut()
 
 		$(".dropdown-trigger").click (e) ->

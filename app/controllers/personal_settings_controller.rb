@@ -77,11 +77,11 @@ class PersonalSettingsController < ApplicationController
       personal_setting.update(:biggest_problem_id => params[:biggest_problem_id], :session_id => session.id)
 
 
-      render json: { :result => "success", :personal_setting => personal_setting, :redirect_to_url => nil, content_type: 'text/json' }
+      render json: { :result => "success", :personal_setting => personal_setting, :redirect_to_url => root_path, content_type: 'text/json' }
 
     else
 
-      render json: { :result => "failure", :personal_setting => nil, :redirect_to_url => nil, content_type: 'text/json' }
+      render json: { :result => "failure", :personal_setting => nil, :redirect_to_url => root_path, content_type: 'text/json' }
 
     end
 
