@@ -10,15 +10,29 @@
 
 				<td class="centered">
 
-					<div class="overlay-content-container preferred-category-container">
+					<div class="overlay-content-container preferred-category-container reveal-panel">
 
 						<h2>What Category Interests You Most?</h2>
 
 						<% OfferCategory.where(:front_page => true).each do |category| %>
 
-							<a class="update-preferred-category category-background popover-options <%= category.url_slug %>" data-category-id="<%= category.id %>"><%= category.name  %></a>
+							<a class="update-preferred-category category-background popover-options <%= category.url_slug %> click-to-reveal" data-reveal-panel-id="how-much" data-category-id="<%= category.id %>"><%= category.name  %></a>
 
 						<%end%>
+
+
+					</div>
+
+
+					<div class="overlay-content-container preferred-category-container reveal-panel" id="how-much">
+
+						<h2>How Much Money Have You Made Online?</h2>
+
+						<a>$0</a>
+
+						<br>
+
+						<a>> $0</a>
 
 
 					</div>

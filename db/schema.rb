@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170606145012) do
+ActiveRecord::Schema.define(version: 20170608175413) do
+
+  create_table "biggest_problems", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "bootsy_image_galleries", force: :cascade do |t|
     t.string   "bootsy_resource_type"
@@ -137,6 +143,8 @@ ActiveRecord::Schema.define(version: 20170606145012) do
     t.integer  "preferred_category_id"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
+    t.boolean  "made_money"
+    t.integer  "biggest_problem_id"
   end
 
   create_table "posts", force: :cascade do |t|

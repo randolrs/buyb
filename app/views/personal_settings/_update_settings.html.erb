@@ -10,18 +10,55 @@
 
 				<td class="centered">
 
-					<div class="overlay-content-container preferred-category-container">
+					<div class="overlay-content-container preferred-category-container reveal-panel">
+
+						<h2>Welcome to thatHQ! We provide ... </h2>
+
+						<a class="button stretch red-background click-to-reveal" data-reveal-panel-id="category">Get Personal Recommendations</a><br>
+						
+						<a class="button stretch green-background click-to-reveal" data-reveal-panel-id="category">Continue without Customzizing</a>
+
+
+					</div>
+
+
+
+					<div class="overlay-content-container preferred-category-container reveal-panel" id="category" style="display: none;">
 
 						<h2>What Category Interests You Most?</h2>
 
 						<% OfferCategory.where(:front_page => true).each do |category| %>
 
-							<a class="update-preferred-category category-background popover-options <%= category.url_slug %>" data-category-id="<%= category.id %>"><%= category.name  %></a>
+							<a class="update-preferred-category category-background popover-options <%= category.url_slug %> click-to-reveal" data-category-id="<%= category.id %>" data-reveal-panel-id="how-much"><%= category.name  %></a>
 
 						<%end%>
 
 
 					</div>
+
+					<div class="overlay-content-container preferred-category-container reveal-panel" id="how-much" style="display: none;">
+
+						<h2>How Much Money Have You Made Online?</h2>
+
+						<a class="button stretch red-background update-how-much click-to-reveal" data-how-much="false" data-reveal-panel-id="biggest-problem">$0</a><br>
+
+						<a class="button stretch green-background update-how-much click-to-reveal" data-how-much="true" data-reveal-panel-id="biggest-problem">More than $0</a>
+
+					</div>
+
+					<div class="overlay-content-container preferred-category-container reveal-panel" id="biggest-problem" style="display: none;">
+
+						<h2>What is Your Biggest Problem Making More Money Online?</h2>
+
+						<a class="button stretch red-background update-biggest-problem" data-biggest-problem-id="false">I don't know how to start.</a><br>
+						<a class="button stretch green-background update-biggest-problem" data-biggest-problem-id="true">I need to reach more potential customers</a>
+						<br>
+						<a class="button stretch green-background update-biggest-problem" data-biggest-problem-id="true">Nobody is buying my product</a>
+						<br>
+						<a class="button stretch green-background update-biggest-problem" data-biggest-problem-id="true">Other</a>
+
+					</div>
+
 
 					<br><br>
 					<br><br>

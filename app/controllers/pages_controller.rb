@@ -10,7 +10,7 @@ class PagesController < ApplicationController
 
     if personal_settings_object
       
-      @personal_settings_cta = false
+      @personal_settings_cta = true #Should be false
       @personal_settings_object = personal_settings_object
       @offer_category = personal_settings_object.preferred_category_object
 
@@ -70,7 +70,7 @@ class PagesController < ApplicationController
 
 
     end
-    
+
     unless @offer_category
 
       redirect_to root_path

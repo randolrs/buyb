@@ -1,0 +1,2 @@
+class BiggestProblem < ApplicationRecord
+end

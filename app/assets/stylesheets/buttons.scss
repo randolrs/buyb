@@ -1,0 +1,53 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+@import 'colors';
+
+
+//BASICS
+
+.button{
+
+    display: inline-block;
+    position: relative;
+    padding: 10px 15px;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid rgba(0,0,0,0.8);
+    margin: 10px auto;
+    font-size: 20px;
+
+    border-radius: 3px;
+    text-shadow: none;
+    font-weight: 200;
+    transition: all 0.6s;
+    text-decoration: none;
+    color: #fff;
+}
+
+.button:hover{
+    transform:scale(1.05);
+    text-decoration: none;
+    color: #fff;
+}
+
+
+
+//COLOR WITH BACKGROUNDS
+
+.button.red-background{
+    background: $brand-red;
+}
+
+.button.green-background{
+    background: $brand-green;
+}
+
+
+//SIZES
+
+.button.stretch{
+    width: 100%;
+}
