@@ -27,8 +27,6 @@ ready = ->
 		$(".full-screen-popover").ready (e) ->
 			if $(@).hasClass('active')
 				$('body').addClass('no-scroll')
-			else
-				alert('upright')
 
 		$('.add-scroll-to-body').click (e) ->
 			$('body').removeClass('no-scroll')
