@@ -24,6 +24,10 @@ ready = ->
 			targetId = "#" + $(@).data("hide-panel-id")
 			$('body').find(targetId).fadeOut()
 
+		$(".main-content").load (e) ->
+			if $('#personal-settings-container').hasClass("active")
+				$('body').addClass('no-scroll')
+
 		$("#personal-settings-container").ready (e) ->
 			if $('#personal-settings-container').hasClass("active")
 				$('body').addClass('no-scroll')
