@@ -44,9 +44,9 @@
 
 	<div class="hero-index-content">
 
-		<h3><%= offer.preview_headline %></h3>
+		<h3><%= offer.preview_headline[0,30] %></h3>
 
-		<p class="preview-text"><%= offer.sales_preview_text %></p>
+		<p class="preview-text"><%= offer.sales_preview_text[0,80] %></p>
 
 		<br>
 

@@ -24,6 +24,12 @@ ready = ->
 			targetId = "#" + $(@).data("hide-panel-id")
 			$('body').find(targetId).fadeOut()
 
+		$(".full-screen-popover").ready (e) ->
+			$('body').addClass('no-scroll')
+
+		$('.add-scroll-to-body').click (e) ->
+			$('body').removeClass('no-scroll')
+
 		$(".dropdown-trigger").click (e) ->
 			e.stopPropagation()
 			targetID = "#" + $(@).data("dropdown-id")

@@ -10,7 +10,12 @@ class PagesController < ApplicationController
 
     if personal_settings_object
       
-      @personal_settings_cta = false #Should be false
+      if Rails.env == "production"
+        @personal_settings_cta = false #Should be false
+      else
+        @personal_settings_cta = true
+      end
+      
       @personal_settings_object = personal_settings_object
       @offer_category = personal_settings_object.preferred_category_object
 
