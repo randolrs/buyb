@@ -25,7 +25,10 @@ ready = ->
 			$('body').find(targetId).fadeOut()
 
 		$(".full-screen-popover").ready (e) ->
-			$('body').addClass('no-scroll')
+			if $(@).hasClass('active')
+				$('body').addClass('no-scroll')
+			else
+				alert('upright')
 
 		$('.add-scroll-to-body').click (e) ->
 			$('body').removeClass('no-scroll')
