@@ -25,8 +25,12 @@ ready = ->
 			$('body').find(targetId).fadeOut()
 
 		$("#personal-settings-container").ready (e) ->
-			if $(@).hasClass("active")
+			if $('#personal-settings-container').hasClass("active")
 				$('body').addClass('no-scroll')
+
+		$(".test-has").click (e) ->
+			if $('#personal-settings-container').hasClass("active")
+				alert("serling")
 
 		$('.add-scroll-to-body').click (e) ->
 			$('body').removeClass('no-scroll')
