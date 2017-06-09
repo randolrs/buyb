@@ -24,8 +24,8 @@ ready = ->
 			targetId = "#" + $(@).data("hide-panel-id")
 			$('body').find(targetId).fadeOut()
 
-		$(".full-screen-popover").ready (e) ->
-			if $(@).hasClass('active')
+		$("#personal-settings-container").ready (e) ->
+			if $(@).hasClass("active")
 				$('body').addClass('no-scroll')
 
 		$('.add-scroll-to-body').click (e) ->
