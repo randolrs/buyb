@@ -31,6 +31,8 @@ ready = ->
 		$(".test-has").click (e) ->
 			if $('#personal-settings-container').hasClass("active")
 				alert("serling")
+			else
+				alert("elimain")
 
 		$('.add-scroll-to-body').click (e) ->
 			$('body').removeClass('no-scroll')
