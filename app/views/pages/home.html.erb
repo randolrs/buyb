@@ -33,17 +33,7 @@
 
 		<br>
 
-		<div class="row">
-
-			<% @offer_category.new_offers.take(4).each do |offer| %>
-		        
-		        <div class="col-xs-6 col-sm-6 col-md-3">
-					<%= render 'offers/hero_index', offer: offer %>
-				</div>
-
-			<%end%>
-
-		</div>
+		<%= render 'offers/index_table', offers: @offer_category.new_offers.take(4) %>
 
 	</section>
 

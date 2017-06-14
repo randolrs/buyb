@@ -14,18 +14,8 @@
 		<a href="<%= offer_category_type_index_path(@offer_category.url_slug, "top") %>" class="see-all-cta <%= @offer_category.url_slug %>">See All</a>
 
 		<br>
-		
-		<div class="row">
 
-			<% @offer_category.top_offers.where(:active => true).take(4).each do |offer| %>
-		        
-		        <div class="col-xs-6 col-sm-6 col-md-3">
-					<%= render 'offers/hero_index', offer: offer %>
-				</div>
-
-			<%end%>
-
-		</div>
+		<%= render 'offers/index_table', offers: @offer_category.top_offers.where(:active => true).take(4) %>
 
 	</section>
 	
@@ -39,17 +29,7 @@
 
 		<br>
 
-		<div class="row">
-
-			<% @offer_category.new_offers.where(:active => true).take(4).each do |offer| %>
-		        
-		        <div class="col-xs-6 col-sm-6 col-md-3">
-					<%= render 'offers/hero_index', offer: offer %>
-				</div>
-
-			<%end%>
-
-		</div>
+		<%= render 'offers/index_table', offers: @offer_category.new_offers.where(:active => true).take(4) %>
 
 	</section>
 
