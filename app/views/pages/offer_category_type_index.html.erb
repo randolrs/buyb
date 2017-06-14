@@ -13,31 +13,7 @@
 
 		<br>
 
-		<% c = 0 %>
-
-		<% until c > @offers.count do %>
-
-			<div class="row">
-
-				<% row_offers = @offers[c..c+3] %>
-
-				<% row_offers.each do |offer| %>
-
-			        <div class="col-xs-6 col-sm-6 col-md-3">
-
-						<%= render 'offers/hero_index', offer: offer %>
-
-					</div>
-
-					<% c = c + 1 %>
-
-				<%end%>
-
-			</div>
-
-			<% c = c + 1 %>
-
-		<% end %>
+		<%= render 'offers/index_table', offers: @offers %>
 
 	</section>
 
