@@ -15,10 +15,21 @@
 
 				<p class="preview-summary"><%= offer.sales_preview_text %></p>
 
-				<br>
-				
-				<p class="preview-summary"><b>Why We Recommend: </b>Copywriting is essnetial to selling online.</p>
+				<% if offer.reason_we_recommend %>
 
+					<br>
+
+					<p class="preview-summary"><b>Reason We Recommend: </b><%= offer.reason_we_recommend %></p>
+
+				<%end%>
+
+				<% if offer.chapter_to_read %>
+				
+					<br>
+				
+					<p class="preview-summary"><b>The One Chapter to Read: </b><%= offer.chapter_to_read %></p>
+
+				<% end%>
 			</div>
 
 			<div class="row-ctas">

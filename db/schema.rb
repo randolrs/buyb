@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170608185835) do
+ActiveRecord::Schema.define(version: 20170614204249) do
 
   create_table "biggest_problems", force: :cascade do |t|
     t.string   "name"
@@ -95,6 +95,7 @@ ActiveRecord::Schema.define(version: 20170608185835) do
     t.integer  "creator_id"
     t.text     "reason_we_recommend"
     t.text     "who_this_is_good_for"
+    t.text     "chapter_to_read"
   end
 
   create_table "order_offers", force: :cascade do |t|

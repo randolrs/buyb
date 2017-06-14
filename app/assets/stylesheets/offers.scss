@@ -299,20 +299,21 @@ article.offer-hero-index{
 
 		.row-image{
 
-			display: inline-block;
+			display: table-cell;
 
 			img{
 				width: 100px;
 			}
+
+
 		}
 
 		.row-content{
 			
-			display: inline-block;
 			vertical-align: top;
-			position: absolute;
-    		right: 0px;
-    		left: 120px;
+			
+
+    		display: table-cell;
 
     		.title{
 							

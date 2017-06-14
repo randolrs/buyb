@@ -19,19 +19,6 @@
 
 	</section>
 	
-	<br>
-
-	<section>
-
-		<header>Latest Recommendations</header>
-
-		<a href="<%= offer_category_type_index_path(@offer_category.url_slug, "newest") %>" class="see-all-cta <%= @offer_category.url_slug %>">See All</a>
-
-		<br>
-
-		<%= render 'offers/index_table', offers: @offer_category.new_offers.where(:active => true).take(4) %>
-
-	</section>
 
 </div>
 
