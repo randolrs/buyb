@@ -1,0 +1,48 @@
+
+<div class="offer-index-table">
+
+	<% offers.each do |offer| %>
+		
+		<div class="table-row">
+			
+			<div class="row-image">
+				<%= image_tag offer.image(:medium), class:"hero-image" %>
+			</div>
+			
+			<div class="row-content">
+
+				<h2 class="title"><%= offer.preview_headline %></h2>
+
+				<p class="preview-summary"><%= offer.sales_preview_text %></p>
+
+				<p class="preview-summary"><%= offer.sales_preview_text %></p>
+
+			</div>
+
+			<div class="row-ctas">
+
+				<% unless offer.affiliate %>
+			
+					<%= link_to "Add to Cart", add_offer_to_order_path(offer.name_url_slug), class:"offer-hero-cta", style:"margin-bottom: 10px;" %>
+
+					<br>
+
+					<%= link_to "Learn More", show_offer_formatted_path(offer.name_url_slug), class:"learn-more-cta" %>
+
+				<%else%>
+
+					<%= link_to "Get This", offer.affiliate_link, class:"offer-hero-cta", style:"margin-bottom: 10px;" %>
+
+					<br>
+					
+					<%= link_to "Learn More", show_offer_formatted_path(offer.name_url_slug), class:"learn-more-cta", target: :_blank %>
+
+				<%end%>
+
+			</div>
+
+		</div>
+
+	<% end %>
+
+</div>
