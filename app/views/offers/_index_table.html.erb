@@ -32,19 +32,16 @@
 
 				<% unless offer.affiliate %>
 			
-					<%= link_to "Add to Cart", add_offer_to_order_path(offer.name_url_slug), class:"offer-hero-cta", style:"margin-bottom: 10px;" %>
+					<%= link_to "Add to Cart", add_offer_to_order_path(offer.name_url_slug), class:"button green-background stretch small", style:"margin-bottom: 10px;" %>
 
-					<br>
 
-					<%= link_to "Learn More", show_offer_formatted_path(offer.name_url_slug), class:"learn-more-cta" %>
+					<%= link_to "Learn More", show_offer_formatted_path(offer.name_url_slug), class:"button green-background stretch small" %>
 
 				<%else%>
 
-					<%= link_to "Get This", offer.affiliate_link, class:"offer-hero-cta", style:"margin-bottom: 10px;" %>
-
-					<br>
+					<%= link_to "Get This", offer.affiliate_link, class:"button green-background stretch small", style:"margin-bottom: 10px;" %>
 					
-					<%= link_to "Learn More", show_offer_formatted_path(offer.name_url_slug), class:"learn-more-cta", target: :_blank %>
+					<%= link_to "Learn More", show_offer_formatted_path(offer.name_url_slug), class:"button green-background stretch small", target: :_blank %>
 
 				<%end%>
 
