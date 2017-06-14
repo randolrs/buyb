@@ -26,26 +26,11 @@
 					<p class="preview-summary"><b>The One Chapter to Read: </b><%= offer.chapter_to_read %></p>
 
 				<% end%>
-			</div>
 
-			<div class="row-ctas">
-
-				<% unless offer.affiliate %>
-			
-					<%= link_to "Add to Cart", add_offer_to_order_path(offer.name_url_slug), class:"button green-background stretch small", style:"margin-bottom: 10px;" %>
-
-
-					<%= link_to "Learn More", show_offer_formatted_path(offer.name_url_slug), class:"button green-background stretch small" %>
-
-				<%else%>
-
-					<%= link_to "Get This", offer.affiliate_link, class:"button green-background stretch small", style:"margin-bottom: 10px;" %>
-					
-					<%= link_to "Learn More", show_offer_formatted_path(offer.name_url_slug), class:"button green-background stretch small", target: :_blank %>
-
-				<%end%>
+				<p class="review-summary"><%= link_to "Get This", offer.affiliate_link, class:"button green-background small", style:"margin-bottom: 10px;" %> <%= link_to "Learn More", root_path, class:"button blue-frame small" %></p>
 
 			</div>
+
 
 		</div>
 

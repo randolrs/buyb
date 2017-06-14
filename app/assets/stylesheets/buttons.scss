@@ -46,6 +46,14 @@
     background: $brand-green;
 }
 
+.button.blue-frame{
+    border: 2px solid $brand-blue;
+    color: $brand-blue;
+    background: #fff;
+    text-shadow: none;
+    font-weight: 500;
+}
+
 
 //SIZES
 

@@ -201,11 +201,18 @@
 					margin-bottom: 10px;
 					position: relative;
 
+					.row-image{
+
+						img{
+							width: 150px;
+						}
+
+
+					}
+
 					.row-content{
 						
 						vertical-align: top;
-
-						padding-right: 200px;
 
 						.title{
 							
