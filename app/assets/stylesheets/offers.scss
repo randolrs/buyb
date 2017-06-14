@@ -115,6 +115,7 @@ article.offer-hero-index{
 		color: #555;
 		font-weight: 300;
 		text-align: justify;
+		margin-bottom: 10px;
 	}
 }
 
@@ -308,28 +309,13 @@ article.offer-hero-index{
 			display: inline-block;
 			vertical-align: top;
 			position: absolute;
-    		right: 200px;
+    		right: 0px;
     		left: 120px;
 
-			.title{
-				
-				margin: 0px;
-				font-size: 20px;
-				margin-bottom: 10px;
-			
-			}
-
-			.preview-summary{
-				font-weight: 300;
-			}
 		}
 
 		.row-ctas{
-			position: absolute;
-			right: 0px;
-			width: 200px;
-			top: 0px;
-			padding: 10px;
+			display: none;
 		}
 	}
 
