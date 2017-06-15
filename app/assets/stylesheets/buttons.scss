@@ -46,6 +46,13 @@
     background: $brand-green;
 }
 
+.button.yellow-background{
+    background: $brand-yellow;
+    color: #222;
+    text-shadow: none;
+    font-weight: 800;
+}
+
 .button.blue-frame{
     border: 2px solid $brand-blue;
     color: $brand-blue;

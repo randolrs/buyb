@@ -1,27 +1,35 @@
-<%= render 'layouts/sidebar' %>
+<% if user_signed_in? %>
 
-<%= render 'layouts/content_header', offer_category: @offer_category %>
+	<%= render 'layouts/sidebar' %>
 
-<%= render 'pages/offer_categories_header' %>
+	<%= render 'layouts/content_header', offer_category: @offer_category %>
 
-
-<div class="main-content">
-
-	<section>
-
-		<div>
-			
-			<header>Top Recommendations</header>
-
-			<a href="<%= offer_category_type_index_path(@offer_category.url_slug, "top") %>" class="see-all-cta <%= @offer_category.url_slug %>">See All</a>
-
-		</div>
-
-		<br>
-
-		<%= render 'offers/index_table', offers: @offer_category.top_offers.take(4) %>
-
-	</section>
+	<%= render 'pages/offer_categories_header' %>
 
 
-</div>
+	<div class="main-content">
+
+		<section>
+
+			<div>
+				
+				<header>Top Recommendations</header>
+
+				<a href="<%= offer_category_type_index_path(@offer_category.url_slug, "top") %>" class="see-all-cta <%= @offer_category.url_slug %>">See All</a>
+
+			</div>
+
+			<br>
+
+			<%= render 'offers/index_table', offers: @offer_category.top_offers.take(4) %>
+
+		</section>
+
+
+	</div>
+
+<%else%>
+	
+	<%= render 'pages/home_landing' %>
+
+<%end%>

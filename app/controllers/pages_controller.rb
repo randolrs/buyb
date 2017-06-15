@@ -2,6 +2,15 @@ class PagesController < ApplicationController
   
   def home
   	
+    unless user_signed_in?
+
+      @hide_header = true
+
+      flash[:error] = "Under Construction"
+
+    end
+
+
   	unless session[:email]
   		@email_cta = true
   	end
@@ -15,7 +24,7 @@ class PagesController < ApplicationController
       else
         @personal_settings_cta = true
       end
-      
+
       @personal_settings_object = personal_settings_object
       @offer_category = personal_settings_object.preferred_category_object
 
