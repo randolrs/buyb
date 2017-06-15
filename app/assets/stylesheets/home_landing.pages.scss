@@ -43,6 +43,11 @@ div.home-landing{
 			color: #fff;
 		}
 
+		h1{
+		    font-size: 48px;
+		    text-shadow: 0px 1px 1px rgba(0,0,0,0.7);
+		}
+		
 		p{
 			font-weight: 300;
 		}
@@ -52,6 +57,12 @@ div.home-landing{
 
 		.section-content{
 			padding: 100px 20px;
+		}
+
+		a.button.yellow-background{
+			
+			box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+    		border: 1px solid rgba(0,0,0,0.1);
 		}
 	}
 
