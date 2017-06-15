@@ -6,7 +6,7 @@ class PagesController < ApplicationController
 
       @hide_header = true
 
-      flash[:error] = "Under Construction"
+      #flash[:error] = "Under Construction"
 
     end
 
