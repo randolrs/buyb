@@ -29,9 +29,9 @@
 
 .full-screen-popover{
     
-    height: 100%;
-    width: 100%;
     position: fixed;
+    top: 0px;
+    bottom: 0px;
     z-index: 999999;
     display: block;
     width: 100%;
@@ -39,7 +39,7 @@
     min-height: 500px;
     border-bottom: 3px solid #fff;
     margin: 0;
-    padding: 0 0 0 0;
+    padding: 20px;
     
 
     .overlay{

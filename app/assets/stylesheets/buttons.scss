@@ -58,6 +58,12 @@
     font-weight: 800;
 }
 
+.button.orange-background{
+    background: $brand-orange;
+    color: #fff;
+    text-shadow: none;
+}
+
 .button.blue-frame{
     border: 2px solid $brand-blue;
     color: $brand-blue;

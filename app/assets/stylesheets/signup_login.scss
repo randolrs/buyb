@@ -1,0 +1,47 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.signup-form-container{
+	
+	width: 500px;
+	max-width: 100%;
+	margin: 0 auto;
+	background: #fff;
+	border-radius: 5px;
+
+	box-shadow: 0px 2px 5px rgba(0,0,0,0.5);
+	
+	.signup-form-container-header{
+		padding: 20px;
+		border-bottom: 1px solid #ccc;
+	}
+
+	.signup-form-container-inputs.form-content{
+		padding: 20px;
+	}
+
+	.signup-form-container-actions {
+
+		padding: 20px;
+		background: #ccc;
+	}
+
+	h2{
+		color: #333;
+	}
+
+	h4{
+		color: #444;
+	}
+
+	p{
+		color: #555;
+		font-weight: 300;
+	}
+
+	label{
+		color: #555;
+		font-weight: 300;
+	}
+}

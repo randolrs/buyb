@@ -95,6 +95,14 @@ class PagesController < ApplicationController
 
   end
 
+  
+
+  def signup
+
+    @hide_header = true
+
+  end
+
 
 
   def newsletter_signups
