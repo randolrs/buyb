@@ -1,0 +1,43 @@
+<%= form_for(personalization_question) do |f| %>
+  <% if personalization_question.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(personalization_question.errors.count, "error") %> prohibited this personalization_question from being saved:</h2>
+
+      <ul>
+      <% personalization_question.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :question %>
+    <%= f.text_area :question %>
+  </div>
+
+  <div class="field">
+    <%= f.label :additional_text %>
+    <%= f.text_area :additional_text %>
+  </div>
+
+  <div class="field">
+    <%= f.label :initial_question %>
+    <%= f.check_box :initial_question %>
+  </div>
+
+  <div class="field">
+    <%= f.label :active %>
+    <%= f.check_box :active %>
+  </div>
+
+  <%= f.fields_for :personalization_question_answers do |builder| %>
+    <%= render 'personalization_question_answer_fields', f: builder %>
+  <% end %>
+
+  <%= link_to_add_fields "Add Answer", f, :personalization_question_answers %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,1 @@
+json.array! @personalization_questions, partial: 'personalization_questions/personalization_question', as: :personalization_question

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170614204249) do
+ActiveRecord::Schema.define(version: 20170616162107) do
 
   create_table "biggest_problems", force: :cascade do |t|
     t.string   "name"
@@ -71,6 +71,15 @@ ActiveRecord::Schema.define(version: 20170614204249) do
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
     t.boolean  "is_active"
+  end
+
+  create_table "offer_question_answer_weights", force: :cascade do |t|
+    t.integer  "personalization_question_id"
+    t.integer  "personalization_question_answer_id"
+    t.integer  "offer_id"
+    t.decimal  "weight"
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
   end
 
   create_table "offers", force: :cascade do |t|
@@ -149,6 +158,25 @@ ActiveRecord::Schema.define(version: 20170614204249) do
     t.integer  "biggest_problem_id"
   end
 
+  create_table "personalization_question_answers", force: :cascade do |t|
+    t.integer  "question_id"
+    t.text     "answer_text"
+    t.integer  "next_question_id"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.integer  "personalization_question_id"
+  end
+
+  create_table "personalization_questions", force: :cascade do |t|
+    t.text     "question"
+    t.text     "additional_text"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.boolean  "initial_question"
+    t.boolean  "active"
+    t.string   "display_id"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.text     "title"
     t.text     "sub_title"
@@ -174,6 +202,14 @@ ActiveRecord::Schema.define(version: 20170614204249) do
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.integer  "user_id"
+  end
+
+  create_table "user_question_answers", force: :cascade do |t|
+    t.integer  "personalization_question_id"
+    t.integer  "user_id"
+    t.integer  "personalization_question_answer_id"
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
   end
 
   create_table "users", force: :cascade do |t|

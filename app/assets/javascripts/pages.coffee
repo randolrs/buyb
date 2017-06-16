@@ -174,4 +174,15 @@ ready = ->
 						$subtotal_text.text(data.new_subtotal)
 						$order_total_text.text(data.new_order_total)
 
+		$('form').on 'click', '.remove_fields', (e) ->
+			$(this).prev('input[type=hidden]').val('1')
+			$(this).closest('fieldset').hide()
+			e.preventDefault()
+
+		$('form').on 'click', '.add_fields', (e) ->
+			time = new Date().getTime()
+			regexp = new RegExp($(this).data('id'), 'g')
+			$(this).before($(this).data('fields').replace(regexp, time))
+			e.preventDefault()
+
 $(document).on('turbolinks:load', ready)

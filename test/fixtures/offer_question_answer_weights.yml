@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  personalization_question_id: 1
+  personalization_question_answer_id: 1
+  offer_id: 1
+  weight: 9.99
+
+two:
+  personalization_question_id: 1
+  personalization_question_answer_id: 1
+  offer_id: 1
+  weight: 9.99

@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Question:</strong>
+  <%= @personalization_question.question %>
+</p>
+
+<p>
+  <strong>Additional text:</strong>
+  <%= @personalization_question.additional_text %>
+</p>
+
+
+<div class="overlay-content-container preferred-category-container reveal-panel" id="how-much">
+
+  <h2><%= @personalization_question.question %></h2>
+
+  <% @personalization_question.personalization_question_answers.each do |answer| %>
+
+    <a class="button stretch red-background update-how-much click-to-reveal" data-reveal-panel-id="<%= answer.next_question_display_id %>" data-question-id = "<%= @personalization_question.id %>" data-answer-id="<%= answer.id %>"><%= answer.answer_text %></a>
+
+  <%end%>
+
+</div>
+
+
+<%= link_to 'Edit', edit_personalization_question_path(@personalization_question) %> |
+<%= link_to 'Back', personalization_questions_path %>

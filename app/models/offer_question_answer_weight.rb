@@ -1,0 +1,2 @@
+class OfferQuestionAnswerWeight < ApplicationRecord
+end

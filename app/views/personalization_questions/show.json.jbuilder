@@ -1,0 +1,1 @@
+json.partial! "personalization_questions/personalization_question", personalization_question: @personalization_question
