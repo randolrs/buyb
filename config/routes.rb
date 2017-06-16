@@ -47,7 +47,9 @@ Rails.application.routes.draw do
 
   post '/newsletter_signup/create/' => 'pages#create_newsletter_subscriber', as: 'create_newsletter_subscriber'
 
-  
+  get '/personalization_questions/update/:question_id/:answer_id' => 'personalization_questions#update_question', as: 'update_question' 
+
+
   get '/personal_settings/preferred_category/update/:category_id' => 'personal_settings#update_preferred_category', as: 'update_preferred_category' 
 
   get '/personal_settings/how_much/update/:how_much' => 'personal_settings#update_how_much', as: 'update_how_much' 

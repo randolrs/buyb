@@ -185,4 +185,16 @@ ready = ->
 			$(this).before($(this).data('fields').replace(regexp, time))
 			e.preventDefault()
 
+		$('.update-personalized-question').click (e) ->
+			e.preventDefault()
+			question_id = $(@).data("question-id")
+			answer_id = $(@).data("answer-id")
+			$.ajax
+				url: "/personalization_questions/update/#{question_id}/#{answer_id}", format: 'js'
+				success: (data) ->
+					console.log(data)
+					if data.redirect_to_url
+		  				window.location.href = data.redirect_to_url
+
+
 $(document).on('turbolinks:load', ready)

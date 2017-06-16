@@ -11,13 +11,13 @@
 </p>
 
 
-<div class="overlay-content-container preferred-category-container reveal-panel" id="how-much">
+<div class="overlay-content-container preferred-category-container">
 
   <h2><%= @personalization_question.question %></h2>
 
   <% @personalization_question.personalization_question_answers.each do |answer| %>
 
-    <a class="button stretch red-background update-how-much click-to-reveal" data-reveal-panel-id="<%= answer.next_question_display_id %>" data-question-id = "<%= @personalization_question.id %>" data-answer-id="<%= answer.id %>"><%= answer.answer_text %></a>
+    <a class="button stretch red-background update-personalized-question" data-reveal-panel-id="<%= answer.next_question_display_id %>" data-question-id = "<%= @personalization_question.id %>" data-answer-id="<%= answer.id %>"><%= answer.answer_text %></a>
 
   <%end%>
 

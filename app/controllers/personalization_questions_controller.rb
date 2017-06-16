@@ -1,6 +1,47 @@
 class PersonalizationQuestionsController < ApplicationController
   before_action :set_personalization_question, only: [:show, :edit, :update, :destroy]
 
+
+
+  def update_question
+
+    if user_signed_in?
+
+      if params[:question_id] && params[:answer_id]
+
+        question = PersonalizationQuestion.find(params[:question_id])
+       
+        answer = PersonalizationQuestionAnswer.find(params[:answer_id])
+
+
+        if question && answer
+
+          user_question_answer = UserQuestionAnswer.create(:personalization_question_id => question.id, :personalization_question_answer_id => answer.id, :user_id => current_user.id)
+          
+          render json: { :result => "success", :redirect_to_url => nil, content_type: 'text/json' }
+
+
+        else
+
+          render json: { :result => "failure", :message => "no question or answer", content_type: 'text/json' }
+        
+        end
+
+      else
+
+        render json: { :result => "failure", :message => "no question or answer param", content_type: 'text/json' }
+        
+      end
+
+    else
+
+      render json: { :result => "failure", :message => "user not signed in", content_type: 'text/json' }
+
+    end
+
+  end
+
+
   # GET /personalization_questions
   # GET /personalization_questions.json
   def index
@@ -27,14 +68,29 @@ class PersonalizationQuestionsController < ApplicationController
     @personalization_question = PersonalizationQuestion.new(personalization_question_params)
 
     respond_to do |format|
+      
       if @personalization_question.save
+
+
+        #something with answers
+
+
+
+        #end something with answers
+
+
         format.html { redirect_to @personalization_question, notice: 'Personalization question was successfully created.' }
         format.json { render :show, status: :created, location: @personalization_question }
+    
       else
+    
         format.html { render :new }
         format.json { render json: @personalization_question.errors, status: :unprocessable_entity }
+    
       end
+    
     end
+
   end
 
   # PATCH/PUT /personalization_questions/1

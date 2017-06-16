@@ -102,7 +102,7 @@
 
               <% question.personalization_question_answers.each do |answer| %>
 
-                <a class="button stretch red-background update-how-much click-to-reveal" data-reveal-panel-id="<%= answer.next_question_display_id %>" data-question-id = "<%= question.id %>" data-answer-id="<%= answer.id %>"></a>
+                <a class="button stretch red-background update-personalized-question click-to-reveal" data-reveal-panel-id="<%= answer.next_question_display_id %>" data-question-id = "<%= question.id %>" data-answer-id="<%= answer.id %>"></a>
 
               <%end%>
 
