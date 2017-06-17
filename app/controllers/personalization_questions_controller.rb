@@ -53,40 +53,30 @@ class PersonalizationQuestionsController < ApplicationController
 
     params[:oqaw_weight].each do |oqaw_weight|
 
-      weight = oqaw_weight
+      weight = params[:oqaw_weight][i.to_s].to_i
 
-      question_id = params[:oqaw_question_id][i]
+      question_id = params[:oqaw_question_id][i.to_s].to_i
 
-      answer_id = params[:oqaw_answer_id][i]
-    
+      answer_id = params[:oqaw_answer_id][i.to_s].to_i
 
-      offer_id = params[:oqaw_offer_id][i]
+      offer_id = params[:oqaw_offer_id][i.to_s].to_i
 
 
       question = PersonalizationQuestion.where(:id => question_id).last
 
+      
       unless question
 
         XXYYZZ
+
       end
 
       answer = PersonalizationQuestionAnswer.where(:id => answer_id).last
 
-      unless answer
-        poss
-      end
-
       offer = Offer.where(:id => offer_id).last
 
-      unless offer
 
-        reddit
-
-      end
-      
       if question && answer && offer
-
-        covert
 
         existing_oqaw = OfferQuestionAnswerWeight.where(:personalization_question_id => question.id, :personalization_question_answer_id => answer.id, :offer_id => offer.id).last
 
