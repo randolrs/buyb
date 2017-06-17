@@ -64,5 +64,41 @@ class Offer < ApplicationRecord
 	end
 
 
+	def weight_for_user(user_id)
+
+		weight = 0
+
+		offerqaws = OfferQuestionAnswerWeight.where(:offer_id => self.id)
+
+		userqas = UserQuestionAnswer.where(:user_id => user_id)
+
+		userqas.each do |userqa|
+
+			answer = userqa.personalization_question_answer
+
+			applicable_oqaw = offerqaws.where(:personalization_question_answer_id => answer.id).last
+
+			if applicable_oqaw
+
+				if applicable_oqaw.weight
+
+					weight = weight + applicable_oqaw.weight
+
+				end
+
+			end
+
+		end
+
+		return weight
+		#check for ... for ...
+
+
+
+
+
+	end
+
+
 
 end
