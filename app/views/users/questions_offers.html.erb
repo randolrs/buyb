@@ -1,0 +1,70 @@
+
+<% i = 0 %>
+
+<%= form_tag update_question_offer_matrix_path do %>
+
+	<input type="submit" name="Update"></input>
+
+	<% Offer.where(:active => true).each do |offer| %>
+
+		<h2><%= offer.name %></h2>
+
+		<table>
+		
+			
+			<tr>
+
+				<% PersonalizationQuestion.where(:active => true).each do |question| %>
+
+					<% question.personalization_question_answers.each do |answer| %>
+
+						<td>
+							
+							<%= question.question %>
+							<br>
+							<%= answer.answer_text %>
+
+							<br>
+
+							<% entry = OfferQuestionAnswerWeight.where(:personalization_question_id => question.id, :personalization_question_answer_id => answer.id, :offer_id => offer.id).last %>
+
+							<% if entry %>
+
+								<% offer_question_answer_weight = entry %>
+
+							<%else%>
+
+								<% offer_question_answer_weight = OfferQuestionAnswerWeight.new %>
+
+							<%end%>
+
+							<% i = i + 1 %>
+
+							<%= fields_for offer_question_answer_weight do |oqaw| %>
+							
+								<%= oqaw.number_field :weight, name: "oqaw_weight[" + i.to_s + "]" %>
+
+								<%= oqaw.hidden_field :offer_id, value: offer.id, name: "oqaw_offer_id[" + i.to_s + "]" %>
+
+								<%= oqaw.hidden_field :personalization_question_id, value: question.id, name: "oqaw_question_id[" + i.to_s + "]" %>
+
+								<%= oqaw.hidden_field :personalization_question_answer_id, value: answer.id, name: "oqaw_answer_id[" + i.to_s + "]" %>
+
+							<% end %>
+
+						</td>
+					
+					<% end %>
+
+				<% end %>
+
+			
+			</tr>
+
+
+		</table>
+
+	<%end%>
+
+<%end%>
+

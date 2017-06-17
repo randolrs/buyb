@@ -41,6 +41,78 @@ class PersonalizationQuestionsController < ApplicationController
 
   end
 
+  
+
+  def update_question_offer_matrix
+
+    c = 1
+
+    j = params[:oqaw_weight].count
+
+    i = 1
+
+    params[:oqaw_weight].each do |oqaw_weight|
+
+      weight = oqaw_weight
+
+      question_id = params[:oqaw_question_id][i]
+
+      answer_id = params[:oqaw_answer_id][i]
+    
+
+      offer_id = params[:oqaw_offer_id][i]
+
+
+      question = PersonalizationQuestion.where(:id => question_id).last
+
+      unless question
+
+        XXYYZZ
+      end
+
+      answer = PersonalizationQuestionAnswer.where(:id => answer_id).last
+
+      unless answer
+        poss
+      end
+
+      offer = Offer.where(:id => offer_id).last
+
+      unless offer
+
+        reddit
+
+      end
+      
+      if question && answer && offer
+
+        covert
+
+        existing_oqaw = OfferQuestionAnswerWeight.where(:personalization_question_id => question.id, :personalization_question_answer_id => answer.id, :offer_id => offer.id).last
+
+        if existing_oqaw
+
+          existing_oqaw.update(:weight => weight)
+
+        else
+
+          OfferQuestionAnswerWeight.create(:personalization_question_id => question.id, :personalization_question_answer_id => answer.id, :offer_id => offer.id, :weight => weight)
+
+        end
+
+
+      end
+
+
+      i = i + 1
+
+    end
+
+    redirect_to questions_offers_path 
+
+  end
+
+
 
   # GET /personalization_questions
   # GET /personalization_questions.json

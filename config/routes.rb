@@ -47,7 +47,11 @@ Rails.application.routes.draw do
 
   post '/newsletter_signup/create/' => 'pages#create_newsletter_subscriber', as: 'create_newsletter_subscriber'
 
+  post 'personalization_questions/matrix/questions_offers/update' => 'personalization_questions#update_question_offer_matrix', as: 'update_question_offer_matrix'
+
   get '/personalization_questions/update/:question_id/:answer_id' => 'personalization_questions#update_question', as: 'update_question' 
+
+  get '/personalization_questions/matrix/questions_offers' => 'users#questions_offers', as: 'questions_offers' 
 
 
   get '/personal_settings/preferred_category/update/:category_id' => 'personal_settings#update_preferred_category', as: 'update_preferred_category' 
