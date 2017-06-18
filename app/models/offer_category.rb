@@ -34,13 +34,21 @@ class OfferCategory < ApplicationRecord
 
 		offers_sorted_by_weight = Array.new
 
+		offers_only_matrix = Array.new
+
 		self.offers.where(:active => true).each do |offer|
 
 			offers_sorted_by_weight << [offer,offer.weight_for_user(user_id)]
 
 		end
 
-		return offers_sorted_by_weight.sort_by(&:last).reverse
+		offers_sorted_by_weight.sort_by(&:last).reverse.each do |item|
+
+			offers_only_matrix << item[0]
+
+		end
+
+		return offers_only_matrix
 
 	end
 
