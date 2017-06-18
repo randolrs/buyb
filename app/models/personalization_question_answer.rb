@@ -15,22 +15,25 @@ class PersonalizationQuestionAnswer < ApplicationRecord
 
 				if question
 
+					
 					return question.display_id
 
 				else
 
+					
 					return nil
 
 				end
 
 			else
 
+				
 				return nil
 
 			end
 
 		else
-
+			
 			return nil
 
 		end

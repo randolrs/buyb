@@ -1,6 +1,9 @@
 <fieldset>
   <%= f.label :answer_text, "Answer" %>
   <%= f.text_field :answer_text %>
+
+  <%= f.collection_select(:next_question_id, PersonalizationQuestion.all, :id, :question, prompt: "Select Next Question") %><br>
+
   <%= f.hidden_field :_destroy %>
   <%= link_to "remove", '#', class: "remove_fields" %>
 </fieldset>

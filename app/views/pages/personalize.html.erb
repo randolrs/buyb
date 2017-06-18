@@ -18,20 +18,20 @@
 
 						<h3>Start and grow your online business.  Get personalized recommendations for books, courses, and more.</h3>
 
-						<a class="button stretch green-background click-to-reveal" data-reveal-panel-id="category">Continue</a><br>
+						<a class="button stretch green-background click-to-reveal" data-reveal-panel-id="<%= PersonalizationQuestion.initial_question.display_id %>">Continue</a><br>
 
 					</div>
 
 
 					<% PersonalizationQuestion.where(:active => true).each do |question| %>
 
-						<div class="overlay-content-container preferred-category-container reveal-panel" id="category" style="display: none;">
+						<div class="overlay-content-container preferred-category-container reveal-panel" id="<%= question.display_id %>" style="display: none;">
 
 							<h2><%= question.question %></h2>
 
 							<% question.personalization_question_answers.each do |answer| %>
 
-							    <a class="button stretch green-background update-personalized-question" data-reveal-panel-id="<%= answer.next_question_display_id %>" data-question-id = "<%= question.id %>" data-answer-id="<%= answer.id %>"><%= answer.answer_text %></a>
+							    <a class="button stretch green-background update-personalized-question <% if answer.next_question_display_id %>click-to-reveal<% end %>" data-reveal-panel-id="<%= answer.next_question_display_id %>" data-question-id = "<%= question.id %>" data-answer-id="<%= answer.id %>"><%= answer.answer_text %></a>
 
 							  <%end%>
 
