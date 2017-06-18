@@ -15,13 +15,7 @@
 
 		<br>
 
-		<%= render 'offers/index_table', offers: @offer_category.top_offers_for_user(current_user.id).take(6) %>
-
-	</section>
-
-	<section>
-
-		<%= @offer_category.top_offers_for_user(current_user.id) %>
+		<%= render 'offers/index_table', offers: @offers.take(6) %>
 
 	</section>
 	

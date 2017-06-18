@@ -33,6 +33,8 @@ class PagesController < ApplicationController
       @personal_settings_cta = true
       @offer_category = OfferCategory.where(:home_page => true).last
 
+      @offers = @offer_category.top_offers_for_user(current_user.id)
+
     end
 
     
@@ -63,7 +65,7 @@ class PagesController < ApplicationController
 
     end
 
-    @offers = @offer_category.offers.where(:active => true)
+    @offers = @offer_category.top_offers_for_user(current_user.id)
 
 
   end
@@ -91,7 +93,7 @@ class PagesController < ApplicationController
 
     end
 
-    @offers = @offer_category.offers.where(:active => true)
+    @offers = @offer_category.top_offers_for_user(current_user.id)
 
   end
 
