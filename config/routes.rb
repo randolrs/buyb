@@ -29,6 +29,9 @@ Rails.application.routes.draw do
 
   get '/newsletter_signups/' => 'pages#newsletter_signups', as: 'newsletter_signups'
 
+  get '/personalize/' => 'pages#personalize', as: 'personalize'
+
+
 
   #match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup 
 

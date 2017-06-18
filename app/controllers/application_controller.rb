@@ -16,12 +16,13 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(user)
 
-    unless current_user.id
+    if current_user.id
       
-      root_path
+      personalize_path
 
     else
 
+      flash[:error] = "Error Logging In"
       root_path
       
     end

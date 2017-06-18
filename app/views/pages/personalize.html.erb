@@ -1,0 +1,66 @@
+<div class="full-screen-popover personal-settings-container active" id="personal-settings-container">
+	
+	<div class="fancy-border fixed"></div>
+
+	<!-- <div class="overlay"> -->
+
+		<table>
+
+			<tr>
+
+				<td class="centered">
+
+					<div class="overlay-content-container preferred-category-container reveal-panel">
+
+						<h2>Welcome to thatHQ!</h2>
+
+						<br>
+
+						<h3>Start and grow your online business.  Get personalized recommendations for books, courses, and more.</h3>
+
+						<a class="button stretch green-background click-to-reveal" data-reveal-panel-id="category">Continue</a><br>
+
+					</div>
+
+
+					<% PersonalizationQuestion.where(:active => true).each do |question| %>
+
+						<div class="overlay-content-container preferred-category-container reveal-panel" id="category" style="display: none;">
+
+							<h2><%= question.question %></h2>
+
+							<% question.personalization_question_answers.each do |answer| %>
+
+							    <a class="button stretch green-background update-personalized-question" data-reveal-panel-id="<%= answer.next_question_display_id %>" data-question-id = "<%= question.id %>" data-answer-id="<%= answer.id %>"><%= answer.answer_text %></a>
+
+							  <%end%>
+
+
+						</div>
+
+
+
+					<%end%>
+
+					
+
+
+					<br><br>
+					<br><br>
+
+				</td>
+
+			</tr>
+<!-- 
+			<tr class="bottom-continue centered">
+
+				<td><span class="glyphicon glyphicon-circle-arrow-down signup-cta-down-arrow add-scroll-to-body" aria-hidden="true"></span></td>
+
+			</tr> -->
+
+
+		</table>
+
+	<!-- </div> -->
+
+</div>

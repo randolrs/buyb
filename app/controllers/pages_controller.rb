@@ -99,7 +99,7 @@ class PagesController < ApplicationController
     if user_signed_in?
       @offers = @offer_category.top_offers_for_user(current_user.id)
     end
-    
+
   end
 
   
@@ -169,6 +169,14 @@ class PagesController < ApplicationController
   		render json: { :status => "failure", :report => @email, content_type: 'text/json' }
   	end
       
+
+  end
+
+
+
+  def personalize
+
+
 
   end
 
