@@ -34,7 +34,18 @@ class PagesController < ApplicationController
       @offer_category = OfferCategory.where(:home_page => true).last
 
       if user_signed_in?
-        @offers = @offer_category.top_offers_for_user(current_user.id)
+
+        if current_user.personalized
+
+          @offers = @offer_category.top_offers_for_user(current_user.id)
+
+        else
+
+          redirect_to personalize_path
+
+        end
+        
+
       end
 
     end
@@ -68,7 +79,17 @@ class PagesController < ApplicationController
     end
 
     if user_signed_in?
-      @offers = @offer_category.top_offers_for_user(current_user.id)
+
+      if current_user.personalized
+
+        @offers = @offer_category.top_offers_for_user(current_user.id)
+
+      else
+
+        redirect_to personalize_path
+
+      end
+
     end
 
   end
@@ -96,8 +117,19 @@ class PagesController < ApplicationController
 
     end
 
+
     if user_signed_in?
-      @offers = @offer_category.top_offers_for_user(current_user.id)
+
+      if current_user.personalized
+
+        @offers = @offer_category.top_offers_for_user(current_user.id)
+
+      else
+
+        redirect_to personalize_path
+
+      end
+
     end
 
   end
@@ -176,7 +208,13 @@ class PagesController < ApplicationController
 
   def personalize
 
+    @hide_header = true
 
+  end
+
+  def enter_payment
+
+    @hide_header = true
 
   end
 

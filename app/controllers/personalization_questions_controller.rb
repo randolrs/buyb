@@ -192,6 +192,6 @@ class PersonalizationQuestionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def personalization_question_params
-      params.require(:personalization_question).permit(:question, :additional_text, :display_id, :initial_question, :active, personalization_question_answers_attributes:[:answer_text, :next_question_id])
+      params.require(:personalization_question).permit(:question, :additional_text, :display_id, :initial_question, :active, personalization_question_answers_attributes:[:id, :answer_text, :next_question_id])
     end
 end

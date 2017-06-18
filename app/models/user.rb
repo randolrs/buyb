@@ -34,6 +34,20 @@ class User < ActiveRecord::Base
 
   end
 
+  def personalized
+
+    if self.user_question_answers.count > 0
+
+      return true
+    
+    else
+
+      return false
+
+    end
+
+  end
+
 
 
 

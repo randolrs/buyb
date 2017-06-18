@@ -1,0 +1,39 @@
+<div class="full-screen-popover brand-gradient-background">
+
+	<a href="<%= root_path %>"><span class="glyphicon glyphicon-arrow-left return-button full-screen-only" aria-hidden="true"></span></a>
+	
+	<div class="full-screen-header centered">
+		<h1 class="centered white-text">thatHQ</h1>
+	</div>
+	
+	<br>
+
+	<div class="full-screen-content-container">
+
+		<div class="signup-form-container">
+
+			<div class="signup-form-container-header">
+			
+				<h2>Enter Your Payment Information</h2>
+
+				<h4>Lifetime Access for $19</h4>
+
+			</div>
+
+			<div class="form-content signup-form-container-inputs">
+
+				<form>
+							
+					<%= render 'orders/credit_card_form' %>
+					
+					<input type="submit" value="Complete Signup" class="button orange-background"></input>
+
+				</form>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</div>

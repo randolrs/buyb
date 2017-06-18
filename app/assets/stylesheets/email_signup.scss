@@ -29,7 +29,7 @@
 
 .full-screen-popover{
     
-    position: fixed;
+    position: relative;
     top: 0px;
     bottom: 0px;
     z-index: 999999;
@@ -38,7 +38,20 @@
     height: 100%;
     min-height: 500px;
     margin: 0;
+    padding-bottom: 30px;
     
+    .full-screen-header{
+        padding: 30px 0px;
+    }
+
+    h1{
+        display: inline-block;
+        margin: 0 auto;
+    }
+
+    .full-screen-content-container{
+        padding:10px;
+    }
     
 
     .return-button{

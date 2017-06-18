@@ -31,6 +31,10 @@ Rails.application.routes.draw do
 
   get '/personalize/' => 'pages#personalize', as: 'personalize'
 
+  get '/payment/' => 'pages#payment', as: 'payment'
+
+  get '/enter_payment/' => 'pages#enter_payment', as: 'enter_payment'
+
 
 
   #match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup 
