@@ -18,6 +18,12 @@
 		<%= render 'offers/index_table', offers: @offer_category.top_offers.where(:active => true).take(4) %>
 
 	</section>
+
+	<section>
+
+		<%= @offer_category.top_offers_for_user(current_user.id) %>
+
+	</section>
 	
 
 </div>

@@ -30,6 +30,20 @@ class OfferCategory < ApplicationRecord
 
 	end
 
+	def top_offers_for_user(user_id)
+
+		offers_sorted_by_weight = Array.new
+
+		self.offers.where(:active => true).each do |offer|
+
+			offers_sorted_by_weight << [offer,offer.weight_for_user(user_id)]
+
+		end
+
+		return offers_sorted_by_weight.sort_by(&:last).reverse
+
+	end
+
 
 	def new_offers
 

@@ -76,6 +76,7 @@ class Offer < ApplicationRecord
 
 			answer = userqa.personalization_question_answer
 
+
 			applicable_oqaw = offerqaws.where(:personalization_question_answer_id => answer.id).last
 
 			if applicable_oqaw
@@ -91,11 +92,6 @@ class Offer < ApplicationRecord
 		end
 
 		return weight
-		#check for ... for ...
-
-
-
-
 
 	end
 
