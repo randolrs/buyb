@@ -37,7 +37,9 @@
   </div>
 
   <%= f.fields_for :personalization_question_answers do |builder| %>
+
     <%= render 'personalization_question_answer_fields', f: builder %>
+  
   <% end %>
 
   <%= link_to_add_fields "Add Answer", f, :personalization_question_answers %>
