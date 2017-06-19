@@ -22,13 +22,13 @@
 
 			<div class="form-content signup-form-container-inputs">
 
-				<form>
+				<%= form_tag initial_payment_path do %>
 							
 					<%= render 'orders/credit_card_form' %>
 					
 					<input type="submit" value="Complete Signup" class="button orange-background"></input>
 
-				</form>
+				<%end%>
 
 			</div>
 

@@ -3,6 +3,9 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  before_action :check_for_user_initialization, if: proc { user_signed_in? }
+
+
   if Rails.env == "production"
   
     Stripe.api_key = ENV['STRIPE_LIVE_SECRET_KEY']
@@ -17,8 +20,23 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(user)
 
     if current_user.id
+        
+      if current_user.initiated_payment
+        
+        if current_user.personalized  
+        
+          root_path
+        
+        else
+
+          personalize_path
+        end
       
-      personalize_path
+      else
+
+        enter_payment_path
+
+      end
 
     else
 
@@ -28,6 +46,35 @@ class ApplicationController < ActionController::Base
     end
 
 
+
+  end
+
+
+  def check_for_user_initialization
+        
+    if current_user.initiated_payment
+      
+      if current_user.personalized  
+        
+        unless request.path == root_path
+          redirect_to root_path
+        end
+      
+      else
+
+        unless request.path == personalize_path
+          redirect_to personalize_path
+        end
+
+      end
+    
+    else
+      
+      unless request.path == enter_payment_path
+        redirect_to enter_payment_path
+      end
+
+    end
 
   end
 

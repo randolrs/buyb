@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'charges/create'
+
   resources :personalization_questions
   resources :creators
   resources :posts
@@ -34,6 +36,9 @@ Rails.application.routes.draw do
   get '/payment/' => 'pages#payment', as: 'payment'
 
   get '/enter_payment/' => 'pages#enter_payment', as: 'enter_payment'
+
+  post '/payment/initiate' => 'charges#initial_payment', as: 'initial_payment'
+
 
 
 
