@@ -9,42 +9,53 @@ class ChargesController < ApplicationController
 
 	def initial_payment
 
-		token = Stripe::Token.create(
+		if user_signed_in?
 
-			:card => {
-				:number => params[:credit_card_number],
-				:exp_month => params[:expMonth],
-				:exp_year => params[:expYear],
-				:cvc => params[:cvc]
+			token = Stripe::Token.create(
 
-			},
-		)
+				:card => {
+					:number => params[:credit_card_number],
+					:exp_month => params[:expMonth],
+					:exp_year => params[:expYear],
+					:cvc => params[:cvc]
 
-		customer = Stripe::Customer.create(
-			
-			:card  => token.id
+				},
+			)
 
-		)
+			customer = Stripe::Customer.create(
+				
+				:card  => token.id
 
-		price = 19 * 100 #needs to be changed to dynamic
+			)
 
-		charge = Stripe::Charge.create(
+			price = 19 * 100 #needs to be changed to dynamic
 
-			:customer    => customer.id,
-			:amount      => price.to_i,
-			:description => 'Rails Stripe customer',
-			:currency    => 'usd'
+			charge = Stripe::Charge.create(
 
-		)
+				:customer    => customer.id,
+				:amount      => price.to_i,
+				:description => 'Rails Stripe customer',
+				:currency    => 'usd'
 
-		purchase = Purchase.create(email: params[:stripeEmail], stripe_card_id: params[:stripeToken], 
-		amount: price, description: charge.description, currency: charge.currency,
-		stripe_customer_id: customer.id, ip_address: request.remote_ip)
+			)
 
-		current_user.update(:initiated_payment => true)
+			purchase = Purchase.create(email: params[:stripeEmail], stripe_card_id: params[:stripeToken], 
+			amount: price, description: charge.description, currency: charge.currency,
+			stripe_customer_id: customer.id, ip_address: request.remote_ip)
 
-		redirect_to personalize_path
+			current_user.update(:initiated_payment => true)
 
+			redirect_to personalize_path
+
+		else
+
+			redirect_to enter_payment_path
+
+		end
+
+	rescue Stripe::CardError => e
+	  flash[:error] = e.message
+	  redirect_to enter_payment_path and return
 	end
 
 end

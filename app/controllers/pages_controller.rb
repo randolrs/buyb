@@ -91,6 +91,12 @@ class PagesController < ApplicationController
 
   end
 
+  def login
+
+    @hide_header = true
+
+  end
+
 
 
   def newsletter_signups
@@ -159,11 +165,40 @@ class PagesController < ApplicationController
 
     @hide_header = true
 
+    if user_signed_in?
+
+      check_for_user_initialization
+
+    else
+
+      flash[:error] = "Signup to Create an Account."
+      redirect_to signup_path
+    
+    end
+
+
   end
 
   def enter_payment
 
-    @hide_header = true
+    if user_signed_in?
+    
+      @hide_header = true
+      
+      if current_user.initiated_payment
+
+        flash[:error] = "Payment already made."
+        redirect_to root_path
+
+      end
+
+    else
+
+      flash[:error] = "Signup to Create An Account"
+
+      redirect_to signup_path
+
+    end
 
   end
 

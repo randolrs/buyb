@@ -2,47 +2,53 @@
 
 	<a href="<%= root_path %>"><span class="glyphicon glyphicon-arrow-left return-button full-screen-only" aria-hidden="true"></span></a>
 
-	<h1 class="centered white-text">thatHQ</h1>
+	<div class="full-screen-header centered">
+		<h1 class="centered white-text">thatHQ</h1>
+	</div>
 
 	<br>
 
-	<div class="signup-form-container">
+	<div class="full-screen-content-container">
 
-		<div class="signup-form-container-header">
-		
-			<h2>Login</h2>
+		<div class="signup-form-container">
 
-		</div>
+			<div class="signup-form-container-header">
+			
+				<h2>Login</h2>
 
-		<div class="form-content signup-form-container-inputs">
+			</div>
 
-			<p>Enter your login credentials</p>
+			<div class="form-content signup-form-container-inputs">
 
-			<br>
+				<p>Enter your login credentials</p>
 
-			<%= form_for(:user, :url => session_path(:user)) do |f| %>
+				<br>
 
-				<div class="field">
-			  
-				  <%= f.email_field :email, autofocus: true, placeholder: "Email", :required => true %>
-				</div>
+				<%= form_for(:user, :url => session_path(:user)) do |f| %>
 
-				<div class="field">
-				 
-				  <%= f.password_field :password, autocomplete: "off", placeholder: "Password", required: true, :required => true %>
-				</div>
+					<div class="field">
+				  
+					  <%= f.email_field :email, autofocus: true, placeholder: "Email", :required => true %>
+					</div>
 
-				<div class="actions">
-				  <%= f.submit "Login", class: "button medium orange-background" %>
-				</div>
+					<div class="field">
+					 
+					  <%= f.password_field :password, autocomplete: "off", placeholder: "Password", required: true, :required => true %>
+					</div>
 
-			<% end %>
+					<div class="actions">
+					  <%= f.submit "Login", class: "button medium orange-background" %>
+					</div>
 
-		</div>
+				<% end %>
 
-		<div class="signup-form-container-actions centered">
-		
-			<p>Don't Have an Account? <%= link_to "Signup", signup_path %></p>
+			</div>
+
+			<div class="signup-form-container-actions centered">
+			
+				<p>Don't Have an Account? <%= link_to "Signup", signup_path %></p>
+
+			</div>
 
 		</div>
 
