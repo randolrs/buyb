@@ -54,13 +54,7 @@ class ApplicationController < ActionController::Base
         
     if current_user.initiated_payment
       
-      if current_user.personalized  
-        
-        unless request.path == root_path
-          redirect_to root_path
-        end
-      
-      else
+      unless current_user.personalized  
 
         unless request.path == personalize_path
           redirect_to personalize_path

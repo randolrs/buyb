@@ -13,7 +13,7 @@ class PagesController < ApplicationController
 
       @offer_category = OfferCategory.where(:home_page => true).last
 
-      @offers = @offer_category.top_offers_for_user(current_user.id)
+        
 
     end
 
@@ -24,21 +24,22 @@ class PagesController < ApplicationController
 
   def offer_category_index
 
+
     if user_signed_in?
 
       check_for_user_initialization
 
     end
 
+
     @offer_category = OfferCategory.where(:url_slug => params[:category_url_slug]).last
+
+    @offers = @offer_category.top_offers_for_user(current_user.id)
 
 
     if personal_settings_object
 
       @personal_settings_object = personal_settings_object
-      
-    else
-
 
     end
 
@@ -48,6 +49,7 @@ class PagesController < ApplicationController
       redirect_to root_path
 
     end
+
 
 
   end
@@ -61,6 +63,8 @@ class PagesController < ApplicationController
     end
 
     @offer_category = OfferCategory.where(:url_slug => params[:category_url_slug]).last
+
+    @offers = @offer_category.top_offers_for_user(current_user.id)
 
     @type = params[:type]
 
