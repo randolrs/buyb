@@ -49,32 +49,6 @@
 
 	<body>
 
-		<% unless user_signed_in?%>
-			
-			<% if @email_cta %>
-				
-				<%# render 'pages/email_cta' %>
-
-				<%# render 'personal_settings/preferred_category' %>
-
-			<%end%>
-
-		<%end%>
-
-		<% if Rails.env == "production" %>
-		
-			<% if @personal_settings_cta && !session[:skip_personal_settings] %>
-
-				<%# render 'personal_settings/update_settings' %>
-
-			<%end%>
-
-		<%else%>
-
-			<%# render 'personal_settings/update_settings' %>
-
-		<%end%>
-
 		<div class="content-container">
 
 			<% unless @hide_header %>

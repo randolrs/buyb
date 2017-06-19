@@ -3,7 +3,7 @@
 	
 	<% if @offer_category %>
 			
-		<a class="sidebar-category <%= OfferCategory.main_category.url_slug %> <%= cp(root_path) %>" href="<%= root_path %>"><span class="glyph glyphicon glyphicon-star"></span><span class="sidebar-category-text"><%= OfferCategory.main_category.name %></span></a>
+		<a class="sidebar-category <%= OfferCategory.main_category.url_slug %> <%= cp(root_path) %>" href="<%= root_path %>"><span class="sidebar-category-text"><%= OfferCategory.main_category.name %></span></a>
 
 		<% OfferCategory.main_category.child_categories.each do |offer_category| %>
 
@@ -23,9 +23,9 @@
 
 	<%end%>
 
-	<%= link_to "About Us", about_us_path, class:"sidebar-action"%>
+	<%# link_to "About Us", about_us_path, class:"sidebar-action"%>
 	
-	<%= link_to "Blog", blog_home_path, class:"sidebar-action" %>
+	<%# link_to "Blog", blog_home_path, class:"sidebar-action" %>
 
 	<%# link_to "Partnership Application", partnership_application_page_path, class:"sidebar-action"%>
 

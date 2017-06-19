@@ -4,9 +4,9 @@
 		
 		<% if @offer_category %>
 
-			<a class="active <%= @offer_category.url_slug %>"><%= @offer_category.name %></a>
+			<a class="active <%= OfferCategory.main_category.url_slug %>"><%= OfferCategory.main_category.name %></a>
 
-			<% OfferCategory.sidebar_categories(@offer_category).each do |offer_category| %>
+			<% OfferCategory.main_category.child_categories.each do |offer_category| %>
 
 				<a href="<%= offer_category_index_path(offer_category.url_slug) %>" class="<%= cp(offer_category_index_path(offer_category.url_slug)) %> <%= offer_category.url_slug %>"><%= offer_category.name %></a>
 
