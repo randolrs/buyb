@@ -70,5 +70,21 @@ class OfferCategory < ApplicationRecord
 		return OfferCategory.where(:id => self.parent_category_id).last
 	end
 
+	def self.main_category
+
+		main_category = OfferCategory.where(:main_category => true).last
+
+		if main_category
+
+			return main_category
+
+		else
+
+			return OfferCategory.first
+
+		end
+
+	end
+
 
 end

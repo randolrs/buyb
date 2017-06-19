@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170619133533) do
+ActiveRecord::Schema.define(version: 20170619174747) do
 
   create_table "biggest_problems", force: :cascade do |t|
     t.string   "name"
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 20170619133533) do
     t.boolean  "front_page"
     t.boolean  "home_page"
     t.         "parent_category_id"
+    t.boolean  "main_category"
   end
 
   create_table "offer_category_tags", force: :cascade do |t|

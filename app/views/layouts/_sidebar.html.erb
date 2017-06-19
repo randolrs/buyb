@@ -2,30 +2,12 @@
 <nav class="sidebar-container">
 	
 	<% if @offer_category %>
-		
-		<% if @offer_category.front_page %>
 			
-			<a class="sidebar-category active <%= @offer_category.url_slug %>"><span class="glyph glyphicon glyphicon-star"></span><span class="sidebar-category-text"><%= @offer_category.name %></span></a>
+		<a class="sidebar-category <%= OfferCategory.main_category.url_slug %> <%= cp(root_path) %>" href="<%= root_path %>"><span class="glyph glyphicon glyphicon-star"></span><span class="sidebar-category-text"><%= OfferCategory.main_category.name %></span></a>
 
-			<% OfferCategory.sidebar_categories(@offer_category).each do |offer_category| %>
+		<% OfferCategory.main_category.child_categories.each do |offer_category| %>
 
-				<a class="sidebar-category <%= offer_category.url_slug %>" href="<%= offer_category_index_path(offer_category.url_slug) %>"><span class="glyph glyphicon glyphicon-plus"></span><span class="sidebar-category-text"><%= offer_category.name %></span></a>
-
-			<%end%>
-		
-		<%else%>
-
-			<% if @offer_category.parent_category %>
-
-				<a class="sidebar-category active <%= @offer_category.parent_category.url_slug %>"><span class="glyph glyphicon glyphicon-star"></span><span class="sidebar-category-text"><%= @offer_category.parent_category.name %></span></a>
-
-				<% OfferCategory.sidebar_categories(@offer_category.parent_category).each do |offer_category| %>
-
-					<a class="sidebar-category <%= offer_category.url_slug %>" href="<%= offer_category_index_path(offer_category.url_slug) %>"><span class="glyph glyphicon glyphicon-plus"></span><span class="sidebar-category-text"><%= offer_category.name %></span></a>
-
-				<%end%>
-
-			<%end%>
+			<a class="sidebar-category <%= offer_category.url_slug %> <%= cp(offer_category_index_path(offer_category.url_slug)) %>" href="<%= offer_category_index_path(offer_category.url_slug) %>"><span class="glyph glyphicon glyphicon-plus"></span><span class="sidebar-category-text"><%= offer_category.name %></span></a>
 
 		<%end%>
 	
@@ -45,14 +27,8 @@
 	
 	<%= link_to "Blog", blog_home_path, class:"sidebar-action" %>
 
-	<%= link_to "Partnership Application", partnership_application_page_path, class:"sidebar-action"%>
+	<%# link_to "Partnership Application", partnership_application_page_path, class:"sidebar-action"%>
 
-
-<!-- 	<%# OfferCategory.where(:front_page => true).take(4).each do |offer_category| %>
-
-		<a class="sidebar-category" href="<%# offer_category_index_path(offer_category.url_slug) %>"><span class="glyph glyphicon glyphicon-plus"></span><span class="sidebar-category-text"><%# offer_category.name %></span></a>
-
-	<%#end%> -->
 
 </nav>
 
