@@ -4,7 +4,7 @@
 		
 		<% if @offer_category %>
 
-			<a class="active <%= OfferCategory.main_category.url_slug %>"><%= OfferCategory.main_category.name %></a>
+			<a href="<%= root_path %>" class="<%=cp(root_path)%> <%= OfferCategory.main_category.url_slug %>"><%= OfferCategory.main_category.name %></a>
 
 			<% OfferCategory.main_category.child_categories.each do |offer_category| %>
 
