@@ -7,50 +7,15 @@ class PagesController < ApplicationController
       @hide_header = true
 
       #flash[:error] = "Under Construction"
-
-    end
-
-
-  	unless session[:email]
-  		@email_cta = true
-  	end
-
-    
-
-    if personal_settings_object
-      
-      if Rails.env == "production"
-        @personal_settings_cta = false #Should be false
-      else
-        @personal_settings_cta = true
-      end
-
-      @personal_settings_object = personal_settings_object
-      @offer_category = personal_settings_object.preferred_category_object
-
     else
 
-      @personal_settings_cta = true
+      check_for_user_initialization
+
       @offer_category = OfferCategory.where(:home_page => true).last
 
-      if user_signed_in?
-
-        if current_user.personalized
-
-          @offers = @offer_category.top_offers_for_user(current_user.id)
-
-        else
-
-          redirect_to personalize_path
-
-        end
-        
-
-      end
+      @offers = @offer_category.top_offers_for_user(current_user.id)
 
     end
-
-    
 
   	
   end
@@ -58,6 +23,12 @@ class PagesController < ApplicationController
 
 
   def offer_category_index
+
+    if user_signed_in?
+
+      check_for_user_initialization
+
+    end
 
     @offer_category = OfferCategory.where(:url_slug => params[:category_url_slug]).last
 
@@ -78,23 +49,16 @@ class PagesController < ApplicationController
 
     end
 
-    if user_signed_in?
-
-      if current_user.personalized
-
-        @offers = @offer_category.top_offers_for_user(current_user.id)
-
-      else
-
-        redirect_to personalize_path
-
-      end
-
-    end
 
   end
 
   def offer_category_type_index
+
+    if user_signed_in?
+
+      check_for_user_initialization
+
+    end
 
     @offer_category = OfferCategory.where(:url_slug => params[:category_url_slug]).last
 
@@ -114,21 +78,6 @@ class PagesController < ApplicationController
     unless @offer_category
 
       redirect_to root_path
-
-    end
-
-
-    if user_signed_in?
-
-      if current_user.personalized
-
-        @offers = @offer_category.top_offers_for_user(current_user.id)
-
-      else
-
-        redirect_to personalize_path
-
-      end
 
     end
 
