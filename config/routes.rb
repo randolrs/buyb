@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   
   root 'pages#home'
 
-  get '/about_us' => 'pages#about_us', as: 'about_us'
+  get '/about' => 'pages#about', as: 'about'
 
   get '/signup/' => 'pages#signup', as: 'signup'
 
