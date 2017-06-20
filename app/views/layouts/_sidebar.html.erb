@@ -3,7 +3,7 @@
 	
 	<% if @offer_category %>
 			
-		<a class="sidebar-category <%= OfferCategory.main_category.url_slug %> <%= cp(root_path) %>" href="<%= root_path %>"><span class="sidebar-category-text"><%= OfferCategory.main_category.name %></span></a>
+		<a class="sidebar-category <%= cp(root_path) %>" href="<%= root_path %>"><span class="sidebar-category-text"><%= OfferCategory.main_category.name %></span></a>
 
 		<% OfferCategory.main_category.child_categories.each do |offer_category| %>
 
