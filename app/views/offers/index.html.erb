@@ -2,6 +2,8 @@
 
 <div class="content">
   
+  <%= link_to 'New Offer', new_offer_path, class:"button", style: "position: fixed; width: 200px; right: 20px; background: #66d; color: #fff;" %>
+
   <h1>Offers</h1>
 
   <%= render 'offers/index_table', offers: @offers %>
@@ -10,4 +12,4 @@
 
 <br>
 
-<%= link_to 'New Offer', new_offer_path %>
+
