@@ -102,6 +102,11 @@ class PagesController < ApplicationController
 
   end
 
+  def about_us
+
+
+  end
+
 
 
   def newsletter_signups
