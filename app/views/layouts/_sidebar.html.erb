@@ -7,7 +7,7 @@
 
 		<% OfferCategory.main_category.child_categories.each do |offer_category| %>
 
-			<a class="sidebar-category <%= offer_category.url_slug %> <%= cp(offer_category_index_path(offer_category.url_slug)) %>" href="<%= offer_category_index_path(offer_category.url_slug) %>"><span class="sidebar-category-text"><%= offer_category.name %></span></a>
+			<a class="sidebar-category <%= offer_category.url_slug %> <%= cp(offer_category_index_path(offer_category.url_slug)) %>" href="<%= offer_category_index_path(offer_category.url_slug) %>"><span class="sidebar-category-text sub"><%= offer_category.name %></span></a>
 
 		<%end%>
 	
