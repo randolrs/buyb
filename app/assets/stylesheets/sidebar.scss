@@ -27,10 +27,11 @@
         cursor: pointer;
         font-weight: 300;
 
+       
+
         text-decoration: none;
         font-size: 20px;
-        color: #444;
-        border-bottom: 1px solid #ddd;
+        color: #333;
 
 
         .glyph{
@@ -56,10 +57,12 @@
     }
 
     .sidebar-category.active{
-        
-        background: #FC8437;
+
         border-bottom: none;
         color: #111;
+        font-weight: 600;
+        box-shadow: none;
+        background: #FFFC00;
     }
 
     .sidebar-category.active.books{
