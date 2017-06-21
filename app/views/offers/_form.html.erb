@@ -34,6 +34,11 @@
   <h2 style="border-bottom: 2px solid #111;">Preview Image and Headlines</h2>
 
   <div class="field">
+    <label>Main Image</label>
+    <%= f.file_field :image %>
+  </div>
+
+  <div class="field">
     <%= f.label :preview_headline %>
     <%= f.text_field :preview_headline%>
   </div>
@@ -44,14 +49,16 @@
   </div>
 
   <div class="field">
+    <%= f.label :reason_we_recommend %>
+    <%= f.text_area :reason_we_recommend %>
+  </div>
+  
+  <div class="field">
     <%= f.label :chapter_to_read %>
     <%= f.text_area :chapter_to_read %>
   </div>
 
-  <div class="field">
-    <label>Main Image</label>
-    <%= f.file_field :image %>
-  </div>
+  
 
   <br>
 
@@ -110,10 +117,7 @@
   <br>
   <h2 style="border-bottom: 2px solid #111;">Learn More Page</h2>
 
-   <div class="field">
-    <%= f.label :reason_we_recommend %>
-    <%= f.text_area :reason_we_recommend %>
-  </div>
+   
 
   <div class="field">
     <%= f.label :who_this_is_good_for %>
