@@ -58,13 +58,6 @@
     <%= f.text_area :chapter_to_read %>
   </div>
 
-  
-
-  <br>
-
-  <h2 style="border-bottom: 2px solid #111;">Question Weighting</h2>
-
-  XXYYZZZ
 
   <br>
 
@@ -118,25 +111,28 @@
   <h2 style="border-bottom: 2px solid #111;">Learn More Page</h2>
 
    
+  <div style="display: none;">
+    
+    <div class="field">
+      <%= f.label :who_this_is_good_for %>
+      <%= f.text_area :who_this_is_good_for %>
+    </div>
 
-  <div class="field">
-    <%= f.label :who_this_is_good_for %>
-    <%= f.text_area :who_this_is_good_for %>
-  </div>
+    <div class="field">
+      <%= f.label :headline %>
+      <%= f.text_field :headline %>
+    </div>
 
-  <div class="field">
-    <%= f.label :headline %>
-    <%= f.text_field :headline %>
-  </div>
+    <div class="field">
+      <%= f.label :sub_headline %>
+      <%= f.text_field :sub_headline %>
+    </div>
 
-  <div class="field">
-    <%= f.label :sub_headline %>
-    <%= f.text_field :sub_headline %>
-  </div>
+    <div class="field">
+      <%= f.label :content %>
+      <%= f.bootsy_area :content %>
+    </div>
 
-  <div class="field">
-    <%= f.label :content %>
-    <%= f.bootsy_area :content %>
   </div>
 
   <div class="actions">
