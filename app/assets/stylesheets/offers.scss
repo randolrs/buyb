@@ -301,10 +301,13 @@ article.offer-hero-index{
 
 		.row-image{
 
-			display: table-cell;
+			display: block;
+			text-align: center;
+
+			margin-bottom: 15px;
 
 			img{
-				width: 100px;
+				width: 150px;
 			}
 
 
