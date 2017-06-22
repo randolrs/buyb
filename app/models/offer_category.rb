@@ -38,8 +38,11 @@ class OfferCategory < ApplicationRecord
 
 		self.offers.where(:active => true).each do |offer|
 
-			offers_sorted_by_weight << [offer,offer.weight_for_user(user_id)]
+			if offer.chapter_to_read != "" && offer.weight_for_user(user_id) > 0
 
+				offers_sorted_by_weight << [offer,offer.weight_for_user(user_id)]
+
+			end
 		end
 
 		offers_sorted_by_weight.sort_by(&:last).reverse.each do |item|
