@@ -9,12 +9,11 @@
 
 		<h2><%= offer.preview_headline %></h2>
 
-		<table>
-		
-			
-			<tr>
+		<% PersonalizationQuestion.where(:active => true).each do |question| %>
 
-				<% PersonalizationQuestion.where(:active => true).each do |question| %>
+			<table>
+
+				<tr>
 
 					<% question.personalization_question_answers.each do |answer| %>
 
@@ -56,15 +55,13 @@
 					
 					<% end %>
 
-				<% end %>
+				</tr>
 
-			
-			</tr>
+			</table>
 
+		<% end %>
 
-		</table>
-
-		<br>
+		<br><br>
 
 	<%end%>
 
