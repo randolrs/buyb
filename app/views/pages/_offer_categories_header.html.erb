@@ -6,7 +6,7 @@
 
 			<a href="<%= root_path %>" class="<%=cp(root_path)%>"><%= OfferCategory.main_category.name %></a>
 
-			<% OfferCategory.main_category.child_categories.each do |offer_category| %>
+			<% OfferCategory.main_category.child_categories(current_user.id).each do |offer_category| %>
 
 				<a href="<%= offer_category_index_path(offer_category.url_slug) %>" class="<%= cp(offer_category_index_path(offer_category.url_slug)) %>"><%= offer_category.name %></a>
 

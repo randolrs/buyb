@@ -62,9 +62,22 @@ class OfferCategory < ApplicationRecord
 
 	end
 
-	def child_categories
+	def child_categories(user_id)
+		
+		children_with_books = Array.new
+		
+		OfferCategory.where(:parent_category_id => self.id).each do |offer_category|
 
-		return OfferCategory.where(:parent_category_id => self.id)
+			if offer_category.top_offers_for_user(user_id).count > 0 
+
+				children_with_books << offer_category
+
+			end
+
+		end
+
+
+		return children_with_books
 	end
 
 
