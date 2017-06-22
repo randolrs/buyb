@@ -28,7 +28,7 @@ class ChargesController < ApplicationController
 
 			)
 
-			price = 19 * 100 #needs to be changed to dynamic
+			price = 29 * 100 #needs to be changed to dynamic
 
 			charge = Stripe::Charge.create(
 
