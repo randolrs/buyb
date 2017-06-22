@@ -9,6 +9,8 @@
 
 		<h2><%= offer.preview_headline %></h2>
 
+		<%if offer.active %><span style="color=green;">active</span><% else %><span style="color=red;">active</span><%end%>
+
 		<% PersonalizationQuestion.where(:active => true).each do |question| %>
 
 			<table>
