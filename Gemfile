@@ -43,6 +43,9 @@ gem 'turbolinks'
 
 gem 'jquery-turbolinks'
 
+#Adding React
+gem "react-rails"
+
 
 gem 'paperclip', '~> 4.2'
 

@@ -13,8 +13,9 @@ class PagesController < ApplicationController
 
       @offer_category = OfferCategory.where(:home_page => true).last
 
-      @offers = @offer_category.top_offers_for_user(current_user.id)
-        
+      #@offers = @offer_category.top_offers_for_user(current_user.id)
+      
+      @offers = Offer.all
 
     end
 

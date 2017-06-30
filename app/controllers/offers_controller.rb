@@ -197,7 +197,7 @@ class OffersController < ApplicationController
             
 
             format.html { redirect_to @offer, notice: 'Offer was successfully created.' }
-            format.json { render :show, status: :created, location: @offer }
+            format.json { render json: @offer }
           else
             format.html { render :new }
             format.json { render json: @offer.errors, status: :unprocessable_entity }

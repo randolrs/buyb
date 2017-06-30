@@ -1,3 +1,6 @@
+
+<%= react_component 'OfferForm', { data: @offers } %>
+
 <%= form_for(offer) do |f| %>
   <% if offer.errors.any? %>
     <div id="error_explanation">

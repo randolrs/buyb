@@ -20,22 +20,14 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(user)
 
     if current_user.id
-        
-      if current_user.initiated_payment
-        
-        if current_user.personalized  
-        
-          root_path
-        
-        else
 
-          personalize_path
-        end
+      if current_user.personalized  
+      
+        root_path
       
       else
 
-        enter_payment_path
-
+        personalize_path
       end
 
     else
@@ -51,21 +43,11 @@ class ApplicationController < ActionController::Base
 
 
   def check_for_user_initialization
-        
-    if current_user.initiated_payment
       
-      unless current_user.personalized  
+    unless current_user.personalized  
 
-        unless request.path == personalize_path
-          redirect_to personalize_path
-        end
-
-      end
-    
-    else
-      
-      unless request.path == enter_payment_path
-        redirect_to enter_payment_path
+      unless request.path == personalize_path
+        redirect_to personalize_path
       end
 
     end

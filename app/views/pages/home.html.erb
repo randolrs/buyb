@@ -21,7 +21,13 @@
 
 			<br>
 
-			<%= render 'offers/index_table', offers: @offers.take(10) %>
+			<%# react_component 'OfferForm' %>
+
+			<%= react_component 'Offers', { data: @offers } %>
+
+
+			<%# @offers.count %>
+			<%# render 'offers/index_table', offers: @offers.take(10) %>
 
 		</section>
 

@@ -20,4 +20,7 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require bootsy
+//= require react
+//= require react_ujs
+//= require components
 //= require_tree .
